@@ -1,0 +1,123 @@
+table.slider-wrapper {
+  border-collapse: collapse;
+}
+
+table.slider-wrapper a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+table.slider-wrapper .fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+table.slider-wrapper .slider-item {
+  position: relative;
+  transition: 300ms;
+  border-left: 4px solid #fff;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(142, 141, 141, 0.1);
+}
+
+table.slider-wrapper .delete-slider-item {
+  visibility: hidden;
+}
+
+table.slider-wrapper .slider-delete {
+  vertical-align: top;
+}
+
+table.slider-wrapper tr.slider-item:hover {
+  background: #f7fcfe;
+  transition: 150ms;
+  border-left: 4px solid #00a0d2;
+}
+
+table.slider-wrapper tr.slider-item:hover .row-actions {
+  visibility: visible;
+}
+
+table.slider-wrapper tr.slider-item:hover .delete-slider-item {
+  visibility: visible;
+}
+
+table.slider-wrapper tr.slider-item td {
+  padding: 13px;
+}
+
+table.slider-wrapper tr.slider-item td img {
+  max-width: 100px;
+}
+
+table.slider-wrapper tr.slider-item td:nth-child(1) {
+  width: 30%;
+}
+
+table.slider-wrapper td.slider-text {
+  width: 100%;
+  vertical-align: top;
+}
+
+table.slider-wrapper td.slider-delete span.media-modal-icon {
+  background-image: none;
+}
+
+table.slider-wrapper td.slider-delete .media-modal-icon:before {
+  content: '\f158';
+  font: 400 20px/1 dashicons;
+  speak: none;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #666;
+}
+
+table.slider-wrapper td.slider-delete:hover span.media-modal-icon:before {
+  color: #F44336;
+}
+
+table.slider-wrapper #add-slide {
+  background: #93D200;
+  border-color: #46AA00;
+  -webkit-box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+table.slider-wrapper #add-slide:focus {
+  background: #54B101;
+  border-color: #29500E;
+  -webkit-box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
+  box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
+}
+
+table.slider-wrapper .delete-all-slides a {
+  color: #a00;
+}
+
+table.slider-wrapper .delete-all-slides a:hover {
+  color: red;
+  cursor: pointer;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    background-color: #c9fd8c;
+  }
+  to {
+    background-color: rgba(201, 253, 140, 0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background-color: #c9fd8c;
+  }
+  to {
+    background-color: rgba(201, 253, 140, 0);
+  }
+}
+
+/*# sourceMappingURL=admin.css.map */
