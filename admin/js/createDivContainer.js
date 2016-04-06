@@ -3,9 +3,9 @@ function createDivContainer($) {
     /* First, count the number of div that already exist. This is how we're going to
      * implement the name and ID attributes of the element.
      */
-    iSliderItemCount = $('.slider-wrapper').children().length;
-    iSliderItemCount++;
-
+    iSliderItemCount = $('.slider-body').children().length;
+	iSliderItemCount++;
+	
     var Element =
     	'<tr class="slide-'
     	+ iSliderItemCount

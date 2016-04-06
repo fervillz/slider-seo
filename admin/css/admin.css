@@ -60,6 +60,14 @@ table.slider-wrapper td.slider-text {
   vertical-align: top;
 }
 
+table.slider-wrapper td.slider-text input:not(:focus) {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-top: 10px;
+  background: transparent;
+}
+
 table.slider-wrapper td.slider-delete span.media-modal-icon {
   background-image: none;
 }
@@ -76,21 +84,6 @@ table.slider-wrapper td.slider-delete .media-modal-icon:before {
 
 table.slider-wrapper td.slider-delete:hover span.media-modal-icon:before {
   color: #F44336;
-}
-
-table.slider-wrapper #add-slide {
-  background: #93D200;
-  border-color: #46AA00;
-  -webkit-box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
-  color: #fff;
-}
-
-table.slider-wrapper #add-slide:focus {
-  background: #54B101;
-  border-color: #29500E;
-  -webkit-box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
-  box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
 }
 
 table.slider-wrapper .delete-all-slides a {
@@ -118,6 +111,21 @@ table.slider-wrapper .delete-all-slides a:hover {
   to {
     background-color: rgba(201, 253, 140, 0);
   }
+}
+
+#add-slide {
+  background: #93D200;
+  border-color: #46AA00;
+  -webkit-box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+#add-slide:focus {
+  background: #54B101;
+  border-color: #29500E;
+  -webkit-box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
+  box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
 }
 
 /*# sourceMappingURL=admin.css.map */

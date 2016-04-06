@@ -59,6 +59,14 @@ table.slider-wrapper {
 	td.slider-text {
 		width: 100%;
 		vertical-align: top;
+
+		input:not(:focus) {
+			border: none;
+			box-shadow: none;
+			padding: 0;
+			margin-top: 10px;
+			background: transparent;
+		}
 	}
 
 	td.slider-delete {
@@ -78,21 +86,6 @@ table.slider-wrapper {
 
 		&:hover span.media-modal-icon:before {
 			color: #F44336;
-		}
-	}
-
-	#add-slide {
-		background: #93D200;
-		border-color: #46AA00;
-		-webkit-box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
-		box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
-		color: #fff;
-
-		&:focus {
-			background: #54B101;
-			border-color: #29500E;
-			-webkit-box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
-			box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
 		}
 	}
 
@@ -123,5 +116,20 @@ table.slider-wrapper {
 		to {
 			background-color: rgba(201, 253, 140, 0);
 		}
+	}
+}
+
+#add-slide {
+	background: #93D200;
+	border-color: #46AA00;
+	-webkit-box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
+	color: #fff;
+
+	&:focus {
+		background: #54B101;
+		border-color: #29500E;
+		-webkit-box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
+		box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
 	}
 }

@@ -7,35 +7,38 @@ function createSliderHiddenInputs($) {
     $inputElementSrc =
         $('<input />')
         //.attr( 'type', 'hidden' )
-        .attr('name', 'footer-thumbnail-src[' + iSliderItemCount + ']')
-        .attr('id', 'footer-thumbnail-src')
+        .attr('name', 'slider-img-src[' + iSliderItemCount + ']')
+        .attr('id', 'slider-img-src')
         .attr('value', '')
         .attr('type', 'hidden');
 
     $inputElementTitle =
         $('<input />')
         //.attr( 'type', 'hidden' )
-        .attr('name', 'footer-thumbnail-title[' + iSliderItemCount + ']')
-        .attr('id', 'footer-thumbnail-title')
+        .attr('name', 'slider-img-title[' + iSliderItemCount + ']')
+        .attr('id', 'slider-img-title')
         .attr('value', '')
-        .attr('type', 'hidden');
+        .attr('type', 'text');
 
     $inputElementAlt =
         $('<input />')
         //.attr( 'type', 'hidden' )
-        .attr('name', 'footer-thumbnail-alt[' + iSliderItemCount + ']')
-        .attr('id', 'footer-thumbnail-alt')
+        .attr('name', 'slider-img-alt[' + iSliderItemCount + ']')
+        .attr('id', 'slider-img-alt')
         .attr('value', '')
-        .attr('type', 'hidden');
+        .attr('type', 'text');
 
     	//create hidden info for thumbnail src
     $inputElementSrcT =
         $('<input />')
         //.attr( 'type', 'hidden' )
-        .attr('name', 'footer-thumbnail-srcT[' + iSliderItemCount + ']')
-        .attr('id', 'footer-thumbnail-srcT')
+        .attr('name', 'slider-img-srcT[' + iSliderItemCount + ']')
+        .attr('id', 'slider-img-srcT')
         .attr('value', '')
-        .attr('type', 'text');
+        .attr('type', 'hidden');
 
-    return $inputElementSrc.add($inputElementSrcT).add($inputElementTitle).add($inputElementAlt);
+    return $inputElementSrc
+        .add($inputElementSrcT)
+        .add($inputElementTitle)
+        .add($inputElementAlt);
 }

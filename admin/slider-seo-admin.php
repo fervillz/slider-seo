@@ -4,7 +4,7 @@
  * The dashboard-specific functionality of the plugin.
  *
  * @link       http://tommcfarlin.com
- * @since      0.1.0
+ * @since      1.0.0
  *
  * @package    Slider_SEO_Admin
  * @subpackage Slider_SEO_Admin/admin
@@ -25,7 +25,7 @@ class Slider_SEO_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    0.1.0
+	 * @since    1.0.0
 	 * @access   private
 	 * @var      string    $name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Slider_SEO_Admin {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    0.1.0
+	 * @since    1.0.0
 	 * @access   private
 	 * @var      string    $version    The version of the plugin
 	 */
@@ -43,12 +43,12 @@ class Slider_SEO_Admin {
 	/**
 	 * Initializes the plugin by defining the properties.
 	 *
-	 * @since 0.1.0
+	 * @since 1.0.0
 	 */
 	public function __construct() {
  
-		$this->name = 'acme-footer-image';
-		$this->version = '0.1.0';
+		$this->name = 'slider-seo';
+		$this->version = '1.0.1';
  
 	}
  
@@ -56,7 +56,7 @@ class Slider_SEO_Admin {
 	 * Defines the hooks that will register and enqueue the JavaScriot
 	 * and the meta box that will render the option.
 	 *
-	 * @since 0.1.0
+	 * @since 1.0.0
 	 */
 	public function run() {
  
@@ -105,16 +105,16 @@ class Slider_SEO_Admin {
 		if ( is_single() ) {
 	 
 			// In order to append an image, there has to be at least a source attribute
-			if ( '' !== ( $src = get_post_meta( get_the_ID(), 'footer-thumbnail-src', true ) ) ) {
+			if ( '' !== ( $src = get_post_meta( get_the_ID(), 'slider-img-src', true ) ) ) {
 	 
 				// read the remaining attributes even if they are empty strings
-				$alt = get_post_meta( get_the_ID(), 'footer-thumbnail-alt', true );
-				$title = get_post_meta( get_the_ID(), 'footer-thumbnail-title', true );
+				$alt = get_post_meta( get_the_ID(), 'slider-img-alt', true );
+				$title = get_post_meta( get_the_ID(), 'slider-img-title', true );
 	 
 				// create the image element within its own container
-				$img_html = '<p id="footer-thumbnail">';
+				$img_html = '<p id="slider-img">';
 					$img_html .= "<img src='$src' alt='$alt' title='$title' />";
-				$img_html .= '</p><!-- #footer-thumbnail -->';
+				$img_html .= '</p><!-- #slider-img -->';
 	 
 				// append it to the content
 				$content .= $img_html;
@@ -136,9 +136,9 @@ class Slider_SEO_Admin {
 	public function save_post( $post_id ) {
 	 
 		// If the 'Resources' inputs exist, iterate through them and sanitize them
-		if ( ! empty( $_POST['footer-thumbnail-src'] ) ) {
+		if ( ! empty( $_POST['slider-img-src'] ) ) {
 		 
-			$resources = $_POST['footer-thumbnail-src'];
+			$resources = $_POST['slider-img-src'];
 			$sanitized_resources = array();
 			foreach ( $resources as $resource ) {
 		 
@@ -149,14 +149,14 @@ class Slider_SEO_Admin {
 		 
 			}
 			 
-			update_post_meta( $post_id, 'footer-thumbnail-src', $sanitized_resources );
+			update_post_meta( $post_id, 'slider-img-src', $sanitized_resources );
 		 
 		}
 
 		// If the 'Resources' inputs exist, iterate through them and sanitize them
-		if ( ! empty( $_POST['footer-thumbnail-srcT'] ) ) {
+		if ( ! empty( $_POST['slider-img-srcT'] ) ) {
 		 
-			$resources = $_POST['footer-thumbnail-srcT'];
+			$resources = $_POST['slider-img-srcT'];
 			$sanitized_resources = array();
 			foreach ( $resources as $resource ) {
 		 
@@ -167,54 +167,54 @@ class Slider_SEO_Admin {
 		 
 			}
 			 
-			update_post_meta( $post_id, 'footer-thumbnail-srcT', $sanitized_resources );
+			update_post_meta( $post_id, 'slider-img-srcT', $sanitized_resources );
 		 
 		}
 
 		// If the 'Resources' inputs exist, iterate through them and sanitize them
-		if ( ! empty( $_POST['footer-thumbnail-title'] ) ) {
+		if ( ! empty( $_POST['slider-img-title'] ) ) {
 		 
-			$resources = $_POST['footer-thumbnail-title'];
+			$resources = $_POST['slider-img-title'];
 			$sanitized_resources = array();
 			foreach ( $resources as $resource ) {
 		 
-				$resource = __( sanitize_text_field( $resource ) );
+				$resource = sanitize_text_field( $resource );
 				if ( ! empty( $resource ) ) {
 					$sanitized_resources[] = $resource;
 				}
 		 
 			}
 			 
-			update_post_meta( $post_id, 'footer-thumbnail-title', $sanitized_resources );
+			update_post_meta( $post_id, 'slider-img-title', $sanitized_resources );
 		 
 		}else {
  
-			if ( '' !== get_post_meta( $post_id, 'footer-thumbnail-title', true ) ) {
-				delete_post_meta( $post_id, 'footer-thumbnail-title' );
+			if ( '' !== get_post_meta( $post_id, 'slider-img-title', true ) ) {
+				delete_post_meta( $post_id, 'slider-img-title' );
 			}
 		 
 		}
 
 		// If the 'Resources' inputs exist, iterate through them and sanitize them
-		if ( ! empty( $_POST['footer-thumbnail-alt'] ) ) {
+		if ( ! empty( $_POST['slider-img-alt'] ) ) {
 		 
-			$resources = $_POST['footer-thumbnail-alt'];
+			$resources = $_POST['slider-img-alt'];
 			$sanitized_resources = array();
 			foreach ( $resources as $resource ) {
 		 
-				$resource = __( sanitize_text_field( $resource ) );
+				$resource = sanitize_text_field( $resource);
 				if ( ! empty( $resource ) ) {
 					$sanitized_resources[] = $resource;
 				}
 		 
 			}
 			 
-			update_post_meta( $post_id, 'footer-thumbnail-alt', $sanitized_resources );
+			update_post_meta( $post_id, 'slider-img-alt', $sanitized_resources );
 		 
 		}else {
  
-			if ( '' !== get_post_meta( $post_id, 'footer-thumbnail-alt', true ) ) {
-				delete_post_meta( $post_id, 'footer-thumbnail-alt' );
+			if ( '' !== get_post_meta( $post_id, 'slider-img-alt', true ) ) {
+				delete_post_meta( $post_id, 'slider-img-alt' );
 			}
 		 
 		}
@@ -248,7 +248,7 @@ class Slider_SEO_Admin {
 	/**
 	 * Renders the meta box on the post and pages.
 	 *
-	 * @since 0.1.0
+	 * @since 1.0.0
 	 */
 	public function add_meta_box() {
  
@@ -259,7 +259,7 @@ class Slider_SEO_Admin {
 	/**
 	 * Registers the JavaScript for handling the media uploader.
 	 *
-	 * @since 0.1.0
+	 * @since 1.0.0
 	 */
 	public function enqueue_scripts() {
 
@@ -272,7 +272,7 @@ class Slider_SEO_Admin {
 	 * the meta box.
 	 *
 	 * @param    WP_Post    $post    The post object
-	 * @since    0.1.0
+	 * @since    1.0.0
 	 */
 	public function display_featured_footer_image( $post ) {
 		include_once( dirname( __FILE__ ) . '/views/admin.php' );

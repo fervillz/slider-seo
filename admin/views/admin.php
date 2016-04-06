@@ -4,10 +4,10 @@
 //Get thumbnail sizes
 $thumbnailSizeW = get_option( 'thumbnail_size_w' );
 $thumbnailSizeH = get_option( 'thumbnail_size_h' );
-$imgSrcs = get_post_meta( $post->ID, 'footer-thumbnail-src', true );
-$imgSrcsT = get_post_meta( $post->ID, 'footer-thumbnail-srcT', true );
-$imgTitles = get_post_meta( $post->ID, 'footer-thumbnail-title', true );
-$imgAlts = get_post_meta( $post->ID, 'footer-thumbnail-alt', true );
+$imgSrcs = get_post_meta( $post->ID, 'slider-img-src', true );
+$imgSrcsT = get_post_meta( $post->ID, 'slider-img-srcT', true );
+$imgTitles = get_post_meta( $post->ID, 'slider-img-title', true );
+$imgAlts = get_post_meta( $post->ID, 'slider-img-alt', true );
 $i = 0;
 
 if ($imgSrcs){
@@ -15,7 +15,7 @@ foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 	
 	<tr class="slide-<?php echo $i; ?> slider-item">
 		<td class="slider-img">
-			<img src="" alt="caption text" title="bordocs"/>
+			<img src="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>" alt="" title=""/>
 			<div class="row-actions hide-if-no-js">
 				<span class="activate">
 					<a title="Replace Image" href="javascript:;" id="set-slide-thumbnail">Replace Image</a> |
@@ -26,7 +26,16 @@ foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 			</div>
 		</td><!-- .check-column -->
 		<td class="slider-text">
-			Easy installation - No settings needed, just add the link of your image, write desciption and paste link to your about us page or any page. Use widget to show it to your sidebar or footer.
+			
+			<input class="widefat" type="text" name="slider-img-title[]" id="slider-img-title" value="<?php if (($imgTitles[$i-1]) || ($imgTitles[$i-1] >= 0)) {  echo $imgTitles[$i-1];  } ?>">
+			<small> Slider Image Title Text </small>
+			
+			
+			<input class="widefat" type="text" name="slider-img-alt[]" id="slider-img-alt" value="<?php if ($imgAlts != null) {  echo $imgAlts[$i-1];  } ?>">
+			<small> Slider Image Alt Text </small>
+			<input type="hidden" name="slider-img-srcT[]" id="slider-img-srcT" value="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>">
+			<input type="hidden" name="slider-img-src[]" id="slider-img-src" value="<?php echo $imgSrc; ?>">
+			
 		</td><!-- .column-description -->
 		<td class="slider-delete" >
 			<a id="delete-slider-item" class="delete-slider-item" alt="Delete this slide" href="#"><span class="media-modal-icon"><span class="screen-reader-text">Close media panel</span></span>

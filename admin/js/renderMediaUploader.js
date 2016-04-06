@@ -67,6 +67,7 @@ function renderMediaUploader($) {
 
         //use only tuhmbnail for faster loading
         var imgSrcFileName, fileExtension;
+
         //get imgSrcFileName of the image
         imgSrcFileName = json.url;
 
@@ -87,8 +88,7 @@ function renderMediaUploader($) {
             .children('img')
             .attr('src', imgSrcFileName)
             .attr('alt', json.caption)
-            .attr('title', json.title)
-            .show();
+            .attr('title', json.title);
 
         /* Next, hide the anchor responsible for allowing the user to select an image
         *$('.item-active #featured-footer-image-container')
@@ -99,21 +99,21 @@ function renderMediaUploader($) {
         // Store the image's information into the meta data fields
         if (json.url != '') {
 
-            $('.item-active #footer-thumbnail-src').val(json.url);
+            $('.item-active #slider-img-src').val(json.url);
             //for thumbnail
-            $('.item-active #footer-thumbnail-srcT').val(imgSrcFileName);
+            $('.item-active #slider-img-srcT').val(imgSrcFileName);
         }
 
         if (json.title != '') {
-            $('.item-active #footer-thumbnail-title').val(json.title);
+            $('.item-active #slider-img-title').val(json.title);
         } else {
-            $('.item-active #footer-thumbnail-title').val('Slider Image Title');
+            $('.item-active #slider-img-title').val('Add Image Title');
         }
 
         if (json.alt != '') {
-            $('.item-active #footer-thumbnail-alt').val(json.alt);
+            $('.item-active #slider-img-alt').val(json.alt);
         } else {
-            $('.item-active #footer-thumbnail-alt').val('Slider Image Alt');
+            $('.item-active #slider-img-alt').val('Add Image Alt');
         }
 
         /* Display the anchor for the removing the featured image

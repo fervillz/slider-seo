@@ -1,7 +1,7 @@
 (function($) {
     'use strict';
 
-    //renderFeaturedImage($);
+    renderFeaturedImage($);
 
     //remove insde padding
     removePaddingInside($);
@@ -9,7 +9,7 @@
     $(function() {
 
 
-        $('.slider-wrapper').on('click', '#set-slide-thumbnail', function(evt) {
+        $('.slider-body').on('click', '#set-slide-thumbnail', function(evt) {
 
             // Stop the anchor's default behavior
             evt.preventDefault();
@@ -22,7 +22,7 @@
 
         });
 
-        $('.slider-wrapper').on('click', '#remove-footer-thumbnail', function(evt) {
+        $('.slider-body').on('click', '#remove-footer-thumbnail', function(evt) {
 
             // Stop the anchor's default behavior
             evt.preventDefault();
@@ -35,7 +35,7 @@
 
         });
 
-		$('.slider-wrapper').on('click', '#delete-slider-item', function(evt) {
+		$('.slider-body').on('click', '#delete-slider-item', function(evt) {
 
             // Stop the anchor's default behavior
             evt.preventDefault();
@@ -56,13 +56,14 @@
              * and append it to the container just above this button.
              */
 
-            $('.slider-wrapper').append(createDivContainer($));
-            iSliderItemCount = $('.slider-wrapper').children().length;
-            $('.slider-item-' + iSliderItemCount + ' #featured-footer-image-meta').append(createSliderHiddenInputs($));
+            $('.slider-body').append(createDivContainer($));
+            iSliderItemCount = $('.slider-body').children().length;
+            console.log(iSliderItemCount);
+            $('.slide-' + iSliderItemCount + ' .slider-text').append(createSliderHiddenInputs($));
 
             //count
-            iSliderItemCount = $('.slider-wrapper').children().length;
-            $('.slider-item-' + iSliderItemCount)
+            iSliderItemCount = $('.slider-body').children().length;
+            $('.slide-' + iSliderItemCount)
                 //.append ( createSliderContent( $ ) )
                 .addClass('animated fadeOut')
                 .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {

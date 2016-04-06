@@ -8,7 +8,7 @@ $screens = array( 'post', 'page' );
  
             add_meta_box(
                 $this->name,
-                'click "Add Slide" to add new slider',
+                'Click "Add Slide" to add new slider',
                 array( $this, 'display_featured_footer_image' ),
                 $screen,
                 'advanced'
