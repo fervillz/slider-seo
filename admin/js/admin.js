@@ -78,6 +78,33 @@
             mediaModalClose();
         });
 
+
+        $('.tab-others').hide();
+        //tabs toggle
+        $('body').on('click', '.tabs-toggle #tab-seo', function(evt) {
+
+            evt.preventDefault();
+
+            $(this).closest('.slider-text').find('.tab-1').addClass('tabs-active');
+            $(this).closest('.slider-text').find('.tab-2').removeClass('tabs-active');
+
+            $(this).closest('.slider-text').find('.tab-seo').show();
+            $(this).closest('.slider-text').find('.tab-others').hide();
+        });
+
+         $('body').on('click', '.tabs-toggle #tab-others', function(evt) {
+
+            evt.preventDefault();
+
+            $(this).closest('.slider-text').find('.tab-2').addClass('tabs-active');
+            $(this).closest('.slider-text').find('.tab-1').removeClass('tabs-active');
+
+            $(this).closest('.slider-text').find('.tab-seo').hide();
+            $(this).closest('.slider-text').find('.tab-others').show();
+        });
+
+         //end tab toggle
+
     });
 
 })(jQuery);
