@@ -80,6 +80,9 @@ function renderMediaUploader($) {
         //remove whitespaces
         imgSrcFileName = imgSrcFileName.replace(/\s/g, '');
         console.log(imgSrcFileName);
+         console.log(json.alt);
+         console.log(json.title);
+         console.log(json.caption);
 
         //now assign the new thumbnail imgSrcFileName
 
@@ -87,7 +90,7 @@ function renderMediaUploader($) {
         $('.item-active .slider-img')
             .children('img')
             .attr('src', imgSrcFileName)
-            .attr('alt', json.caption)
+            .attr('alt', json.alt)
             .attr('title', json.title);
 
         /* Next, hide the anchor responsible for allowing the user to select an image
@@ -131,6 +134,11 @@ function renderMediaUploader($) {
 
 
         //alert(json.url +'\n'+json.caption+'\n'+json.title);
+
+        //show hidden action buttons
+        $('#major-publishing-actions, #publish').removeClass('hidden');
+
+        
 
     });
 

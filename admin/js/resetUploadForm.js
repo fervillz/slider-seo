@@ -9,29 +9,29 @@
  */
 
 function resetUploadForm($) {
-    'use strict';
-    // First, we'll hide the image
-    $('.remove-item-active #featured-footer-image-container')
-        .children('img')
-        .hide();
+	'use strict';
+	// First, we'll hide the image
+	$('.remove-item-active #featured-footer-image-container')
+		.children('img')
+		.hide();
 
-    // Then display the previous container
-    $('.remove-item-active #featured-footer-image-container')
-        .prev()
-        .show();
+	// Then display the previous container
+	$('.remove-item-active #featured-footer-image-container')
+		.prev()
+		.show();
 
-    // Finally, we add the 'hidden' class back to this anchor's parent
-    $('.remove-item-active #featured-footer-image-container')
-        .next()
-        .hide()
-        .addClass('hidden');
+	// Finally, we add the 'hidden' class back to this anchor's parent
+	$('.remove-item-active #featured-footer-image-container')
+		.next()
+		.hide()
+		.addClass('hidden');
 
-    // Finally, we reset the meta data input fields
-    $('.remove-item-active #featured-footer-image-meta')
-        .children()
-        .val('');
+	// Finally, we reset the meta data input fields
+	$('.tab-itemw')
+		.children()
+		.val('');
 
-    $('.remove-item-active').removeClass('remove-item-active');
+	$('.remove-item-active').removeClass('remove-item-active');
 
 
 }

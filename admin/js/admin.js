@@ -48,7 +48,7 @@
 
         });
 
-        $('#add-slide').on('click', function(evt) {
+        $('.add-slide').on('click', function(evt) {
 
             evt.preventDefault();
 

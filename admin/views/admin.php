@@ -1,22 +1,5 @@
-<div id="major-publishing-actions" class="delete-all-slides delete-all-1">
-	<div id="delete-action">
-		<a class="">Delete All Slides</a>
-	</div>
-
-	<div id="publishing-action">
-		<span class="spinner"></span>
-			<input name="original_publish" type="hidden" id="original_publish" value="Update">
-		<div class="wp-media-buttons">
-			<a href="#" id="add-slide" class="button add_media"><?php echo "Add Slide"; ?></a>
-			<input name="save" type="submit" class="button button-primary" id="publish" value="Save Slider">
-		</div><!-- .wp-media-buttons -->
-	</div>
-	<div class="clear"></div>
-</div>
-
-<table class="slider-wrapper">
-<tbody class="slider-body">
 <?php 
+
 //Get thumbnail sizes
 $thumbnailSizeW = get_option( 'thumbnail_size_w' );
 $thumbnailSizeH = get_option( 'thumbnail_size_h' );
@@ -27,6 +10,32 @@ $imgAlts = get_post_meta( $post->ID, 'slider-img-alt', true );
 $i = 0;
 
 if ($imgSrcs){
+
+?>
+<div id="major-publishing-actions" class="delete-all-slides delete-all-1">
+	<div id="delete-action">
+		<a class="">Delete All Slides</a>
+	</div>
+
+	<div id="publishing-action">
+		<span class="spinner"></span>
+			<input name="original_publish" type="hidden" id="original_publish" value="Update">
+		<div class="wp-media-buttons">
+			<a href="#" id="add-slide" class="button add_media add-slide"><?php echo "Add Slide"; ?></a>
+			<input name="save" type="submit" class="button button-primary" id="publish" value="Save Slider">
+		</div><!-- .wp-media-buttons -->
+	</div>
+	<div class="clear"></div>
+</div>
+
+<?php } ?>
+
+<table class="slider-wrapper">
+<tbody class="slider-body">
+
+<?php 
+
+if ($imgSrcs){
 foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 	
 	<tr class="slide-<?php echo $i; ?> slider-item">
@@ -34,10 +43,10 @@ foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 			<img src="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>" alt="" title=""/>
 			<div class="row-actions hide-if-no-js">
 				<span class="activate">
-					<a title="Replace Image" href="javascript:;" id="set-slide-thumbnail">Replace Image</a> |
+					<a title="Edit" href="javascript:;" id="set-slide-thumbnail">Edit</a> |
 				</span>
 				<span class="delete">
-					<a title="Delete Slide Item" id="delete-slider-item">Delete Slide</a> |
+					<a title="Delete Slide Item" id="delete-slider-item">Delete</a> |
 				</span>
 			</div>
 		</td><!-- .check-column -->
@@ -116,29 +125,16 @@ foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 <input id="thumbnailSizeW" type="hidden" name="thumbnailWidth" value="<?php echo $thumbnailSizeW; ?> " />
 <input id="thumbnailSizeH" type="hidden" name="thumbnailHeight" value="<?php echo $thumbnailSizeH; ?> " />
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div id="major-publishing-actions" class="delete-all-slides">
-	<div id="delete-action">
+	
+	<div id="delete-action" class="hidden">
 		<a class="">Delete All Slides</a>
 	</div>
 
 	<div id="publishing-action">
-		<span class="spinner"></span>
-			<input name="original_publish" type="hidden" id="original_publish" value="Update">
 		<div class="wp-media-buttons">
-			<a href="#" id="add-slide" class="button add_media"><?php echo "Add Slide"; ?></a>
-			<input name="save" type="submit" class="button button-primary" id="publish" value="Save Slider">
+			<a href="#" id="add-slide" class="button add_media add-slide"><?php echo "Add Slide"; ?></a>
+			<input name="save" type="submit" class="button button-primary <?php if (!$imgSrcs){ echo "hidden";} ?>" id="publish" value="Save Slider">
 		</div><!-- .wp-media-buttons -->
 	</div>
 	<div class="clear"></div>

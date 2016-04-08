@@ -34,6 +34,7 @@ table.slider-wrapper {
 
 		ul.tabs-toggle {
 			margin: 0;
+			display: flex;
 		}
 
 		&:hover {
@@ -52,14 +53,6 @@ table.slider-wrapper {
 
 		td {
 			padding: 13px;
-
-			img {
-				max-width: 100%;
-			}
-
-			&:nth-child(1) {
-				width: 30%;
-			}
 		}
 	}
 
@@ -68,9 +61,10 @@ table.slider-wrapper {
 		vertical-align: top;
 
 		li {
-			padding: 3px 5px 0;
+			padding: 3px 5px 3px;
 			border: 1px solid transparent;
 			display: inline;
+			margin-bottom: -1px;
 
 			&.tabs-active {
 				border: 1px solid #dfdfdf;

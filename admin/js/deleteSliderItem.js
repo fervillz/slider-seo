@@ -2,7 +2,7 @@ function deleteSliderItem($) {
 	'use strict';
 
 	if (confirm('This will delete the slide?')) {
-		$('.delete-item-active .slider-text')
+		$('.tab-item')
 			.children()
 			.val('');
 
