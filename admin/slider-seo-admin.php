@@ -218,7 +218,56 @@ class Slider_SEO_Admin {
 			}
 		 
 		}
+
+		// If the 'caption' inputs exist, iterate through them and sanitize them
+		if ( ! empty( $_POST['slider-img-caption'] ) ) {
+		 
+			$resources = $_POST['slider-img-caption'];
+			$sanitized_resources = array();
+			foreach ( $resources as $resource ) {
+		 
+				$resource = sanitize_text_field( $resource);
+				if ( ! empty( $resource ) ) {
+					$sanitized_resources[] = $resource;
+				}
+		 
+			}
+			 
+			update_post_meta( $post_id, 'slider-img-caption', $sanitized_resources );
+		 
+		}else {
+ 
+			if ( '' !== get_post_meta( $post_id, 'slider-img-caption', true ) ) {
+				delete_post_meta( $post_id, 'slider-img-caption' );
+			}
+		 
+		}
+
+		if ( ! empty( $_POST['slider-img-url'] ) ) {
+		 
+				$resources = $_POST['slider-img-url'];
+				$sanitized_resources = array();
+				foreach ( $resources as $resource ) {
+
+					$resource = esc_url( strip_tags( $resource ) );
+					if ( ! empty( $resource ) ) {
+						$sanitized_resources[] = $resource;
+					}
+			 
+				}
+				 
+				update_post_meta( $post_id, 'slider-img-url', $sanitized_resources );
+			 
+			}else {
+	 
+				if ( '' !== get_post_meta( $post_id, 'slider-img-url', true ) ) {
+					delete_post_meta( $post_id, 'slider-img-url' );
+				}
+			 
+			}
 	}
+
+
 
 
 

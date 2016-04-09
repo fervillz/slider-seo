@@ -56,6 +56,14 @@ table.slider-wrapper tr.slider-item td {
   padding: 13px;
 }
 
+table.slider-wrapper #set-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid silver;
+}
+
 table.slider-wrapper td.slider-text {
   width: 100%;
   vertical-align: top;

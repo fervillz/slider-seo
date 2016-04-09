@@ -1,4 +1,4 @@
-<div class="slider-wrapper">
+<div class="slider-body">
 
 <?php 
 //Get thumbnail sizes
@@ -59,7 +59,7 @@ foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 		<span class="spinner"></span>
 			<input name="original_publish" type="hidden" id="original_publish" value="Update">
 <div class="wp-media-buttons">
-	<a href="#" id="add-slide" class="button add_media"><?php echo "Add Slide"; ?></a>
+	<a href="#" id="add-slide" class="add-slide button add_media"><?php echo "Add Slide"; ?></a>
 </div><!-- .wp-media-buttons -->
 			
 

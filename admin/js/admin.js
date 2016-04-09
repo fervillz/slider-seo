@@ -59,7 +59,7 @@
             $('.slider-body').append(createDivContainer($));
             iSliderItemCount = $('.slider-body').children().length;
             console.log(iSliderItemCount);
-            $('.slide-' + iSliderItemCount + ' .slider-text').append(createSliderHiddenInputs($));
+            createSliderHiddenInputs($);
 
             //count
             iSliderItemCount = $('.slider-body').children().length;

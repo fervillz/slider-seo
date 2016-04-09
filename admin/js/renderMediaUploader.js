@@ -119,6 +119,15 @@ function renderMediaUploader($) {
             $('.item-active #slider-img-alt').val('Add Image Alt');
         }
 
+        if (json.caption != '') {
+            $('.item-active #slider-img-caption').text(json.caption);
+        } else {
+            $('.item-active #slider-img-caption').text('Add Image caption');
+        }
+
+        //add some url
+        $('.item-active #slider-img-url').val("#");
+
         /* Display the anchor for the removing the featured image
         *$('.item-active #featured-footer-image-container')
         *    .next()
@@ -130,8 +139,10 @@ function renderMediaUploader($) {
         $('.item-active input#set-slide-thumbnail').hide();
         $('.item-active .row-actions').removeClass('hidden');
         
+        $('.item-active #set-image').prev('img').removeClass('hidden');
+        $('.item-active #set-image').hide();
+        
         $('.item-active').removeClass('item-active');
-
 
         //alert(json.url +'\n'+json.caption+'\n'+json.title);
 

@@ -7,11 +7,12 @@ $imgSrcs = get_post_meta( $post->ID, 'slider-img-src', true );
 $imgSrcsT = get_post_meta( $post->ID, 'slider-img-srcT', true );
 $imgTitles = get_post_meta( $post->ID, 'slider-img-title', true );
 $imgAlts = get_post_meta( $post->ID, 'slider-img-alt', true );
+$imgCaption = get_post_meta( $post->ID, 'slider-img-caption', true );
+$imgUrls = get_post_meta( $post->ID, 'slider-img-url', true );
+
 $i = 0;
+if ($imgSrcs){ ?>
 
-if ($imgSrcs){
-
-?>
 <div id="major-publishing-actions" class="delete-all-slides delete-all-1">
 	<div id="delete-action">
 		<a class="">Delete All Slides</a>
@@ -36,7 +37,8 @@ if ($imgSrcs){
 <?php 
 
 if ($imgSrcs){
-foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
+	echo sizeof($imgSrcs);
+foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 	
 	<tr class="slide-<?php echo $i; ?> slider-item">
 		<td class="slider-img">
@@ -51,7 +53,6 @@ foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 			</div>
 		</td><!-- .check-column -->
 		<td class="slider-text">
-			
 			<ul class="tabs-toggle">
 				<li class="hide-if-no-js tab-1 tabs-active">
 					<a href="#" id="tab-seo">SEO</a>
@@ -82,13 +83,13 @@ foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 							</div>
 						</div> 
 					</small>
-
 					<input type="hidden" name="slider-img-srcT[]" id="slider-img-srcT" value="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>">
 					<input type="hidden" name="slider-img-src[]" id="slider-img-src" value="<?php echo $imgSrc; ?>">
 				</div>
 
 				<div class="tab-item tab-others">
-					<textarea name="" id="" cols="30" rows="10"></textarea>
+
+					<textarea name="slider-img-caption[]" id="slider-img-caption" cols="30" rows="10"><?php if (($imgCaption[$i-1]) || ($imgCaption[$i-1] >= 0)) {  echo $imgCaption[$i-1];  } ?></textarea>
 					<small> Slider Image Short Caption
 						<div class="tooltip dashicons dashicons-warning">
 							<div class="tooltiptext"><b>Short descriptive content about the image</b> <br><br>
@@ -97,7 +98,7 @@ foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 						</div>
 					</small>
 
-					<input class="widefat" type="text" name="slider-img-alt[]" id="slider-img-alt" value="<?php if ($imgAlts != null) {  echo $imgAlts[$i-1];  } ?>">
+					<input class="widefat" type="text" name="slider-img-url[]" id="slider-img-url" value="<?php if ($imgUrls != null) {  echo $imgUrls[$i-1];  } ?>">
 					<small> Slider Image Link Url
 						<div class="tooltip dashicons dashicons-warning">
 							<div class="tooltiptext"><b>The right anchor text</b> <br><br>
@@ -107,10 +108,6 @@ foreach ( $imgSrcs as $imgSrc ) { $i++; ?>
 					</small>
 				</div>
 			</div>
-			
-			
-			
-			
 		</td><!-- .column-description -->
 		<td class="slider-delete" >
 			<a id="delete-slider-item" class="delete-slider-item" alt="Delete this slide" href="#"><span class="media-modal-icon"><span class="screen-reader-text">Close media panel</span></span>
