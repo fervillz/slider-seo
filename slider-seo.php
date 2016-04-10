@@ -36,6 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 require_once( plugin_dir_path( __FILE__ ) . 'admin/slider-seo-admin.php' );
  
+
 /**
  * Begins execution of the plugin.
  *
@@ -50,6 +51,6 @@ function run_slider_SEO_admin() {
  
     $plugin = new Slider_SEO_Admin();
     $plugin->run();
- 
 }
+
 run_slider_SEO_admin();

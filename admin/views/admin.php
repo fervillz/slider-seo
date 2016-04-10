@@ -11,10 +11,13 @@ $imgCaption = get_post_meta( $post->ID, 'slider-img-caption', true );
 $imgUrls = get_post_meta( $post->ID, 'slider-img-url', true );
 
 $i = 0;
+
+//[foobar]
+
 if ($imgSrcs){ ?>
 
 <div id="major-publishing-actions" class="delete-all-slides delete-all-1">
-	<div id="delete-action">
+	<div id="delete-action" class="delete-action">
 		<a class="">Delete All Slides</a>
 	</div>
 
@@ -37,7 +40,7 @@ if ($imgSrcs){ ?>
 <?php 
 
 if ($imgSrcs){
-	echo sizeof($imgSrcs);
+
 foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 	
 	<tr class="slide-<?php echo $i; ?> slider-item">
@@ -124,14 +127,20 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 
 <div id="major-publishing-actions" class="delete-all-slides">
 	
-	<div id="delete-action" class="hidden">
+	<div id="delete-action" class="delete-action <?php if (!$imgSrcs){ echo "hidden";} ?>">
 		<a class="">Delete All Slides</a>
 	</div>
 
 	<div id="publishing-action">
 		<div class="wp-media-buttons">
 			<a href="#" id="add-slide" class="button add_media add-slide"><?php echo "Add Slide"; ?></a>
+			
+			<?php if($post->post_status  == "publish"): ?>
 			<input name="save" type="submit" class="button button-primary <?php if (!$imgSrcs){ echo "hidden";} ?>" id="publish" value="Save Slider">
+			<?php else: ?>
+			<input type="submit" name="publish" id="publish" class="button button-primary" value="Create Slide">
+			<?php endif; ?>
+			
 		</div><!-- .wp-media-buttons -->
 	</div>
 	<div class="clear"></div>

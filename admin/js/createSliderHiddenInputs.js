@@ -5,23 +5,23 @@ function createSliderHiddenInputs($) {
 
     // Next, create the actual input element and then return it to the caller
     $inputElementSrc =
-        $('input#slider-img-src')
+        $('.slide-'+iSliderItemCount+' input#slider-img-src')
         //.attr( 'type', 'hidden' )
         .attr('name', 'slider-img-src[' + iSliderItemCount + ']');
 
     $inputElementTitle =
-        $('input#slider-img-title')
+        $('.slide-'+iSliderItemCount+' input#slider-img-title')
         //.attr( 'type', 'hidden' )
         .attr('name', 'slider-img-title[' + iSliderItemCount + ']');
 
     $inputElementAlt =
-        $('input#slider-img-alt')
+        $('.slide-'+iSliderItemCount+' input#slider-img-alt')
         //.attr( 'type', 'hidden' )
         .attr('name', 'slider-img-alt[' + iSliderItemCount + ']');
 
     //create hidden info for thumbnail src
     $inputElementSrcT =
-        $('input#slider-img-srcT')
+        $('.slide-'+iSliderItemCount+' input#slider-img-srcT')
         //.attr( 'type', 'hidden' )
         .attr('name', 'slider-img-srcT[' + iSliderItemCount + ']')
         .attr('id', 'slider-img-srcT')
@@ -30,13 +30,13 @@ function createSliderHiddenInputs($) {
 
     //create hidden info for thumbnail src
     $inputElementUrl =
-        $('input#slider-img-url')
+        $('.slide-'+iSliderItemCount+' input#slider-img-url')
         //.attr( 'type', 'hidden' )
         .attr('name', 'slider-img-url[' + iSliderItemCount + ']');
 
     //caption
     $inputElementCaption =
-        $('textarea#slider-img-caption')
+        $('.slide-'+iSliderItemCount+' textarea#slider-img-caption')
         //.attr( 'type', 'hidden' )
         .attr('name', 'slider-img-caption[' + iSliderItemCount + ']');
 

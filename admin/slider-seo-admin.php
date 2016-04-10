@@ -59,16 +59,20 @@ class Slider_SEO_Admin {
 	 * @since 1.0.0
 	 */
 	public function run() {
- 
+		// Set the constants
+		add_action( 'plugins_loaded', array( $this, 'constants' ), 1 );
+ 		// create post type
+		add_action( 'plugins_loaded', array( $this, 'create_post_type' ), 2 );
+
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'save_post', array( $this, 'save_post' ) );
-		add_action( 'the_content', array( $this, 'the_content' ) );
-
-		// Set the constants
-		add_action( 'plugins_loaded', array( $this, 'constants' ), 1 );
  
+	}
+
+	public function create_post_type() {
+		require_once( trailingslashit( slider_SEO_INCLUDES ) . 'add_post_type.php' );
 	}
 
 	 /**
@@ -92,43 +96,9 @@ class Slider_SEO_Admin {
 
 	}
 
-	/**
-	 * If the current post is a single post, check to see if there is a featured image.
-	 * If so, append is to the post content prior to rendering the post.
-	 *
-	 * @param   string    $content    The content of the post.
-	 * @since   1.0.0
-	 */
-	public function the_content( $content ) {
-	 
-		// We only care about appending the image to single pages
-		if ( is_single() ) {
-	 
-			// In order to append an image, there has to be at least a source attribute
-			if ( '' !== ( $src = get_post_meta( get_the_ID(), 'slider-img-src', true ) ) ) {
-	 
-				// read the remaining attributes even if they are empty strings
-				$alt = get_post_meta( get_the_ID(), 'slider-img-alt', true );
-				$title = get_post_meta( get_the_ID(), 'slider-img-title', true );
-	 
-				// create the image element within its own container
-				$img_html = '<p id="slider-img">';
-					$img_html .= "<img src='$src' alt='$alt' title='$title' />";
-				$img_html .= '</p><!-- #slider-img -->';
-	 
-				// append it to the content
-				$content .= $img_html;
-	 
-			}
-	 
-		}
-	 
-		return $content;
-	 
-	}
 
 	/**
-	 * Sanitized and saves the post featured footer image meta data specific with this post.
+	 * Sanitized and saves the post slider image meta data specific with this post.
 	 *
 	 * @param    int    $post_id    The ID of the post with which we're currently working.
 	 * @since 0.2.0
@@ -226,7 +196,7 @@ class Slider_SEO_Admin {
 			$sanitized_resources = array();
 			foreach ( $resources as $resource ) {
 		 
-				$resource = sanitize_text_field( $resource);
+				$resource = esc_textarea( strip_tags( $resource));
 				if ( ! empty( $resource ) ) {
 					$sanitized_resources[] = $resource;
 				}
@@ -323,8 +293,12 @@ class Slider_SEO_Admin {
 	 * @param    WP_Post    $post    The post object
 	 * @since    1.0.0
 	 */
-	public function display_featured_footer_image( $post ) {
+	public function display_main_metabox( $post ) {
 		include_once( dirname( __FILE__ ) . '/views/admin.php' );
+	}
+
+	public function display_main_metabox2( $post ) {
+		include_once( dirname( __FILE__ ) . '/views/admin_shortcode.php' );
 	}
  
 }

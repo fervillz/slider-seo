@@ -222,6 +222,66 @@ table.slider-wrapper .tooltip .tooltiptext:before {
   border-color: #A1A1A1 transparent transparent transparent;
 }
 
+#slider_seo_shortcode a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#slider_seo_shortcode .slider-seo-shortcode {
+  margin-bottom: 13px;
+}
+
+#slider_seo_shortcode .slider-seo-instruction {
+  font-style: italic;
+  color: #B9B9B9;
+}
+
+#slider_seo_shortcode ul.tabs-toggle {
+  margin-bottom: 0;
+  display: flex;
+}
+
+#slider_seo_shortcode input, #slider_seo_shortcode textarea {
+  font-family: monospace;
+}
+
+#slider_seo_shortcode li {
+  padding: 3px 5px 3px;
+  border: 1px solid transparent;
+  display: inline;
+  margin-bottom: -1px;
+}
+
+#slider_seo_shortcode li.tabs-active {
+  border: 1px solid #dfdfdf;
+  border-bottom-color: #fdfdfd;
+  background-color: #fdfdfd;
+}
+
+#slider_seo_shortcode li a:focus {
+  outline: none;
+}
+
+#slider_seo_shortcode textarea {
+  max-height: 50px;
+  width: 100%;
+  max-width: 100%;
+}
+
+#slider_seo_shortcode .tab-content {
+  min-height: 42px;
+  max-height: 200px;
+  padding: 0 0.9em;
+  border: 1px solid #dfdfdf;
+  background-color: #fdfdfd;
+}
+
+#slider_seo_shortcode small {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
 #add-slide {
   background: #93D200;
   border-color: #46AA00;
@@ -243,10 +303,15 @@ table.slider-wrapper .tooltip .tooltiptext:before {
 
 #delete-action a:hover {
   color: red;
+  cursor: pointer;
 }
 
 .delete-all-1 {
   border-bottom: 1px solid #EEEEEE;
+}
+
+.delete-all-1 .wp-media-buttons {
+  width: 300px;
 }
 
 /*# sourceMappingURL=admin.css.map */
