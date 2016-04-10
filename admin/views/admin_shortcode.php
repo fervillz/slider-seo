@@ -27,14 +27,14 @@ $postid = $post->ID; ?>
 	<div class="tab-item tab-scode2" style="display: none;">
 		<div class="slider-seo-instruction">
 			<p>
-				Copy & paste this code into a php file.
+				Copy & paste this php code into any of your Wordpress theme files.
 			</p>
 		</div>
 		<div class="slider-seo-shortcode">
 			<textarea readonly='readonly' class="widefat">
 <?php esc_html_e("<?php ","slider-seo"); ?>
-<?php esc_html_e("echo do_shortcode(\"[metaslider id='']\");","slider-seo"); ?>
-<?php esc_html_e("?>","slider-seo"); ?></textarea>
+<?php esc_html_e("echo do_shortcode(\"[id='".$postid."']\");","slider-seo"); ?>
+ <?php esc_html_e("?>","slider-seo"); ?></textarea>
 			
 			
 		</div>

@@ -70,7 +70,7 @@
 			$('.slider-body').append(createDivContainer($));
 			createSliderHiddenInputs($);
 
-			//count
+			/*animate using animate.css
 			iSliderItemCount = $('.slider-body').children().length;
 			$('.slide-' + iSliderItemCount)
 				//.append ( createSliderContent( $ ) )
@@ -78,6 +78,7 @@
 				.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 					$(this).removeClass('animated fadeOut');
 				});
+			*/
 
 
 		});

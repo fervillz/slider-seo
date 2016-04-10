@@ -63,17 +63,43 @@ class Slider_SEO_Admin {
 		add_action( 'plugins_loaded', array( $this, 'constants' ), 1 );
  		// create post type
 		add_action( 'plugins_loaded', array( $this, 'create_post_type' ), 2 );
+		// create shortcode
+		add_action( 'plugins_loaded', array( $this, 'create_shortcode' ), 2 );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
+
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
+
+		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
+
 		add_action( 'save_post', array( $this, 'save_post' ) );
+
+		add_filter( 'single_template', array( $this, 'get_custom_post_type_template' ) );
  
+	}
+
+	public function create_shortcode() {
+		require_once( trailingslashit( slider_SEO_INCLUDES ) . 'slider_seo_shortcode.php' );
 	}
 
 	public function create_post_type() {
 		require_once( trailingslashit( slider_SEO_INCLUDES ) . 'add_post_type.php' );
 	}
+
+	public function get_custom_post_type_template($single_template) {
+    global $post;
+
+     if ($post->post_type == 'slider_seo') {
+          $single_template = plugin_dir_path( __FILE__ ) . '/slider_seo-template.php';
+     }
+     else{
+     	echo $single_template;
+     }
+     return $single_template;
+	}
+	
 
 	 /**
 	 * Define constants (optional)
@@ -237,10 +263,6 @@ class Slider_SEO_Admin {
 			}
 	}
 
-
-
-
-
 	/**
 	 * Registers the stylesheets for handling the meta box
 	 *
@@ -253,15 +275,6 @@ class Slider_SEO_Admin {
 			plugin_dir_url( __FILE__ ) . 'css/admin.css',
 			array()
 		);
-
-		wp_enqueue_style(
-			'animate',
-			'https://raw.githubusercontent.com/daneden/animate.css/master/animate.css',
-			array()
-		);
-
-		
-	 
 	}
  
 	/**
@@ -285,6 +298,19 @@ class Slider_SEO_Admin {
 		require_once( trailingslashit( slider_SEO_INCLUDES ) . 'enqueue_scripts.php' );
  
 	}
+
+	/**
+	 * Enqueue scripts in front.
+	 *
+	 * @since 1.0.0
+	 */
+	public function wp_enqueue_scripts() {
+
+		require_once( trailingslashit( slider_SEO_INCLUDES ) . 'wp_enqueue_scripts.php' );
+ 
+	}
+
+	
  
 	/**
 	 * Renders the view that displays the contents for the meta box that for triggering
