@@ -33,6 +33,10 @@ wp_enqueue_script('createSliderHiddenInputs',slider_SEO_URL . 'js/createSliderHi
 //slider plugin sub script
 wp_enqueue_script( 'slider-sub-script', slider_SEO_URL . 'js/sliderSeo.js', array( 'jquery' ), '1.0', true  );
 
+
+//save slider script
+wp_enqueue_script( 'slider-save', slider_SEO_URL . 'js/saveSliderItem.js', array( 'jquery' ), '1.0', true  );
+
 //Enqueue the admin.js script
 wp_enqueue_script(
 

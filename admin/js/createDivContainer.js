@@ -9,7 +9,7 @@ function createDivContainer($) {
     var Element =
     	'<tr class="slide-'
     	+ iSliderItemCount
-    	+ ' slider-item">'
+    	+ ' slider-item slider-item-notsave">'
 		+ 	'<td class="slider-img">'
 		+ 	'<img src="" alt="" title="" class="hidden"/>'
 		+ 	'<div id="set-image" style="width: 148px; height: 148px;">'

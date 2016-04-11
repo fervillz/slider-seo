@@ -11,7 +11,8 @@ $screens = array( 'slider_seo' );
                 'Click "Add Slide" to add new slider',
                 array( $this, 'display_main_metabox' ),
                 $screen,
-                'advanced'
+                'normal',
+                'high'
             );
         };
 

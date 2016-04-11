@@ -40,7 +40,7 @@
 			// Stop the anchor's default behavior
 			evt.preventDefault();
 
-
+			$('body').addClass('slide-delete-active');
 			//add removeactive class
 			$(this).closest('.slider-item').addClass('delete-item-active')
 				// Remove the image, toggle the anchors
@@ -83,14 +83,44 @@
 
 		});
 
+		//save slider
+		$('body').on('click', '.publish-slider', function(evt) {
+			evt.preventDefault();
+			saveSliderItem();
+		});
+
 		//Run stuff when uploader close modal is click
 		$('body').on('click', '.media-modal-close, .media-modal-backdrop', function() {
 			mediaModalClose();
 		});
 
-
 		$('.tab-others').hide();
-		//tabs toggle
+
+		//append loading gif
+		$('body').append('<div class="se-pre-con"></div>');
+
+		//restore deleted slides
+		$('.restore-slide').click(function(evt) {
+			evt.preventDefault();
+		    restoreSliderItem($);
+		});
+
+		//sohw loading while loading page
+		$(window).load(function() {
+			// Animate loader off screen
+			$(".se-pre-con").fadeOut("slow");;
+		});
+
+		//clone slide
+		$('body').on('click', '.clone-slide', function(evt) {
+			evt.preventDefault();
+				console.log('cloning');
+				var $tr    = $(this).closest('tr');
+    			var $clone = $tr.clone(true);
+    			$tr.after($clone);
+    		});
+
+    	//tabs toggle
 		$('body').on('click', '.tabs-toggle #tab-seo', function(evt) {
 
 			evt.preventDefault();

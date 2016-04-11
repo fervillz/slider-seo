@@ -22,11 +22,11 @@ if ($imgSrcs){ ?>
 	</div>
 
 	<div id="publishing-action">
-		<span class="spinner"></span>
-			<input name="original_publish" type="hidden" id="original_publish" value="Update">
+		<input name="original_publish" type="hidden" id="original_publish" value="Update">
 		<div class="wp-media-buttons">
+			<a href="#" id="restore-slide" class="button restore-slide">Restore Deleted Slides</a>
 			<a href="#" id="add-slide" class="button add_media add-slide"><?php echo "Add Slide"; ?></a>
-			<input name="save" type="submit" class="button button-primary" id="publish" value="Save Slider">
+			<input name="save" type="submit" class="button button-primary" class="publish-slider" value="Save Slider">
 		</div><!-- .wp-media-buttons -->
 	</div>
 	<div class="clear"></div>
@@ -45,10 +45,13 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 	
 	<tr class="slide-<?php echo $i; ?> slider-item" alt="Drag and Drop to reorder slides">
 		<td class="slider-img">
-			<img src="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>" alt="" title=""/>
+			<img id="set-slide-thumbnail" src="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>" alt="" title=""/>
 			<div class="row-actions hide-if-no-js">
 				<span class="activate">
 					<a title="Edit" href="javascript:;" id="set-slide-thumbnail">Edit</a> |
+				</span>
+				<span class="activate">
+					<a title="Clone" href="javascript:;" class="clone-slide">Clone</a> |
 				</span>
 				<span class="delete">
 					<a title="Delete Slide Item" id="delete-slider-item">Delete</a> |
@@ -133,13 +136,10 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 
 	<div id="publishing-action">
 		<div class="wp-media-buttons">
+			<a href="#" id="restore-slide" class="button restore-slide">Restore Deleted Slides</a>
 			<a href="#" id="add-slide" class="button add_media add-slide"><?php echo "Add Slide"; ?></a>
 			
-			<?php if($post->post_status  == "publish"): ?>
-			<input name="save" type="submit" class="button button-primary <?php if (!$imgSrcs){ echo "hidden";} ?>" id="publish" value="Save Slider">
-			<?php else: ?>
-			<input type="submit" name="publish" id="publish" class="button button-primary" value="Create Slide">
-			<?php endif; ?>
+			<input type="submit" class="publish-slider button button-primary" value="Save Slider">
 			
 		</div><!-- .wp-media-buttons -->
 	</div>
