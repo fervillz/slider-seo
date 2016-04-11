@@ -14,7 +14,11 @@ table.slider-wrapper .fadeOut {
 }
 
 table.slider-wrapper .slider-item {
-  transition: 300ms;
+  -webkit-transition: background 300ms ease-in;
+  -moz-transition: background 300ms ease-in;
+  -ms-transition: background 300ms ease-in;
+  -o-transition: background 300ms ease-in;
+  transition: background 300ms ease-in;
   border-left: 4px solid #fff;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
@@ -39,8 +43,12 @@ table.slider-wrapper tr.slider-item ul.tabs-toggle {
 }
 
 table.slider-wrapper tr.slider-item:hover {
+  -webkit-transition: background 150ms ease-in;
+  -moz-transition: background 150ms ease-in;
+  -ms-transition: background 150ms ease-in;
+  -o-transition: background 150ms ease-in;
+  transition: background 150ms ease-in;
   background: #f7fcfe;
-  transition: 150ms;
   border-left: 4px solid #00a0d2;
 }
 
@@ -54,6 +62,20 @@ table.slider-wrapper tr.slider-item:hover .delete-slider-item {
 
 table.slider-wrapper tr.slider-item td {
   padding: 13px;
+}
+
+table.slider-wrapper #sortable tr:hover {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+table.slider-wrapper #sortable tr.ui-sortable-helper {
+  outline: 1px solid #00A0D2;
+  border-width: 0;
+}
+
+table.slider-wrapper #sortable .ui-state-highlight {
+  height: 200px;
 }
 
 table.slider-wrapper #set-image {
@@ -94,7 +116,6 @@ table.slider-wrapper td.slider-text textarea {
 
 table.slider-wrapper td.slider-text .tab-content {
   min-height: 42px;
-  max-height: 200px;
   padding: 0 0.9em;
   border: 1px solid #dfdfdf;
   background-color: #fdfdfd;
@@ -104,6 +125,11 @@ table.slider-wrapper td.slider-text small {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  cursor: auto;
+}
+
+table.slider-wrapper td.slider-text small .tooltip {
+  cursor: help;
 }
 
 table.slider-wrapper td.slider-delete span.media-modal-icon {
@@ -222,44 +248,12 @@ table.slider-wrapper .tooltip .tooltiptext:before {
   border-color: #A1A1A1 transparent transparent transparent;
 }
 
-#slider_seo_shortcode a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
 #slider_seo_shortcode .slider-seo-shortcode {
   margin-bottom: 13px;
 }
 
-#slider_seo_shortcode .slider-seo-instruction {
-  font-style: italic;
-  color: #B9B9B9;
-}
-
-#slider_seo_shortcode ul.tabs-toggle {
-  margin-bottom: 0;
-  display: flex;
-}
-
 #slider_seo_shortcode input, #slider_seo_shortcode textarea {
   font-family: monospace;
-}
-
-#slider_seo_shortcode li {
-  padding: 3px 5px 3px;
-  border: 1px solid transparent;
-  display: inline;
-  margin-bottom: -1px;
-}
-
-#slider_seo_shortcode li.tabs-active {
-  border: 1px solid #dfdfdf;
-  border-bottom-color: #fdfdfd;
-  background-color: #fdfdfd;
-}
-
-#slider_seo_shortcode li a:focus {
-  outline: none;
 }
 
 #slider_seo_shortcode textarea {
@@ -268,15 +262,54 @@ table.slider-wrapper .tooltip .tooltiptext:before {
   max-width: 100%;
 }
 
-#slider_seo_shortcode .tab-content {
+#slider_seo_shortcode .slider-seo-instruction,
+#slider_seo_animation .slider-seo-instruction {
+  font-style: italic;
+  color: #B9B9B9;
+}
+
+#slider_seo_shortcode a,
+#slider_seo_animation a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#slider_seo_shortcode ul.tabs-toggle,
+#slider_seo_animation ul.tabs-toggle {
+  margin-bottom: 0;
+  display: flex;
+}
+
+#slider_seo_shortcode li,
+#slider_seo_animation li {
+  padding: 3px 5px 3px;
+  border: 1px solid transparent;
+  display: inline;
+  margin-bottom: -1px;
+}
+
+#slider_seo_shortcode li.tabs-active,
+#slider_seo_animation li.tabs-active {
+  border: 1px solid #dfdfdf;
+  border-bottom-color: #fdfdfd;
+  background-color: #fdfdfd;
+}
+
+#slider_seo_shortcode li a:focus,
+#slider_seo_animation li a:focus {
+  outline: none;
+}
+
+#slider_seo_shortcode .tab-content,
+#slider_seo_animation .tab-content {
   min-height: 42px;
-  max-height: 200px;
-  padding: 0 0.9em;
+  padding: 0 0.9em 1em;
   border: 1px solid #dfdfdf;
   background-color: #fdfdfd;
 }
 
-#slider_seo_shortcode small {
+#slider_seo_shortcode small,
+#slider_seo_animation small {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -312,6 +345,20 @@ table.slider-wrapper .tooltip .tooltiptext:before {
 
 .delete-all-1 .wp-media-buttons {
   width: 300px;
+}
+
+#slider_seo_animation table {
+  width: 100%;
+}
+
+#slider_seo_animation table td {
+  width: 50%;
+}
+
+#slider_seo_animation table td input,
+#slider_seo_animation table td select,
+#slider_seo_animation table td textarea {
+  width: 100%;
 }
 
 /*# sourceMappingURL=admin.css.map */
