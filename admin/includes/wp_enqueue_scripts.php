@@ -16,7 +16,7 @@ wp_enqueue_script(
 	$this->version,
 
 	//enqueue the script before </body>
-	true
+	false
 
 	);
 
@@ -29,8 +29,6 @@ wp_enqueue_style( 'slider-seo-owldefault-style', slider_SEO_URL . 'css/owl.theme
 //animate css
 wp_enqueue_style( 'slider-seo-animate-style', slider_SEO_URL . 'css/animate.css' );
 
-//slider addon script
-wp_enqueue_script( 'slider-seo-script', slider_SEO_URL . 'js/sliderSeo.js', array( 'jquery' ), '1.0', true  );
 
 ?>
 

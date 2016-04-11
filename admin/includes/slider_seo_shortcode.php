@@ -2,13 +2,13 @@
 
 function slider_seo_func( $atts ){
 
-	$a = shortcode_atts( array(
-        'id' => '1',
-    ), $atts );
+	$post = shortcode_atts( array(
+		'id' => '1',
+	), $atts );
 
 	// WP_Query arguments
 	$args = array (
-		'page_id'                => $a['id'],
+		'page_id'                => $post['id'],
 		'post_type'              => array( 'slider_seo' ),
 		'post_status'            => array( 'publish' ),
 	);
@@ -17,7 +17,7 @@ function slider_seo_func( $atts ){
 	$slider_seo_query = new WP_Query( $args );
 
 	//meta
-	$imgSrcs = get_post_meta( $a['id'], 'slider-img-src', true );
+	$imgSrcs = get_post_meta( $post['id'], 'slider-img-src', true );
 	// The Loop
 	if ( $slider_seo_query->have_posts() ) {
 		while ( $slider_seo_query->have_posts() ) {
@@ -42,7 +42,36 @@ function slider_seo_func( $atts ){
 	// Restore original Post Data
 	wp_reset_postdata();
 
-}
+	//script
+	//get value animation
+	$slider_seo_animateOut = get_post_meta( $post['id'], 'slider_seo_animateOut', true );
+	$slider_seo_animateIn = get_post_meta( $post['id'], 'slider_seo_animateIn', true ); ?>
+	
+
+	<script type='text/javascript'>
+		(function($) {
+			'use strict';
+
+			$('.owl-carousel').owlCarousel( {
+				animateOut: '<?php echo $slider_seo_animateOut; ?>',
+			    animateIn: '<?php echo $slider_seo_animateIn; ?>',
+			    items:2,
+			    margin:30,
+			    stagePadding:30,
+			    smartSpeed:450,
+			    nav: true,
+			    dots: true,
+			    loop: true,
+			    autoplay: true,
+			    autoplayTimeout:1500,
+			});
+
+		})(jQuery);
+	</script>
+
+
+
+<?php }
 
 
 add_shortcode( 'slider-seo', 'slider_seo_func' );

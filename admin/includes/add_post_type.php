@@ -39,7 +39,7 @@ function slider_seo() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 5,
+		'menu_position'         => 81,
 		'menu_icon'             => 'dashicons-format-gallery',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,

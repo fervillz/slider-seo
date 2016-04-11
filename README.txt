@@ -11,7 +11,7 @@ Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Create SEO friendly slider and boost traffic in your website in no time. The most popular WordPress slider plugin. Creating slideshows with [Slider SEO](http://www.sliderseo.com/) is fast and easy. Simply select images from your WordPress Media Library, drag and drop them into place, set slide captions, links and SEO fields all from one page. You can choose from 4 different slideshow types (Flex Slider, Nivo Slider, Responsive Slides & Coin Slider) and use the provided shortcode or template include to easily embed slideshows in your blog.
+Responsive WordPress slider plus SEO friendly equals boost traffic in no time. Select from 60+ different slider animations and use its builtin slider themes.
 
 == Description ==
 Enhance your website with this easy to use about us widget. Easy to use, first install, update, go to widgets and drag 'About Us Widget' widget to sidebar. Add your title, link to image, short descrition and link to about page or any other page. That's all and it works like a charm

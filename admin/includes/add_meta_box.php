@@ -18,9 +18,20 @@ $screens = array( 'slider_seo' );
         foreach ( $screens as $screen ) {
  
             add_meta_box(
+                'slider_seo_animation',
+                'General Settings',
+                array( $this, 'display_main_metabox_gsettings' ),
+                $screen,
+                'side'
+            );
+        };
+
+        foreach ( $screens as $screen ) {
+ 
+            add_meta_box(
                 'slider_seo_shortcode',
                 'How to Use',
-                array( $this, 'display_main_metabox2' ),
+                array( $this, 'display_main_metabox_shortcode' ),
                 $screen,
                 'side'
             );

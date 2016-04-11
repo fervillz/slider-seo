@@ -1,6 +1,5 @@
 <?php 
 
-//Get thumbnail sizes
 $postid = $post->ID; ?>
 
 <ul class="tabs-toggle">
@@ -12,32 +11,28 @@ $postid = $post->ID; ?>
 	</li>
 </ul>
 <div class="tab-content">
-	<div class="tab-item tab-scode1">
- 		<div class="slider-seo-instruction">
+	<div class="tab-item">
+ 		 <span class="slider-seo-instruction">
 			<p>
 				Copy & paste the shortcode directly into any WordPress post or page.
 			</p>
-		</div>
-		<div class="slider-seo-shortcode">
+		</span>
+		<span class="slider-seo-shortcode">
 			<input class="widefat" readonly='readonly' type='text' value='[slider-seo id="<?php echo $postid; ?>"]'>
-		</div>
-		<div class="clear"></div>
+		</span>
 	</div>
 
-	<div class="tab-item tab-scode2" style="display: none;">
-		<div class="slider-seo-instruction">
+	<div class="tab-item" style="display: none;">
+		 <span class="slider-seo-instruction">
 			<p>
 				Copy & paste this php code into any of your Wordpress theme files.
 			</p>
-		</div>
-		<div class="slider-seo-shortcode">
+		</span>
+		<span class="slider-seo-shortcode">
 			<textarea readonly='readonly' class="widefat">
 <?php esc_html_e("<?php ","slider-seo"); ?>
 <?php esc_html_e("echo do_shortcode(\"[id='".$postid."']\");","slider-seo"); ?>
  <?php esc_html_e("?>","slider-seo"); ?></textarea>
-			
-			
-		</div>
-		<div class="clear"></div>
-	</div>
+	</span>
+</div>
 </div>

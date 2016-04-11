@@ -89,10 +89,10 @@ class Slider_SEO_Admin {
 	}
 
 	public function get_custom_post_type_template($single_template) {
-    global $post;
+   global $wp_query, $post;
 
      if ($post->post_type == 'slider_seo') {
-          $single_template = plugin_dir_path( __FILE__ ) . '/slider_seo-template.php';
+          $single_template = plugin_dir_path( __FILE__ ) . '/slider-seo-template.php';
      }
      else{
      	echo $single_template;
@@ -261,7 +261,19 @@ class Slider_SEO_Admin {
 				}
 			 
 			}
+
+		if ( ! empty( $_POST['slider-img-url'] ) ) {
+			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+			if ( ! isset( $_POST['slider_seo_nonce'] ) || ! wp_verify_nonce( $_POST['slider_seo_nonce'], '_slider_seo_nonce' ) ) return;
+			if ( ! current_user_can( 'edit_post', $post_id ) ) return;
+
+			if ( isset( $_POST['slider_seo_animateOut'] ) )
+				update_post_meta( $post_id, 'slider_seo_animateOut', esc_attr( $_POST['slider_seo_animateOut'] ) );
+			if ( isset( $_POST['slider_seo_animateIn'] ) )
+			update_post_meta( $post_id, 'slider_seo_animateIn', esc_attr( $_POST['slider_seo_animateIn'] ) );
+		}
 	}
+
 
 	/**
 	 * Registers the stylesheets for handling the meta box
@@ -323,8 +335,12 @@ class Slider_SEO_Admin {
 		include_once( dirname( __FILE__ ) . '/views/admin.php' );
 	}
 
-	public function display_main_metabox2( $post ) {
+	public function display_main_metabox_shortcode( $post ) {
 		include_once( dirname( __FILE__ ) . '/views/admin_shortcode.php' );
+	}
+
+	public function display_main_metabox_gsettings( $post ) {
+		include_once( dirname( __FILE__ ) . '/views/admin_gsettings.php' );
 	}
  
 }

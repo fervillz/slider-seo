@@ -30,6 +30,9 @@ wp_enqueue_script('renderFeaturedImage',slider_SEO_URL . 'js/renderFeaturedImage
 //Enqueue createSliderHiddenInputs
 wp_enqueue_script('createSliderHiddenInputs',slider_SEO_URL . 'js/createSliderHiddenInputs.js',array( 'jquery' ),$this->version,true);
 
+//slider plugin sub script
+wp_enqueue_script( 'slider-sub-script', slider_SEO_URL . 'js/sliderSeo.js', array( 'jquery' ), '1.0', true  );
+
 //Enqueue the admin.js script
 wp_enqueue_script(
 

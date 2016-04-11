@@ -35,7 +35,7 @@ if ($imgSrcs){ ?>
 <?php } ?>
 
 <table class="slider-wrapper">
-<tbody class="slider-body">
+<tbody class="slider-body" id="sortable">
 
 <?php 
 
@@ -43,7 +43,7 @@ if ($imgSrcs){
 
 foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 	
-	<tr class="slide-<?php echo $i; ?> slider-item">
+	<tr class="slide-<?php echo $i; ?> slider-item" alt="Drag and Drop to reorder slides">
 		<td class="slider-img">
 			<img src="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>" alt="" title=""/>
 			<div class="row-actions hide-if-no-js">
@@ -68,7 +68,7 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 				<div class="tab-item tab-seo">
 					<input class="widefat" type="text" name="slider-img-title[]" id="slider-img-title" value="<?php if (($imgTitles[$i-1]) || ($imgTitles[$i-1] >= 0)) {  echo $imgTitles[$i-1];  } ?>">
 					<small> Slider Image Title Text 
-						<div class="tooltip dashicons dashicons-warning">
+						<div class="tooltip dashicons dashicons-editor-help">
 							<div class="tooltiptext"><b>Use keyword(s) in title. Preferably using english words.</b> <br><br>
 							ie: istead of "iStock_00044xSmall.jpg" which doesn't add much information about an image, use "image-optimization.jpg".
 							</div>
@@ -78,7 +78,7 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 					
 					<input class="widefat" type="text" name="slider-img-alt[]" id="slider-img-alt" value="<?php if ($imgAlts != null) {  echo $imgAlts[$i-1];  } ?>">
 					<small> Slider Image Alt Text 
-						<div class="tooltip dashicons dashicons-warning">
+						<div class="tooltip dashicons dashicons-editor-help">
 							<div class="tooltiptext"><b>Create descriptive alt text</b> <br><br>
 							Alt text or tags are another way that search engines help determine what your image is about. Unlike traditional web content, search engines can’t determine the text content of an image. (Search spiders are pretty smart, but as far as I know they haven’t developed eyes yet.) As a result, search engines need to rely on captions around the image, alt text, file names and other surrounding text. Adding descriptive text in the alt tag helps the search engines determine what the content of the image is.
 							<br><br>
@@ -94,7 +94,7 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 
 					<textarea name="slider-img-caption[]" id="slider-img-caption" cols="30" rows="10"><?php if (($imgCaption[$i-1]) || ($imgCaption[$i-1] >= 0)) {  echo $imgCaption[$i-1];  } ?></textarea>
 					<small> Slider Image Short Caption
-						<div class="tooltip dashicons dashicons-warning">
+						<div class="tooltip dashicons dashicons-editor-help">
 							<div class="tooltiptext"><b>Short descriptive content about the image</b> <br><br>
 							Image captions are important because they are one of the most well-read pieces of content on your entire site.
 							</div>
@@ -103,7 +103,7 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 
 					<input class="widefat" type="text" name="slider-img-url[]" id="slider-img-url" value="<?php if ($imgUrls != null) {  echo $imgUrls[$i-1];  } ?>">
 					<small> Slider Image Link Url
-						<div class="tooltip dashicons dashicons-warning">
+						<div class="tooltip dashicons dashicons-editor-help">
 							<div class="tooltiptext"><b>The right anchor text</b> <br><br>
 							Anchor text is another important factor in image SEO. If you decide to link to images with text, your anchor text can play a role in how your image is ranked for keywords. Use descriptive anchor text that describes the image.  For example, linking to an image using a generic term like “image” or “photo” or a file name that doesn’t use keywords doesn’t give search engines much meaningful information on what the image is about. Linking to an image with keywords is helpful to search engines as well as people visiting your site.
 							</div>
