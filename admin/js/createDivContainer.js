@@ -9,15 +9,15 @@ function createDivContainer($) {
     var Element =
     	'<tr class="slide-'
     	+ iSliderItemCount
-    	+ ' slider-item slider-item-notsave">'
+    	+ ' slider-item slider-item-notsave item-active">'
 		+ 	'<td class="slider-img">'
 		+ 	'<img src="" alt="" title="" class="hidden"/>'
 		+ 	'<div id="set-image" style="width: 148px; height: 148px;">'
-		+	'<input type="submit" id="set-slide-thumbnail" value="Set Slide Image" class="button">'
+		+	'<input type="submit" value="Set Slide Image" class="set-slide-thumbnail button">'
 		+	'</div>'
 		+ 	'<div class="row-actions hide-if-no-js">'
 		+ 		'<span class="activate">'
-		+ 			'<a title="Edit" href="javascript:;" id="set-slide-thumbnail">Edit</a> |'
+		+ 			'<a title="Edit" href="javascript:;" class="set-slide-thumbnail">Edit</a> |'
 		+ 		'</span>'
 		+ 		'<span class="delete">'
 		+ 			'<a title="Delete Slide Item" id="delete-slider-item">Delete</a> |'

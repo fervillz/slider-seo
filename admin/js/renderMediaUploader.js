@@ -7,152 +7,120 @@
  */
 
 function renderMediaUploader($) {
-    'use strict';
+	'use strict';
 
-    var file_frame, image_data, json;
+	var file_frame, image_data;
 
-    //Get thumbnail sizes
-    var thumbnailSizeW = $('#thumbnailSizeW').val();
-    var thumbnailSizeH = $('#thumbnailSizeH').val();
-    console.log(thumbnailSizeW);
-    console.log(thumbnailSizeH);
-    /**
-     * If an instance of file_frame already exists, then we can open it
-     * rather than creating a new instance.
-     */
-    if (undefined !== file_frame) {
+	//Get thumbnail sizes
+	var thumbnailSizeW = $('#thumbnailSizeW').val();
+	var thumbnailSizeH = $('#thumbnailSizeH').val();
+	console.log(thumbnailSizeW);
+	console.log(thumbnailSizeH);
+	
+	if (undefined !== file_frame) {
 
-        file_frame.open();
-        return;
+		file_frame.open();
+		return;
 
-    }
+	}
 
-    /**
-     * If we're this far, then an instance does not exist, so we need to
-     * create our own.
-     *
-     * Here, use the wp.media library to define the settings of the Media
-     * Uploader. We're opting to use the 'post' frame which is a template
-     * defined in WordPress core and are initializing the file frame
-     * with the 'insert' state.
-     *
-     * We're also not allowing the user to select more than one image.
-     */
-    file_frame = wp.media.frames.file_frame = wp.media({
-        frame: 'post',
-        state: 'insert',
-        multiple: false
-    });
-
-    /**
-     * Setup an event handler for what to do when an image has been
-     * selected.
-     *
-     * Since we're using the 'view' state when initializing
-     * the file_frame, we need to make sure that the handler is attached
-     * to the insert event.
-     */
-    file_frame.on('insert', function() {
+	file_frame = wp.media.frames.file_frame = wp.media({
+		frame: 'post',
+		state: 'insert',
+		multiple: true
+	});
 
 
+	file_frame.on('insert', function() {
 
-        // Read the JSON data returned from the Media Uploader
-        json = file_frame.state().get('selection').first().toJSON();
+		var length = file_frame.state().get("selection").length;
+		var images = file_frame.state().get("selection").models
+		var imgSrcFileName, fileExtension;
+		
+		if (0 > length) {
+			return;
+		}
 
-        // First, make sure that we have the URL of an image to display
-        if (0 > $.trim(json.url.length)) {
+		for( var counter = 0; counter < length; counter++ ) {
 
-            return;
-        }
+			var image_url = images[counter].changed.url;
+			var image_caption = images[counter].changed.caption;
+			var image_title = images[counter].changed.title;
+			var image_alt = images[counter].changed.alt;
 
-        //use only tuhmbnail for faster loading
-        var imgSrcFileName, fileExtension;
+			//Create thumbnail
+			//Get imgSrcFileName of the image
+			imgSrcFileName = image_url;
 
-        //get imgSrcFileName of the image
-        imgSrcFileName = json.url;
+			//get extension
+			fileExtension = imgSrcFileName.split('.').pop();
 
-        //get extension
-        fileExtension = imgSrcFileName.split('.').pop();
+			//add thumbnail sizes
+			imgSrcFileName = imgSrcFileName.replace('.' + fileExtension, '-' + thumbnailSizeW + 'x' + thumbnailSizeH + '.' + fileExtension);
 
-        //add thumbnail sizes
-        imgSrcFileName = imgSrcFileName.replace('.' + fileExtension, '-' + thumbnailSizeW + 'x' + thumbnailSizeH + '.' + fileExtension);
+			//remove whitespaces
+			imgSrcFileName = imgSrcFileName.replace(/\s/g, '');
 
-        //remove whitespaces
-        imgSrcFileName = imgSrcFileName.replace(/\s/g, '');
-        console.log(imgSrcFileName);
-         console.log(json.alt);
-         console.log(json.title);
-         console.log(json.caption);
+			//Ih there are multiple selected images
+			if ( counter > 0) {
+				$('.slider-body').append(createDivContainer($));
+				createSliderHiddenInputs($);	 
+			}
 
-        //now assign the new thumbnail imgSrcFileName
+			//Set the properties of the image and display it
+			$('.item-active .slider-img')
+			.children('img')
+			.attr('src', imgSrcFileName)
+			.attr('alt', image_alt)
+			.attr('title', image_title);
 
-        // After that, set the properties of the image and display it
-        $('.item-active .slider-img')
-            .children('img')
-            .attr('src', imgSrcFileName)
-            .attr('alt', json.alt)
-            .attr('title', json.title);
+			// Store the image's information into the meta data fields
+			if (image_url != '') {
 
-        /* Next, hide the anchor responsible for allowing the user to select an image
-        *$('.item-active #featured-footer-image-container')
-        *     .prev()
-        *    .hide();
-        */    
+				$('.item-active #slider-img-src').val(image_url);
+				//for thumbnail
+				$('.item-active #slider-img-srcT').val(imgSrcFileName);
+			}
 
-        // Store the image's information into the meta data fields
-        if (json.url != '') {
+			if (image_title != '') {
+				$('.item-active #slider-img-title').val(image_title);
+			} else {
+				$('.item-active #slider-img-title').val('Add Image Title');
+			}
 
-            $('.item-active #slider-img-src').val(json.url);
-            //for thumbnail
-            $('.item-active #slider-img-srcT').val(imgSrcFileName);
-        }
+			if (image_alt != '') {
+				$('.item-active #slider-img-alt').val(image_alt);
+			} else {
+				$('.item-active #slider-img-alt').val('Add Image Alt');
+			}
 
-        if (json.title != '') {
-            $('.item-active #slider-img-title').val(json.title);
-        } else {
-            $('.item-active #slider-img-title').val('Add Image Title');
-        }
+			if (image_caption != '') {
+				$('.item-active #slider-img-caption').text(image_caption);
+			} else {
+				$('.item-active #slider-img-caption').text('Add Image caption');
+			}
 
-        if (json.alt != '') {
-            $('.item-active #slider-img-alt').val(json.alt);
-        } else {
-            $('.item-active #slider-img-alt').val('Add Image Alt');
-        }
+			//add some url
+			$('.item-active #slider-img-url').val("#");
 
-        if (json.caption != '') {
-            $('.item-active #slider-img-caption').text(json.caption);
-        } else {
-            $('.item-active #slider-img-caption').text('Add Image caption');
-        }
+			$('.item-active #set-slide-thumbnail').removeClass('upload-active');
+			$('.item-active input#set-slide-thumbnail').hide();
+			$('.item-active .row-actions').removeClass('hidden');
+			
+			$('.item-active #set-image').prev('img').removeClass('hidden');
+			$('.item-active #set-image').hide();
 
-        //add some url
-        $('.item-active #slider-img-url').val("#");
+			//show hidden action buttons
+			$('#major-publishing-actions, #publish').removeClass('hidden');
 
-        /* Display the anchor for the removing the featured image
-        *$('.item-active #featured-footer-image-container')
-        *    .next()
-        *   .show();
-        */
+			$('.item-active').removeClass('item-active');
 
+			//console.log(imgSrcFileName +'\n'+image_caption +'\n'+image_title +'\n');
+		}
 
-        $('.item-active #set-slide-thumbnail').removeClass('upload-active');
-        $('.item-active input#set-slide-thumbnail').hide();
-        $('.item-active .row-actions').removeClass('hidden');
-        
-        $('.item-active #set-image').prev('img').removeClass('hidden');
-        $('.item-active #set-image').hide();
-        
-        $('.item-active').removeClass('item-active');
+		$('.item-active').removeClass('item-active');
+	});
 
-        //alert(json.url +'\n'+json.caption+'\n'+json.title);
-
-        //show hidden action buttons
-        $('#major-publishing-actions, #publish').removeClass('hidden');
-
-        
-
-    });
-
-    // Now display the actual file_frame
-    file_frame.open();
+	// Now display the actual file_frame
+	file_frame.open();
 }

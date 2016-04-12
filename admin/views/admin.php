@@ -50,10 +50,10 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 	
 	<tr class="slide-<?php echo $i; ?> slider-item" alt="Drag and Drop to reorder slides">
 		<td class="slider-img">
-			<img id="set-slide-thumbnail" src="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>" alt="" title=""/>
+			<img class="set-slide-thumbnail" src="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>" alt="" title=""/>
 			<div class="row-actions hide-if-no-js">
 				<span class="activate">
-					<a title="Edit" href="javascript:;" id="set-slide-thumbnail">Edit</a> |
+					<a title="Edit" href="javascript:;" class="set-slide-thumbnail">Edit</a> |
 				</span>
 				<span class="activate">
 					<a title="Clone" href="javascript:;" class="clone-slide">Clone</a> |
@@ -127,6 +127,7 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 	</tr>
 		
 <?php }} ?>
+
 </tbody><!-- #the-list -->
 </table><!-- .wp-list-table -->
 

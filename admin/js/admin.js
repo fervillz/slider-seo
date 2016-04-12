@@ -7,9 +7,7 @@
 	removePaddingInside($);
 
 	$(function() {
-
-
-		$('.slider-body').on('click', '#set-slide-thumbnail', function(evt) {
+		$('.slider-body').on('click', '.set-slide-thumbnail', function(evt) {
 
 			// Stop the anchor's default behavior
 			evt.preventDefault();
@@ -63,23 +61,9 @@
 
 			evt.preventDefault();
 
-			/* Create a new input element that will be used to capture the users input
-			 * and append it to the container just above this button.
-			 */
-
 			$('.slider-body').append(createDivContainer($));
 			createSliderHiddenInputs($);
-
-			/*animate using animate.css
-			iSliderItemCount = $('.slider-body').children().length;
-			$('.slide-' + iSliderItemCount)
-				//.append ( createSliderContent( $ ) )
-				.addClass('animated fadeOut')
-				.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-					$(this).removeClass('animated fadeOut');
-				});
-			*/
-
+			renderMediaUploader($);
 
 		});
 
@@ -118,7 +102,7 @@
 				var $tr    = $(this).closest('tr');
     			var $clone = $tr.clone(true);
     			$tr.after($clone);
-    		});
+    	});
 
     	//tabs toggle
 		$('body').on('click', '.tabs-toggle #tab-seo', function(evt) {
