@@ -58,10 +58,10 @@ function slider_seo_func( $atts ){
 			    items:2,
 			    margin:30,
 			    stagePadding:30,
-			    smartSpeed:450,
-			    nav: true,
+			    smartSpeed:400,
+			    nav: false,
 			    dots: true,
-			    loop: true,
+			    loop: false,
 			    autoplay: true,
 			    autoplayTimeout:1500,
 			});

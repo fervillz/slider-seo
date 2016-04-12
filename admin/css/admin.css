@@ -404,7 +404,7 @@
   width: 50%;
 }
 
-#slider_seo_animation table td input,
+#slider_seo_animation table td input:not([type="checkbox"]),
 #slider_seo_animation table td select,
 #slider_seo_animation table td textarea {
   width: 100%;

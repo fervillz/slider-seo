@@ -1,8 +1,13 @@
 <?php 
 
+// Add a nonce field for security
+wp_nonce_field( 'slider_seo_save', 'slider_seo_nonce' );
+
 //Get thumbnail sizes
 $thumbnailSizeW = get_option( 'thumbnail_size_w' );
 $thumbnailSizeH = get_option( 'thumbnail_size_h' );
+
+//Start getting meta values
 $imgSrcs = get_post_meta( $post->ID, 'slider-img-src', true );
 $imgSrcsT = get_post_meta( $post->ID, 'slider-img-srcT', true );
 $imgTitles = get_post_meta( $post->ID, 'slider-img-title', true );
@@ -10,10 +15,10 @@ $imgAlts = get_post_meta( $post->ID, 'slider-img-alt', true );
 $imgCaption = get_post_meta( $post->ID, 'slider-img-caption', true );
 $imgUrls = get_post_meta( $post->ID, 'slider-img-url', true );
 
+//counter
 $i = 0;
 
-//[foobar]
-
+//check if imgsrc is not null
 if ($imgSrcs){ ?>
 
 <div id="major-publishing-actions" class="delete-all-slides delete-all-1">

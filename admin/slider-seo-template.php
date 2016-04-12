@@ -19,5 +19,5 @@
 	<?php endwhile; // End of the loop. ?>
 
 </div><!-- .slider-seo-wrapper -->
-
+error
 <?php get_footer(); ?>

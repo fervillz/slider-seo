@@ -361,7 +361,7 @@
 #slider_seo_shortcode,
 #slider_seo_animation {
 	.slider-seo-instruction {
-		font-style: italic; 
+		font-style: italic;
 		color: #B9B9B9;
 	}
 
@@ -417,7 +417,7 @@
 		td {
 			width: 50%;
 
-			input,
+			input:not([type="checkbox"]),
 			select,
 			textarea {
 				width: 100%;

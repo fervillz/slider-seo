@@ -89,7 +89,7 @@ class Slider_SEO_Admin {
 	}
 
 	public function get_custom_post_type_template($single_template) {
-   global $wp_query, $post;
+    global $post;
 
      if ($post->post_type == 'slider_seo') {
           $single_template = plugin_dir_path( __FILE__ ) . '/slider-seo-template.php';
@@ -124,156 +124,125 @@ class Slider_SEO_Admin {
 
 
 	/**
-	 * Sanitized and saves the post slider image meta data specific with this post.
-	 *
-	 * @param    int    $post_id    The ID of the post with which we're currently working.
-	 * @since 0.2.0
+	 * @param		string	$meta_id	  	The ID of the metabox being save
+	 * @param		string	$post_id	  	The ID of the post being save
+	 * @param       bool  	$url 			input type is url
+	 * @param       bool  	$text 			input type is text
+	 * @param       bool  	$textarea 		input type is textarea
 	 */
-	public function save_post( $post_id ) {
-	 
-		// If the 'Resources' inputs exist, iterate through them and sanitize them
-		if ( ! empty( $_POST['slider-img-src'] ) ) {
+	
+	public function save_post_meta( $meta_id = '', $post_id, $url = false, $text = false, $textarea = false ) {
+		if ( ! empty( $_POST[$meta_id] ) ) {
 		 
-			$resources = $_POST['slider-img-src'];
+			$resources = $_POST[$meta_id];
 			$sanitized_resources = array();
 			foreach ( $resources as $resource ) {
-		 
-				$resource = esc_url( strip_tags( $resource ) );
-				if ( ! empty( $resource ) ) {
-					$sanitized_resources[] = $resource;
-				}
-		 
-			}
-			 
-			update_post_meta( $post_id, 'slider-img-src', $sanitized_resources );
-		 
-		}
-
-		// If the 'Resources' inputs exist, iterate through them and sanitize them
-		if ( ! empty( $_POST['slider-img-srcT'] ) ) {
-		 
-			$resources = $_POST['slider-img-srcT'];
-			$sanitized_resources = array();
-			foreach ( $resources as $resource ) {
-		 
-				$resource = esc_url( strip_tags( $resource ) );
-				if ( ! empty( $resource ) ) {
-					$sanitized_resources[] = $resource;
-				}
-		 
-			}
-			 
-			update_post_meta( $post_id, 'slider-img-srcT', $sanitized_resources );
-		 
-		}
-
-		// If the 'Resources' inputs exist, iterate through them and sanitize them
-		if ( ! empty( $_POST['slider-img-title'] ) ) {
-		 
-			$resources = $_POST['slider-img-title'];
-			$sanitized_resources = array();
-			foreach ( $resources as $resource ) {
-		 
-				$resource = sanitize_text_field( $resource );
-				if ( ! empty( $resource ) ) {
-					$sanitized_resources[] = $resource;
-				}
-		 
-			}
-			 
-			update_post_meta( $post_id, 'slider-img-title', $sanitized_resources );
-		 
-		}else {
- 
-			if ( '' !== get_post_meta( $post_id, 'slider-img-title', true ) ) {
-				delete_post_meta( $post_id, 'slider-img-title' );
-			}
-		 
-		}
-
-		// If the 'Resources' inputs exist, iterate through them and sanitize them
-		if ( ! empty( $_POST['slider-img-alt'] ) ) {
-		 
-			$resources = $_POST['slider-img-alt'];
-			$sanitized_resources = array();
-			foreach ( $resources as $resource ) {
-		 
-				$resource = sanitize_text_field( $resource);
-				if ( ! empty( $resource ) ) {
-					$sanitized_resources[] = $resource;
-				}
-		 
-			}
-			 
-			update_post_meta( $post_id, 'slider-img-alt', $sanitized_resources );
-		 
-		}else {
- 
-			if ( '' !== get_post_meta( $post_id, 'slider-img-alt', true ) ) {
-				delete_post_meta( $post_id, 'slider-img-alt' );
-			}
-		 
-		}
-
-		// If the 'caption' inputs exist, iterate through them and sanitize them
-		if ( ! empty( $_POST['slider-img-caption'] ) ) {
-		 
-			$resources = $_POST['slider-img-caption'];
-			$sanitized_resources = array();
-			foreach ( $resources as $resource ) {
-		 
-				$resource = esc_textarea( strip_tags( $resource));
-				if ( ! empty( $resource ) ) {
-					$sanitized_resources[] = $resource;
-				}
-		 
-			}
-			 
-			update_post_meta( $post_id, 'slider-img-caption', $sanitized_resources );
-		 
-		}else {
- 
-			if ( '' !== get_post_meta( $post_id, 'slider-img-caption', true ) ) {
-				delete_post_meta( $post_id, 'slider-img-caption' );
-			}
-		 
-		}
-
-		if ( ! empty( $_POST['slider-img-url'] ) ) {
-		 
-				$resources = $_POST['slider-img-url'];
-				$sanitized_resources = array();
-				foreach ( $resources as $resource ) {
-
+		 		
+				if ($url) {
 					$resource = esc_url( strip_tags( $resource ) );
-					if ( ! empty( $resource ) ) {
-						$sanitized_resources[] = $resource;
-					}
-			 
 				}
-				 
-				update_post_meta( $post_id, 'slider-img-url', $sanitized_resources );
-			 
-			}else {
-	 
-				if ( '' !== get_post_meta( $post_id, 'slider-img-url', true ) ) {
-					delete_post_meta( $post_id, 'slider-img-url' );
+
+				if ($text) {
+					$resource = sanitize_text_field( $resource );
 				}
-			 
+
+				if ($textarea) {
+					$resource = esc_textarea( strip_tags( $resource));
+				}
+
+				if ( ! empty( $resource ) ) {
+					$sanitized_resources[] = $resource;
+				}
+		 
 			}
+			 
+			update_post_meta( $post_id, $meta_id, $sanitized_resources );
+		 
+		}
 
-		if ( ! empty( $_POST['slider-img-url'] ) ) {
-			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-			if ( ! isset( $_POST['slider_seo_nonce'] ) || ! wp_verify_nonce( $_POST['slider_seo_nonce'], '_slider_seo_nonce' ) ) return;
-			if ( ! current_user_can( 'edit_post', $post_id ) ) return;
-
-			if ( isset( $_POST['slider_seo_animateOut'] ) )
-				update_post_meta( $post_id, 'slider_seo_animateOut', esc_attr( $_POST['slider_seo_animateOut'] ) );
-			if ( isset( $_POST['slider_seo_animateIn'] ) )
-			update_post_meta( $post_id, 'slider_seo_animateIn', esc_attr( $_POST['slider_seo_animateIn'] ) );
+		else {
+ 
+			if ( '' !== get_post_meta( $post_id, $meta_id, true ) ) {
+				delete_post_meta( $post_id, $meta_id );
+			}
+		 
 		}
 	}
 
+
+
+	public function save_post( $post_id ) {
+
+		/* If we're not working with a 'slider_seo' post type or the user doesn't have permission to save,
+		 * then we exit the function.
+		 */
+		
+		if ( ! $this->user_can_save( $post_id, 'slider_seo_nonce', 'slider_seo_save' ) ) {
+			return;
+		}
+
+		//slider image source
+		$this->save_post_meta('slider-img-src', $post_id, true);
+
+		//slider image set thumbnail
+		$this->save_post_meta('slider-img-srcT', $post_id, true);
+
+		//slider image set title
+		$this->save_post_meta('slider-img-title', $post_id, false, true);
+
+		//slider image set alt
+		$this->save_post_meta('slider-img-alt', $post_id, false, true);
+
+		//slider image set caption
+		$this->save_post_meta('slider-img-caption', $post_id, false, false, true);
+
+		//slider custom url
+		$this->save_post_meta('slider-img-url', $post_id, true);
+
+		
+		//save animation metabox settings
+		if ( isset( $_POST['slider_seo_animateOut'] ) )
+
+			update_post_meta( $post_id, 'slider_seo_animateOut', esc_attr( $_POST['slider_seo_animateOut'] ) );
+		
+		if ( isset( $_POST['slider_seo_animateIn'] ) )
+			
+			update_post_meta( $post_id, 'slider_seo_animateIn', esc_attr( $_POST['slider_seo_animateIn'] ) );
+		
+	}
+
+	/**
+	 * Verifies that the post type that's being saved is actually a post (versus a page or another
+	 * custom post type.
+	 *
+	 * @since       0.5.0
+	 * @access      private
+	 * @return      bool      Return if the current post type is a post; false, otherwise.
+	 */
+	private function is_valid_post_type() {
+		return ! empty( $_POST['post_type'] ) && 'slider_seo' == $_POST['post_type'];
+	}
+
+	/**
+	 * Determines whether or not the current user has the ability to save meta data associated with this post.
+	 *
+	 * @since       0.5.0
+	 * @access      private
+	 * @param		int		$post_id	  The ID of the post being save
+	 * @param       string  $nonce_action The name of the action associated with the nonce.
+	 * @param       string  $nonce_id     The ID of the nonce field.
+	 * @return		bool				  Whether or not the user has the ability to save this post.
+	 */
+	private function user_can_save( $post_id, $nonce_action, $nonce_id ) {
+
+	    $is_autosave = wp_is_post_autosave( $post_id );
+	    $is_revision = wp_is_post_revision( $post_id );
+	    $is_valid_nonce = ( isset( $_POST[ $nonce_action ] ) && wp_verify_nonce( $_POST[ $nonce_action ], $nonce_id ) );
+
+	    // Return true if the user is able to save; otherwise, false.
+	    return ! ( $is_autosave || $is_revision ) && $this->is_valid_post_type() && $is_valid_nonce;
+
+	}
 
 	/**
 	 * Registers the stylesheets for handling the meta box
