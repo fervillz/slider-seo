@@ -4,9 +4,11 @@ function deleteSliderItem($) {
 	if (confirm('This will delete the slide?')) {
 		$('.delete-item-active')
 			.hide();
+
+		$('.restore-slide').css('visibility','visible');
 	}
 
-	$('.restore-slide').css('visibility','visible');
+	
 }
 
 function restoreSliderItem($) {

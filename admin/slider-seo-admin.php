@@ -3,7 +3,7 @@
 /**
  * The dashboard-specific functionality of the plugin.
  *
- * @link       http://tommcfarlin.com
+ * @link       http://fernandovillamorjr.com/
  * @since      1.0.0
  *
  * @package    Slider_SEO_Admin
@@ -15,11 +15,8 @@
  *
  * Defines the plugin name, version, the meta box functionality
  * and the JavaScript for loading the Media Uploader.
- *
- * @package    Slider_SEO_Admin
- * @subpackage Slider_SEO_Admin/admin
- * @author     Tom McFarlin <tom@tommcfarlin.com>
  */
+
 class Slider_SEO_Admin {
  
 	/**
