@@ -58,6 +58,7 @@ function slider_seo_func( $atts ){
 		(function($) {
 			'use strict';
 
+			
 			$('.owl-carousel').owlCarousel( {
 				animateOut: 'rotateOut',
 			    animateIn: 'rotateIn',
