@@ -42,9 +42,15 @@ function slider_seo_func( $atts ){
 	// Restore original Post Data
 	wp_reset_postdata();
 
-	//script
-	//get value animation
-	$slider_seo_animateOut = get_post_meta( $post['id'], 'slider_seo_animateOut', true );
+	/*
+	*  Get value animation
+	*/
+	$slider_type = get_post_meta( $post['id'], 'slider_type', true );
+	$slider_seo_basic_speed = get_post_meta( $post['id'], 'slider_seo_basic_speed', true );
+	$slider_seo_basic_navigation = get_post_meta( $post['id'], 'slider_seo_basic_navigation', true );
+	$slider_seo_basic_dots = get_post_meta( $post['id'], 'slider_seo_basic_dots', true );
+	
+
 	$slider_seo_animateIn = get_post_meta( $post['id'], 'slider_seo_animateIn', true ); ?>
 	
 
@@ -53,14 +59,14 @@ function slider_seo_func( $atts ){
 			'use strict';
 
 			$('.owl-carousel').owlCarousel( {
-				animateOut: '<?php echo $slider_seo_animateOut; ?>',
-			    animateIn: '<?php echo $slider_seo_animateIn; ?>',
-			    items:2,
+				animateOut: 'rotateOut',
+			    animateIn: 'rotateIn',
+			    items: <?php echo $slider_type; ?>,
 			    margin:30,
 			    stagePadding:30,
-			    smartSpeed:400,
-			    nav: false,
-			    dots: true,
+			    smartSpeed:<?php echo $slider_seo_basic_speed; ?>,
+			    nav: <?php echo ( $slider_seo_basic_navigation === 'true' ) ? 'true' : 'false'; ?>,
+			 	dots: <?php echo ( $slider_seo_basic_dots === 'true' ) ? 'true' : 'false'; ?>,
 			    loop: false,
 			    autoplay: true,
 			    autoplayTimeout:1500,

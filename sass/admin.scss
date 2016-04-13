@@ -412,15 +412,76 @@
 	table {
 		width: 100%;
 
-		tr {}
+		tr {
+			height: 32px;
+		}
 
 		td {
-			width: 50%;
+			&:first-child {
+				width: 40%;
+			}
+
+			&:last-child {
+				width: 60%;
+			}
 
 			input:not([type="checkbox"]),
 			select,
 			textarea {
 				width: 100%;
+			}
+
+			input[type="radio"] {
+				width: auto;
+			}
+
+			&.slider-type-radio {
+				input[type="radio"] {
+					display: none;
+				}
+
+				.label_slider_type {
+					background-image: url("../images/radio-slider-type.jpg");
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-color: #fff;
+					height: 23px;
+					display: inline-block;
+					-webkit-box-shadow: 0 0 3px 0 #DBDBDB;
+					box-shadow: 0 0 3px 0 #DBDBDB;
+					width: 40px;
+					opacity: .3;
+					transform: scale(0.9);
+					transition: 300ms;
+
+					&:hover {
+						opacity: .8;
+						-webkit-box-shadow: 0 0 0 1px #18A1DB;
+						box-shadow: 0 0 0 1px #18A1DB;
+						transform: scale(1);
+						transition: 100ms;
+					}
+				}
+
+				.radio_slider_type:checked + label {
+					opacity: 1;
+					-webkit-box-shadow: 0 0 0 1px #18A1DB;
+					box-shadow: 0 0 0 1px #18A1DB;
+					transform: scale(1);
+					transition: 150ms;
+				}
+
+				.label_slider_type1 {
+					background-position: 0 0;
+				}
+
+				.label_slider_type2 {
+					background-position: -40px 0;
+				}
+
+				.label_slider_type3 {
+					background-position: -80px 0;
+				}
 			}
 		}
 	}

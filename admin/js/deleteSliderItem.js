@@ -1,14 +1,10 @@
 function deleteSliderItem($) {
 	'use strict';
 
-	if (confirm('This will delete the slide?')) {
-		$('.delete-item-active')
+	$('.delete-item-active')
 			.hide();
-
-		$('.restore-slide').css('visibility','visible');
-	}
-
 	
+	$('.restore-slide').css('visibility','visible');
 }
 
 function restoreSliderItem($) {
@@ -27,9 +23,9 @@ function savedeleteSliderItem($) {
 
 	$('.delete-item-active .tab-item')
 		.children()
-		.val('');	
+		.val('');
+		console.log('deleting');	
 }
-
 
 
 function deleteAllSliderItem($) {

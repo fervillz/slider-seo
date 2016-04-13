@@ -31,7 +31,7 @@ if ($imgSrcs){ ?>
 		<div class="wp-media-buttons">
 			<a href="#" id="restore-slide" class="button restore-slide">Restore Deleted Slides</a>
 			<a href="#" id="add-slide" class="button add_media add-slide"><?php echo "Add Slide"; ?></a>
-			<input name="save" type="submit" class="button button-primary" class="publish-slider" value="Save Slider">
+			<input type="submit" class="publish-slider button button-primary" value="Save Slider">
 		</div><!-- .wp-media-buttons -->
 	</div>
 	<div class="clear"></div>
@@ -48,7 +48,7 @@ if ($imgSrcs){
 
 foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 	
-	<tr class="slide-<?php echo $i; ?> slider-item" alt="Drag and Drop to reorder slides">
+	<tr class="slide-<?php echo $i; ?> slider-item">
 		<td class="slider-img">
 			<img class="set-slide-thumbnail" src="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>" alt="" title=""/>
 			<div class="row-actions hide-if-no-js">

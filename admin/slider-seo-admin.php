@@ -166,7 +166,15 @@ class Slider_SEO_Admin {
 		}
 	}
 
-
+	public function save_post_meta_animation( $meta_id = '',  $post_id ) {
+		
+		if ( isset( $_POST[$meta_id] ) ) {
+			update_post_meta( $post_id, $meta_id, esc_attr( $_POST[$meta_id] ) );
+		}
+		else {
+			update_post_meta( $post_id, $meta_id, null );
+		}
+	}
 
 	public function save_post( $post_id ) {
 
@@ -198,15 +206,23 @@ class Slider_SEO_Admin {
 
 		
 		//save animation metabox settings
-		if ( isset( $_POST['slider_seo_animateOut'] ) )
+		
+		//slider type
+		$this->save_post_meta_animation('slider_type', $post_id);
+		
+		//animation speed
+		$this->save_post_meta_animation('slider_seo_basic_speed', $post_id);
 
-			update_post_meta( $post_id, 'slider_seo_animateOut', esc_attr( $_POST['slider_seo_animateOut'] ) );
-		
-		if ( isset( $_POST['slider_seo_animateIn'] ) )
-			
-			update_post_meta( $post_id, 'slider_seo_animateIn', esc_attr( $_POST['slider_seo_animateIn'] ) );
-		
+		//navigation
+		$this->save_post_meta_animation('slider_seo_basic_navigation', $post_id);
+
+		//dots
+		$this->save_post_meta_animation('slider_seo_basic_dots', $post_id);
+
+
 	}
+
+	
 
 	/**
 	 * Verifies that the post type that's being saved is actually a post (versus a page or another

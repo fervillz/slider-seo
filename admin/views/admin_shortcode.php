@@ -14,7 +14,7 @@ $postid = $post->ID; ?>
 	<div class="tab-item">
  		 <span class="slider-seo-instruction">
 			<p>
-				Copy & paste the shortcode directly into any WordPress post or page.
+				Copy this shortcode and paste it into your post, page, or text widget content:
 			</p>
 		</span>
 		<span class="slider-seo-shortcode">
@@ -25,7 +25,7 @@ $postid = $post->ID; ?>
 	<div class="tab-item" style="display: none;">
 		 <span class="slider-seo-instruction">
 			<p>
-				Copy & paste this php code into any of your Wordpress theme files.
+				Copy & paste this php code into any of your php theme files.
 			</p>
 		</span>
 		<span class="slider-seo-shortcode">

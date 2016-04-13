@@ -16,7 +16,7 @@ function renderMediaUploader($) {
 	var thumbnailSizeH = $('#thumbnailSizeH').val();
 	console.log(thumbnailSizeW);
 	console.log(thumbnailSizeH);
-	
+
 	if (undefined !== file_frame) {
 
 		file_frame.open();
@@ -27,7 +27,10 @@ function renderMediaUploader($) {
 	file_frame = wp.media.frames.file_frame = wp.media({
 		frame: 'post',
 		state: 'insert',
-		multiple: true
+		multiple: true,
+		library : {
+			type : 'image'
+		}
 	});
 
 

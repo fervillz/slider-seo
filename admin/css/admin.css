@@ -400,14 +400,73 @@
   width: 100%;
 }
 
-#slider_seo_animation table td {
-  width: 50%;
+#slider_seo_animation table tr {
+  height: 32px;
+}
+
+#slider_seo_animation table td:first-child {
+  width: 40%;
+}
+
+#slider_seo_animation table td:last-child {
+  width: 60%;
 }
 
 #slider_seo_animation table td input:not([type="checkbox"]),
 #slider_seo_animation table td select,
 #slider_seo_animation table td textarea {
   width: 100%;
+}
+
+#slider_seo_animation table td input[type="radio"] {
+  width: auto;
+}
+
+#slider_seo_animation table td.slider-type-radio input[type="radio"] {
+  display: none;
+}
+
+#slider_seo_animation table td.slider-type-radio .label_slider_type {
+  background-image: url("../images/radio-slider-type.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  height: 23px;
+  display: inline-block;
+  -webkit-box-shadow: 0 0 3px 0 #DBDBDB;
+  box-shadow: 0 0 3px 0 #DBDBDB;
+  width: 40px;
+  opacity: .3;
+  transform: scale(0.9);
+  transition: 300ms;
+}
+
+#slider_seo_animation table td.slider-type-radio .label_slider_type:hover {
+  opacity: .8;
+  -webkit-box-shadow: 0 0 0 1px #18A1DB;
+  box-shadow: 0 0 0 1px #18A1DB;
+  transform: scale(1);
+  transition: 100ms;
+}
+
+#slider_seo_animation table td.slider-type-radio .radio_slider_type:checked + label {
+  opacity: 1;
+  -webkit-box-shadow: 0 0 0 1px #18A1DB;
+  box-shadow: 0 0 0 1px #18A1DB;
+  transform: scale(1);
+  transition: 150ms;
+}
+
+#slider_seo_animation table td.slider-type-radio .label_slider_type1 {
+  background-position: 0 0;
+}
+
+#slider_seo_animation table td.slider-type-radio .label_slider_type2 {
+  background-position: -40px 0;
+}
+
+#slider_seo_animation table td.slider-type-radio .label_slider_type3 {
+  background-position: -80px 0;
 }
 
 /*# sourceMappingURL=admin.css.map */
