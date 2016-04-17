@@ -1,3 +1,18 @@
+#slider_seo_slides {
+  border-color: #5b9dd9;
+  -webkit-box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+  box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+}
+
+#slider_seo_slides .hndle.ui-sortable-handle {
+  background: #5b9dd9;
+  color: #fff;
+}
+
+#slider_seo_slides .toggle-indicator:before {
+  color: #fff;
+}
+
 #slider_seo_slides table.slider-wrapper {
   border-collapse: collapse;
   /* Tooltip container */

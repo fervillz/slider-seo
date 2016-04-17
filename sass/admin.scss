@@ -1,4 +1,17 @@
 #slider_seo_slides {
+	border-color: #5b9dd9;
+	-webkit-box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+	box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+
+	.hndle.ui-sortable-handle {
+		background: #5b9dd9;
+		color: #fff;
+	}
+
+	.toggle-indicator:before {
+		color: #fff;
+	}
+	
 	table.slider-wrapper {
 		border-collapse: collapse;
 
