@@ -154,6 +154,20 @@
 
 			});
 		}
+		
+		//select shortcode on click
+		$('body').on('click', '#slider_seo_shortcode textarea, #slider_seo_shortcode input', function() {
+
+			$(this).select();
+
+		});
+
+		//select shortcode on click
+		$('body').on('hover', '#slider_seo_shortcode textarea, #slider_seo_shortcode input', function() {
+
+			$(this).select();
+
+		});
 
 		//slider type
 		$('body').on('click', '.radio_slider_type', function() {
