@@ -61,7 +61,9 @@ class Slider_SEO_Admin {
  		// create post type
 		add_action( 'plugins_loaded', array( $this, 'create_post_type' ), 2 );
 		// create shortcode
-		add_action( 'plugins_loaded', array( $this, 'create_shortcode' ), 2 );
+		add_action( 'plugins_loaded', array( $this, 'create_shortcode' ), 3 );
+
+		add_action( 'plugins_loaded', array( $this, 'custom_columns' ), 4 );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
@@ -73,6 +75,7 @@ class Slider_SEO_Admin {
 
 		add_action( 'save_post', array( $this, 'save_post' ) );
 
+
 		add_filter( 'single_template', array( $this, 'get_custom_post_type_template' ) );
  
 	}
@@ -83,6 +86,10 @@ class Slider_SEO_Admin {
 
 	public function create_post_type() {
 		require_once( trailingslashit( slider_SEO_INCLUDES ) . 'add_post_type.php' );
+	}
+
+	public function custom_columns() {
+		require_once( trailingslashit( slider_SEO_INCLUDES ) . 'add_post_column.php' );
 	}
 
 	public function get_custom_post_type_template($single_template) {
@@ -219,9 +226,41 @@ class Slider_SEO_Admin {
 		//dots
 		$this->save_post_meta_animation('slider_seo_basic_dots', $post_id);
 
+		//slider_layout
+		$this->save_post_meta_animation('slider_layout', $post_id);
 
+		//slider_layout width
+		$this->save_post_meta_animation('slider_seo_basic_width', $post_id);
+
+		//slider_layout height
+		$this->save_post_meta_animation('slider_seo_basic_height', $post_id);
+
+		//slider_layout margin
+		$this->save_post_meta_animation('slider_seo_basic_margin', $post_id);
+
+		//slider_layout padding
+		$this->save_post_meta_animation('slider_seo_basic_padding', $post_id);
+
+		//slider loop
+		$this->save_post_meta_animation('slider_seo_basic_loop', $post_id);
+		
+		//slider Timeout
+		$this->save_post_meta_animation('slider_seo_basic_autoplayTimeout', $post_id);
+
+		//slider_layout padding
+		$this->save_post_meta_animation('slider_seo_basic_animation', $post_id);
+
+		//slider autoheight
+		$this->save_post_meta_animation('slider_seo_basic_autoheight', $post_id);
+
+		//slider lazyload
+		$this->save_post_meta_animation('slider_seo_basic_lazyload', $post_id);
+
+		//slider autoWidth
+		$this->save_post_meta_animation('slider_seo_basic_autoWidth', $post_id);
+
+		
 	}
-
 	
 
 	/**

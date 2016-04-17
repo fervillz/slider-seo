@@ -7,6 +7,14 @@
 <?php include_once( 'gsettings_partials/anim_speed.php' ); ?>
 <?php include_once( 'gsettings_partials/navigation.php' ); ?>
 <?php include_once( 'gsettings_partials/dots.php' ); ?>
+<?php include_once( 'gsettings_partials/margin.php' ); ?>
+<?php include_once( 'gsettings_partials/padding.php' ); ?>
+<?php include_once( 'gsettings_partials/loop.php' ); ?>
+<?php include_once( 'gsettings_partials/autoplayTimeout.php' ); ?>
+<?php include_once( 'gsettings_partials/autoheight.php' ); ?>
+<?php include_once( 'gsettings_partials/lazyload.php' ); ?>
+<?php include_once( 'gsettings_partials/autoWidth.php' ); ?>
+<?php include_once( 'gsettings_partials/navtext.php' ); ?>
 
 <!-- Tabs Toggle -->
 <ul class="tabs-toggle">
@@ -27,8 +35,6 @@
 			<table id="tab-basic">
 				<tr> <?php tr_slider_type($post); ?> </tr>
 				<tr> <?php animation($post); ?> </tr>
-				<tr> <?php width_height($post); ?> </tr>
-				<tr> <?php width_height($post, 'height'); ?> </tr>
 				<tr> <?php anim_speed($post); ?> </tr>
 				<tr> <?php navigation($post); ?> </tr>
 				<tr> <?php dots($post); ?> </tr>
@@ -40,8 +46,17 @@
 	<div class="tab-item" style="display: none;">
 		 <span> <span class="slider-seo-instruction"> <p> This configuration allows you to change various preferences to suit your needs.</p> </span>
 			<table id="tab-advanced">
-				<tr> <?php tr_slider_type($post,'advanced'); ?> </tr>
-				<tr> <?php animation($post, 'advanced'); ?> </tr>
+				<?php tr_slider_type($post,'advanced'); ?>
+				<?php animation($post, 'advanced'); ?>
+				<?php width_height($post, 'advanced') ?>
+				<?php navtext($post, 'advanced') ?>
+				<?php margin($post, 'advanced'); ?>
+				<?php padding($post, 'advanced'); ?>
+				<?php autoplayTimeout($post, 'advanced'); ?>
+				<?php loop($post, 'advanced'); ?>
+				<?php autoheight($post, 'advanced'); ?>
+				<?php autoWidth($post, 'advanced'); ?>
+				<?php lazyload($post, 'advanced'); ?>
 			 </table>
 		 </span>
 	</div>

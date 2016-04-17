@@ -155,6 +155,46 @@
 			});
 		}
 
+		//slider type
+		$('body').on('click', '.radio_slider_type', function() {
+
+			var radioValue;
+
+			if ( $(this).is(':checked') ) {
+				radioValue = $(this).val();
+				$('#slider_type_custom').val(radioValue);
+			}
+
+		});
+
+		//slider layout
+		$('body').on('click', '.radio_slider_layout', function() {
+
+			if ( $(' #slider_layout2 ').is(':checked') ) {
+				$('.fixedLayout').hide();
+			}
+			else {
+				$('.fixedLayout').show();
+			}
+
+		});
+
+		//animation select
+		$('body').on('change', '.slider_seo_basic_animation', function() {
+
+			if ( $(this).hasClass('slider_seo_basic_animation1') ) {
+				console.log('slider_seo_basic_animation1');
+				var selectedAnim1 = $('.slider_seo_basic_animation1 option:selected').text();
+				$('.slider_seo_basic_animation_input').val(selectedAnim1);
+			} 
+			else {
+				console.log('slider_seo_basic_animation23');
+				var selectedAnim2 = $('.slider_seo_basic_animation2 option:selected').text();
+				var selectedAnim3 = $('.slider_seo_basic_animation3 option:selected').text();
+				$('.slider_seo_basic_animation_input').val(selectedAnim2+' '+selectedAnim3);
+			}
+		});
+
 	});
 
 })(jQuery);

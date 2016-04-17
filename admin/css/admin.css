@@ -404,6 +404,10 @@
   height: 32px;
 }
 
+#slider_seo_animation table tr.full--td td:last-child {
+  width: 100%;
+}
+
 #slider_seo_animation table td:first-child {
   width: 40%;
 }
@@ -426,7 +430,8 @@
   display: none;
 }
 
-#slider_seo_animation table td.slider-type-radio .label_slider_type {
+#slider_seo_animation table td.slider-type-radio .label_slider_type,
+#slider_seo_animation table td.slider-type-radio .label_slider_layout {
   background-image: url("../images/radio-slider-type.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -441,7 +446,8 @@
   transition: 300ms;
 }
 
-#slider_seo_animation table td.slider-type-radio .label_slider_type:hover {
+#slider_seo_animation table td.slider-type-radio .label_slider_type:hover,
+#slider_seo_animation table td.slider-type-radio .label_slider_layout:hover {
   opacity: .8;
   -webkit-box-shadow: 0 0 0 1px #18A1DB;
   box-shadow: 0 0 0 1px #18A1DB;
@@ -449,7 +455,8 @@
   transition: 100ms;
 }
 
-#slider_seo_animation table td.slider-type-radio .radio_slider_type:checked + label {
+#slider_seo_animation table td.slider-type-radio .radio_slider_type:checked + label,
+#slider_seo_animation table td.slider-type-radio .radio_slider_layout:checked + label {
   opacity: 1;
   -webkit-box-shadow: 0 0 0 1px #18A1DB;
   box-shadow: 0 0 0 1px #18A1DB;
@@ -469,16 +476,36 @@
   background-position: -80px 0;
 }
 
-#slider_seo_animation table td.slider-type-radio .label_slider_type4 {
+#slider_seo_animation table td.slider-type-radio .label_slider_layout1 {
   background-position: -120px 0;
 }
 
-#slider_seo_animation table td.slider-type-radio .label_slider_type5 {
+#slider_seo_animation table td.slider-type-radio .label_slider_layout2 {
   background-position: -160px 0;
 }
 
 #slider_seo_animation table td.slider-type-radio .label_slider_type6 {
   background-position: -200px 0;
+}
+
+#slider_seo_animation table td.slider-type-radio .label_slider_type7 {
+  background-position: -240px 0;
+}
+
+#slider_seo_animation table td.slider-type-radio .label_slider_type8 {
+  background-position: -280px 0;
+}
+
+.thumb.column-thumb {
+  position: relative !important;
+}
+
+.edit-php.post-type-slider_seo tbody tr:nth-child(odd) {
+  background: #f7fcfe;
+}
+
+.edit-php.post-type-slider_seo tbody tr:hover {
+  background: #f7fcfe;
 }
 
 /*# sourceMappingURL=admin.css.map */
