@@ -8,83 +8,98 @@
   width: 100%;
 }
 
-.setNavPos .owl-controls {
+.slider-seo-owl-carousel.setNavPos .owl-controls {
   position: absolute !important;
 }
 
-[class*="topOnly"] .owl-controls {
+.slider-seo-owl-carousel[class*="topOnly"] .owl-controls {
   padding: 10px;
   align-items: baseline;
 }
 
-[class*="outerTop"] {
-  top: 50px;
+.slider-seo-owl-carousel[class*="outerTop"] {
+  margin-top: 70px;
 }
 
-[class*="outerTop"] .owl-controls {
+.slider-seo-owl-carousel[class*="outerTop"] .owl-controls {
   padding: 0px;
-  margin-top: 0 !important;
 }
 
-[class*="middleOnly"] .owl-controls {
+.slider-seo-owl-carousel[class*="outerTop"] .owl-nav {
+  margin-top: -40px;
+}
+
+.slider-seo-owl-carousel[class*="middleOnly"] .owl-controls {
   padding: 10px;
   align-items: center;
 }
 
-[class*="outerMiddle"] .owl-controls {
+.slider-seo-owl-carousel[class*="outerMiddle"] .owl-controls {
   padding: 0px;
-  margin-top: -20px !important;
+  align-items: center;
 }
 
-[class*="bottomOnly"] .owl-controls {
+.slider-seo-owl-carousel[class*="bottomOnly"] .owl-controls {
   padding: 10px;
   align-items: flex-end;
 }
 
-.bottomOnly-Center .owl-nav {
+.slider-seo-owl-carousel .bottomOnly-Center .owl-nav {
   margin-bottom: 20px;
 }
 
-[class*="Left"] .owl-controls {
+.slider-seo-owl-carousel[class*="Left"] .owl-controls {
   left: 0;
 }
 
-[class*="Left"] .owl-controls .owl-nav {
+.slider-seo-owl-carousel[class*="Left"] .owl-controls .owl-nav {
   text-align: left;
 }
 
-[class*="Right"] .owl-controls {
+.slider-seo-owl-carousel[class*="Right"] .owl-controls {
   right: 0;
 }
 
-[class*="Right"] .owl-controls .owl-nav {
+.slider-seo-owl-carousel[class*="Right"] .owl-controls .owl-nav {
   text-align: right;
 }
 
-[class*="Center"] .owl-controls {
+.slider-seo-owl-carousel[class*="Center"] .owl-controls {
   width: 100%;
 }
 
-[class*="Justify"] .owl-controls {
+.slider-seo-owl-carousel[class*="Justify"] .owl-controls {
   width: 100%;
-  padding: 10px;
   box-sizing: border-box;
 }
 
-[class*="Justify"] .owl-prev {
+.slider-seo-owl-carousel[class*="Justify"] .owl-prev {
   float: left;
 }
 
-[class*="Justify"] .owl-next {
+.slider-seo-owl-carousel[class*="Justify"] .owl-next {
   float: right;
 }
 
-.owl-nav {
+.slider-seo-owl-carousel[class*="outer"][class*="Left"] .owl-prev {
+  margin-left: 0 !important;
+}
+
+.slider-seo-owl-carousel[class*="outer"][class*="Right"] .owl-next {
+  margin-right: 0 !important;
+}
+
+.slider-seo-owl-carousel[class*="outer"] [class*="Justify"] .owl-prev,
+.slider-seo-owl-carousel[class*="outer"] [class*="Justify"] .owl-next {
+  margin: 0 !important;
+}
+
+.slider-seo-owl-carousel .owl-nav {
   pointer-events: auto;
   width: 100%;
 }
 
-.owl-dots {
+.slider-seo-owl-carousel .owl-dots {
   pointer-events: auto;
   width: 100%;
   position: absolute;
