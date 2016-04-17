@@ -347,6 +347,24 @@
   max-width: 100%;
 }
 
+#slider_seo_shortcode,
+#slider_seo_animation {
+  border-color: #5b9dd9;
+  -webkit-box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+  box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+}
+
+#slider_seo_shortcode .hndle.ui-sortable-handle,
+#slider_seo_animation .hndle.ui-sortable-handle {
+  background: #5b9dd9;
+  color: #fff;
+}
+
+#slider_seo_shortcode .hndle.ui-sortable-handle .toggle-indicator:before,
+#slider_seo_animation .hndle.ui-sortable-handle .toggle-indicator:before {
+  color: #fff !important;
+}
+
 #slider_seo_shortcode .slider-seo-instruction,
 #slider_seo_animation .slider-seo-instruction {
   font-style: italic;

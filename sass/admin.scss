@@ -364,6 +364,19 @@
 
 #slider_seo_shortcode,
 #slider_seo_animation {
+	border-color: #5b9dd9;
+	-webkit-box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+	box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+
+	.hndle.ui-sortable-handle {
+		background: #5b9dd9;
+		color: #fff;
+
+		.toggle-indicator:before {
+			color: #fff !important;
+		}
+	}
+
 	.slider-seo-instruction {
 		font-style: italic;
 		color: #B9B9B9;
@@ -419,7 +432,7 @@
 		tr {
 			height: 32px;
 
-			&.full--td td:last-child{
+			&.full--td td:last-child {
 				width: 100%;
 			}
 		}
@@ -443,7 +456,7 @@
 				width: auto;
 			}
 
-			&.slider-type-radio{
+			&.slider-type-radio {
 				input[type="radio"] {
 					display: none;
 				}
