@@ -259,6 +259,13 @@ class Slider_SEO_Admin {
 		//slider autoWidth
 		$this->save_post_meta_animation('slider_seo_basic_autoWidth', $post_id);
 
+		//slider autoWidth
+		$this->save_post_meta('slider_seo_basic_navtext', $post_id, false, true);
+
+		//slider nav position
+		$this->save_post_meta_animation('slider_seo_navPos', $post_id);
+		
+
 		
 	}
 	

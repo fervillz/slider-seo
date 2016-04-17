@@ -14,7 +14,8 @@ module.exports = function(grunt) {
         },
         files: {
           //'css/app.css': 'scss/app.scss'
-          'admin/css/admin.css': 'sass/admin.scss'
+          'admin/css/admin.css': 'sass/admin.scss',
+          'admin/css/slider_seo_style.css': 'sass/frontend.scss'
         }
       }
     },

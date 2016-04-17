@@ -15,6 +15,7 @@
 <?php include_once( 'gsettings_partials/lazyload.php' ); ?>
 <?php include_once( 'gsettings_partials/autoWidth.php' ); ?>
 <?php include_once( 'gsettings_partials/navtext.php' ); ?>
+<?php include_once( 'gsettings_partials/navPos.php' ); ?>
 
 <!-- Tabs Toggle -->
 <ul class="tabs-toggle">
@@ -38,7 +39,7 @@
 				<tr> <?php anim_speed($post); ?> </tr>
 				<tr> <?php navigation($post); ?> </tr>
 				<tr> <?php dots($post); ?> </tr>
-			 </table> 
+			</table> 
 		</span>
 	</div>
 
@@ -46,10 +47,11 @@
 	<div class="tab-item" style="display: none;">
 		 <span> <span class="slider-seo-instruction"> <p> This configuration allows you to change various preferences to suit your needs.</p> </span>
 			<table id="tab-advanced">
+				<input type="hidden" id="pageID" value="<?php echo $post->ID; ?>" />
+
 				<?php tr_slider_type($post,'advanced'); ?>
 				<?php animation($post, 'advanced'); ?>
 				<?php width_height($post, 'advanced') ?>
-				<?php navtext($post, 'advanced') ?>
 				<?php margin($post, 'advanced'); ?>
 				<?php padding($post, 'advanced'); ?>
 				<?php autoplayTimeout($post, 'advanced'); ?>
@@ -57,6 +59,8 @@
 				<?php autoheight($post, 'advanced'); ?>
 				<?php autoWidth($post, 'advanced'); ?>
 				<?php lazyload($post, 'advanced'); ?>
+				<?php navtext($post, 'advanced') ?>
+				<?php navPos($post, 'advanced') ?>
 			 </table>
 		 </span>
 	</div>

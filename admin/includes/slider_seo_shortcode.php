@@ -2,6 +2,9 @@
 
 function slider_seo_func( $atts ){
 
+	//includes
+	include_once( slider_SEO_ADMIN_DIR.'/views/gsettings_partials/navPosCss.php' );
+
 	$post = shortcode_atts( array(
 		'id' => '1',
 	), $atts );
@@ -23,6 +26,13 @@ function slider_seo_func( $atts ){
 	//meta
 	$imgSrcs = get_post_meta( $post['id'], 'slider-img-src', true );
 	$slider_seo_basic_lazyload = get_post_meta( $post['id'], 'slider_seo_basic_lazyload', true );
+	$slider_seo_navPos = get_post_meta( $post['id'], 'slider_seo_navPos', true );
+	if ($slider_seo_navPos) {
+		$slider_seo_navPos = $slider_seo_navPos.' setNavPos';
+	}
+	else{
+		$slider_seo_navPos = '';
+	}
 	
 	// The Loop
 	if ( $slider_seo_query->have_posts() ) {
@@ -32,7 +42,7 @@ function slider_seo_func( $atts ){
 				<?php if ( $slider_layout == '1'): ?>
 						<div class="sliderSeoFixedLayout" style="width: <?php echo $slider_layoutW.'px;'; ?> height:<?php echo $slider_layoutH.'px;'; ?>" >
 				<?php endif; ?>
-					<div class="owl-carousel owl-theme">
+					<div class="slider-seo-owl-carousel-<?php echo $post['id']; ?> <?php echo $slider_seo_navPos; ?> slider-seo-owl-carousel owl-theme">
 					
 					<?php foreach ( $imgSrcs as $imgSrc ) { ?>
 						<?php if ( $slider_seo_basic_lazyload == true ): ?>
@@ -62,6 +72,14 @@ function slider_seo_func( $atts ){
 	$anim1 = splitBasicAnimShortcode( $anim )[0];
 	$anim2 = splitBasicAnimShortcode( $anim )[1];
 
+	$slider_seo_basic_navtext = get_post_meta( $post['id'], 'slider_seo_basic_navtext', true );
+	$navText1 = '';
+	$navText2 = '';
+	if ($slider_seo_basic_navtext) {
+		$navText1 = $slider_seo_basic_navtext[0];
+		$navText2 = $slider_seo_basic_navtext[1];	
+	}
+
 	$slider_type = get_post_meta( $post['id'], 'slider_type', true );
 	$slider_seo_basic_speed = get_post_meta( $post['id'], 'slider_seo_basic_speed', true );
 	$slider_seo_basic_navigation = get_post_meta( $post['id'], 'slider_seo_basic_navigation', true );
@@ -79,8 +97,7 @@ function slider_seo_func( $atts ){
 		(function($) {
 			'use strict';
 
-			
-			$('.owl-carousel').owlCarousel( {
+			$('.slider-seo-owl-carousel').owlCarousel( {
 				animateOut: '<?php echo $anim2; ?>',
 			    animateIn: '<?php echo $anim1; ?>',
 			    items: <?php echo ( $slider_type === '' ) ? '1' : $slider_type; ?>,
@@ -95,16 +112,18 @@ function slider_seo_func( $atts ){
 			    autoHeight: <?php echo ( ($slider_seo_basic_autoheight === 'true') || ($slider_seo_basic_autoheight === '') ) ? 'true' : 'false'; ?>,
 			    lazyLoad: <?php echo ( ($slider_seo_basic_lazyload === 'true') || ($slider_seo_basic_lazyload === '') ) ? 'true' : 'false'; ?>,
 			    autoWidth:<?php echo ( ($slider_seo_basic_autoWidth === 'true') || ($slider_seo_basic_autoWidth === '') ) ? 'true' : 'false'; ?>,
-			    navText: ['&#x27;next&#x27;','&#x27;prev&#x27;'],
+			    navText: <?php echo ( $slider_seo_basic_navtext === "" ) ? "['next','prev']" : "['".$navText1."','".$navText2."']" ?>,
 			});
 
 		})(jQuery);
 	</script>
 
-
-
+	<style>
+		.slider-seo-owl-carousel-<?php echo $post['id']; ?> .owl-controls.top-center{
+			navPosTop();
+		}
+	</style>
 <?php }
-
 
 add_shortcode( 'slider-seo', 'slider_seo_func' );
 
