@@ -118,7 +118,7 @@
 				margin-bottom: -1px;
 
 				&.tabs-active {
-					border: 1px solid #dfdfdf;
+					border: 1px solid #D7F3FF;
 					border-bottom-color: #fdfdfd;
 					background-color: #fdfdfd;
 				}
@@ -371,10 +371,10 @@
 	.hndle.ui-sortable-handle {
 		background: #5b9dd9;
 		color: #fff;
+	}
 
-		.toggle-indicator:before {
-			color: #fff !important;
-		}
+	.toggle-indicator:before {
+		color: #fff;
 	}
 
 	.slider-seo-instruction {
@@ -414,7 +414,7 @@
 	.tab-content {
 		min-height: 42px;
 		padding: 0 .9em 1em;
-		border: 1px solid #dfdfdf;
+		border: 1px solid #D7F3FF;
 		background-color: #fdfdfd;
 	}
 
