@@ -80,8 +80,7 @@
 
 		$('.tab-others').hide();
 
-		//append loading gif
-		$('body').append('<div class="se-pre-con"></div>');
+		
 
 		//restore deleted slides
 		$('.restore-slide').click(function(evt) {
@@ -92,7 +91,7 @@
 		//sohw loading while loading page
 		$(window).load(function() {
 			// Animate loader off screen
-			$(".se-pre-con").fadeOut("slow");;
+			$(".se-pre-con").fadeOut("slow");
 		});
 
 		//clone slide
@@ -157,16 +156,12 @@
 		
 		//select shortcode on click
 		$('body').on('click', '#slider_seo_shortcode textarea, #slider_seo_shortcode input', function() {
-
 			$(this).select();
-
 		});
 
 		//select shortcode on click
 		$('body').on('hover', '#slider_seo_shortcode textarea, #slider_seo_shortcode input', function() {
-
-			$(this).select();
-
+			$(this).focus().select();
 		});
 
 		//slider type
