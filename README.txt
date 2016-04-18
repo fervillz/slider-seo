@@ -1,7 +1,7 @@
 === Slider SEO ===
 Contributors: fervillz
 Plugin URI:   https://wordpress.org/plugins/slider-seo
-Tags: Widget, Slider, SEO, Fast, Simple, Easy, Widget, Post, Page, Shortcode
+Tags: Widget, Slider, SEO, Fast, Simple, Easy, Widget, Post, Page, Shortcode, animation, banner rotator, best slider, carousel, content slider, fullwidth slider, gallery, gallery slider, hardware accelerate, Horizontal slider, HTML5 slider, image slider, layer slider, mobile slider, page slider, Photo Slider, post slider, responsive slider, slide, slider, slider plugin, slider shortcode, slideshow, swipe, touch slider, vertical slider, wordpress slider, wordpress slideshow
 Requires at least: 3.9
 Tested up to: 4.5
 Stable tag:1.0.1
@@ -9,10 +9,33 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Responsive WordPress slider plus SEO friendly equals boost traffic in no time. Select from 60+ different slider animations. Slider-SEO plugin enables you to create beautiful carousels.
+Responsive WordPress slider plus SEO friendly equals boost traffic in no time. Select from multiple different slider animations. Slider-SEO plugin enables you to create beautiful carousels.
 
 == Description ==
-Responsive WordPress slider plus SEO friendly equals boost traffic in no time. Select from 60+ different slider animations. Slider-SEO plugin enables you to create beautiful carousels.
+Slider SEO is a SEO friendly slider that focus on helping your website get indexed by search engines thus allowing more traffics to come. 
+
+This slider is 100% responsive with full support mobile devices, tablets, desktop computers and all modern web browsers which includes iPhone, iPad, Android, Chrome, Safari, Firefox, Opera, Internet Explorer 7/8/9/10/11 and also Microsoft Edge.
+
+Create amazing animation combo effects powered by animate.css
+
+Move the slider through your fingers in mobile devices or mouse in desktops
+
+**Features**
+
+* Very user friendly admin panel
+* Using the power of Owl carousel in tandem with the fast and powerful animate.css
+* Touch Swipe by Finger or Mouse
+* Responsive image slider
+* SEO and script optimized
+* Set image title, alt, caption and add links
+* Carousel Slider
+* Create Slider with Shortcode
+* HTML Layer Slideshow
+* Responsive from big monitors up to snall mobile devices, tablets etc.
+* Redorder slides
+* Restore deleted slides
+* Remove slider 1 by 1 or removed them all in a single click.
+* 100% FREE and this one already comes in full version.
 
 == Installation ==
 **Very Important**
@@ -21,7 +44,7 @@ Whenever you update the plugin, make sure to deactivate the previous version and
 
 **Automatic installation**
 
-*This is the easiest option as WordPress handles the file transfers itself and you don’t need to leave your web browser. To do an automatic install of Slider SEO.
+This is the easiest option as WordPress handles the file transfers itself and you don’t need to leave your web browser. To do an automatic install of Slider SEO.
 
 1. Log in to your WordPress dashboard and go to Plugins -> Add New
 2. In the search field type **Slider SEO** and click Search Plugins.
@@ -32,7 +55,7 @@ Whenever you update the plugin, make sure to deactivate the previous version and
 
 **Manual installation or Installing Via FTP**
 
-*The manual installation method involves downloading our plugin and uploading it to your webserver via your favorite FTP application.
+* The manual installation method involves downloading our plugin and uploading it to your webserver via your favorite FTP application.
 
 1. Download the plugin to your hardisk.
 2. Unzip.
@@ -44,10 +67,20 @@ Whenever you update the plugin, make sure to deactivate the previous version and
 
 
 == Frequently Asked Questions ==
-* For the new installers, it may be useful to read instructions well before contacting us.
+**How do I add the slider to my site?**
+* You can add it by shortcode or via the widget control panel or PHP shortcode.
+
+**Can I show multiple slider on one page?**
+* Yes you can use multiple slider in widgets ,post and pages.
+
+**How to include a slider in a post or a page?**
+* [slider-seo id="20"]	
+
+**How to include a slider into header.php or other PHP files?**
+* <?php echo do_shortcode("[slider-seo id='20']"); ?>
 
 == Screenshots ==
-1. The widget settings
+1. The admin settings
 
 == Changelog ==
 = 1.0.1 - 17/04/2016 =

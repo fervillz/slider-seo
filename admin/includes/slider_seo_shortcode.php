@@ -72,11 +72,9 @@ function slider_seo_func( $atts ){
 					</div><!-- .sliderSeoFixedLayout -->
 				<?php endif; ?>
 			<?php
-
-
 		}
 	} else {
-		echo "You have entered an invalid Slider SEO Shortcode";
+		_e( 'You have entered an invalid Slider SEO Shortcode', 'slider-seo');
 	}
 
 	// Restore original Post Data

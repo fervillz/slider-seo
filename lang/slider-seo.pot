@@ -1,0 +1,827 @@
+# Copyright (C) 2016 Fernando
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-04-18 01:06-0700\n"
+"PO-Revision-Date: 2016-04-18 01:07-0700\n"
+"Last-Translator: fernando villamor <fervillz@gmail.com>\n"
+"Language-Team: fervillz <fervillz@gmail.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/includes/add_meta_box.php:11
+msgid "Click \"Add Slide\" to add new slider"
+msgstr "Click \"Add Slide\" to add new slider"
+
+#: admin/includes/add_meta_box.php:23
+msgid "General Settings"
+msgstr "General Settings"
+
+#: admin/includes/add_meta_box.php:35
+msgid "How to Use"
+msgstr "How to Use"
+
+#: admin/includes/add_post_column.php:9
+msgid "Slider"
+msgstr "Slider"
+
+#: admin/includes/add_post_column.php:10
+msgid "Thumbnails"
+msgstr "Thumbnails"
+
+#: admin/includes/add_post_column.php:11 admin/views/admin_shortcode.php:4
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: admin/includes/add_post_column.php:12
+msgid "Template Include"
+msgstr "Template Include"
+
+#: admin/includes/add_post_column.php:13
+#: admin/views/gsettings_partials/animation.php:9
+msgid "Animation"
+msgstr "Animation"
+
+#: admin/includes/add_post_column.php:14
+msgid "Date"
+msgstr "Date"
+
+#: admin/includes/add_post_type.php:9 admin/includes/add_post_type.php:10
+#: admin/includes/add_post_type.php:34
+msgid "Slider SEO"
+msgstr "Slider SEO"
+
+#: admin/includes/add_post_type.php:11
+msgid "Slider Archives"
+msgstr "Slider Archives"
+
+#: admin/includes/add_post_type.php:12
+msgid "Parent Item:"
+msgstr "Parent Item:"
+
+#: admin/includes/add_post_type.php:13
+msgid "All Slider Items"
+msgstr "All Slider Items"
+
+#: admin/includes/add_post_type.php:14 admin/includes/add_post_type.php:15
+msgid "Add New Slider"
+msgstr ""
+
+#: admin/includes/add_post_type.php:16
+msgid "New Slider"
+msgstr ""
+
+#: admin/includes/add_post_type.php:17
+msgid "Edit Slider"
+msgstr ""
+
+#: admin/includes/add_post_type.php:18
+msgid "Update Slider"
+msgstr ""
+
+#: admin/includes/add_post_type.php:19
+msgid "View Slider"
+msgstr ""
+
+#: admin/includes/add_post_type.php:20
+msgid "Search Slider"
+msgstr ""
+
+#: admin/includes/add_post_type.php:21
+msgid "Not found"
+msgstr ""
+
+#: admin/includes/add_post_type.php:22
+msgid "Not found in Trash"
+msgstr ""
+
+#: admin/includes/add_post_type.php:23
+msgid "Featured Image"
+msgstr ""
+
+#: admin/includes/add_post_type.php:24
+msgid "Set featured image"
+msgstr ""
+
+#: admin/includes/add_post_type.php:25
+msgid "Remove featured image"
+msgstr ""
+
+#: admin/includes/add_post_type.php:26
+msgid "Use as featured image"
+msgstr ""
+
+#: admin/includes/add_post_type.php:27
+msgid "Insert into item"
+msgstr ""
+
+#: admin/includes/add_post_type.php:28
+msgid "Uploaded to this item"
+msgstr ""
+
+#: admin/includes/add_post_type.php:29
+msgid "Items list"
+msgstr ""
+
+#: admin/includes/add_post_type.php:30
+msgid "Items list navigation"
+msgstr ""
+
+#: admin/includes/add_post_type.php:31
+msgid "Filter items list"
+msgstr ""
+
+#: admin/includes/add_post_type.php:35
+msgid "Create slides fast and easy"
+msgstr ""
+
+#: admin/includes/slider_seo_shortcode.php:77
+msgid "You have entered an invalid Slider SEO Shortcode"
+msgstr ""
+
+#: admin/views/admin.php:26 admin/views/admin.php:135
+msgid "Delete All Slides"
+msgstr ""
+
+#: admin/views/admin.php:32 admin/views/admin.php:140 admin/views/admin.php:152
+msgid "Restore Deleted Slides"
+msgstr ""
+
+#: admin/views/admin.php:33 admin/views/admin.php:141 admin/views/admin.php:157
+msgid "Add Slide"
+msgstr ""
+
+#: admin/views/admin.php:56
+msgid "Edit"
+msgstr ""
+
+#: admin/views/admin.php:59
+msgid "Clone"
+msgstr ""
+
+#: admin/views/admin.php:62
+msgid "Delete"
+msgstr ""
+
+#: admin/views/admin.php:69
+msgid "SEO"
+msgstr ""
+
+#: admin/views/admin.php:72
+msgid "Others"
+msgstr ""
+
+#: admin/views/admin.php:78
+msgid "Slider Image Title Text"
+msgstr ""
+
+#: admin/views/admin.php:80
+msgid ""
+"<b>Use keyword(s) in title. Preferably using english words.</b> <br><br>ie: "
+"istead of \"iStock_00044xSmall.jpg\" which doesn't add much information "
+"about an image, use \"image-optimization.jpg\"."
+msgstr ""
+
+#: admin/views/admin.php:87
+msgid "Slider Image Alt Text"
+msgstr ""
+
+#: admin/views/admin.php:89
+msgid ""
+"<b>Create descriptive alt text</b> <br><br>\n"
+"\t\t\t\t\t\t\tAlt text or tags are another way that search engines help "
+"determine what your image is about. Unlike traditional web content, search "
+"engines can not determine the text content of an image. (Search spiders are "
+"pretty smart, but as far as I know they haven't developed eyes yet.) As a "
+"result, search engines need to rely on captions around the image, alt text, "
+"file names and other surrounding text. Adding descriptive text in the alt "
+"tag helps the search engines determine what the content of the image is."
+"<br><br> If an image is used as navigation, ie as a link to another page, be "
+"sure to use alt text that is meaningful to the content of the page being "
+"linked to."
+msgstr ""
+
+#: admin/views/admin.php:103
+msgid ""
+"<b>Short descriptive content about the image</b> <br><br>Image captions are "
+"important because they are one of the most well-read pieces of content on "
+"your entire site."
+msgstr ""
+
+#: admin/views/admin.php:111
+msgid ""
+"<b>The right anchor text</b> <br><br>Anchor text is another important factor "
+"in image SEO. If you decide to link to images with text, your anchor text "
+"can play a role in how your image is ranked for keywords. Use descriptive "
+"anchor text that describes the image.  For example, linking to an image "
+"using a generic term like \\\"image\\\" or \\\"photo\\\" or a file name that "
+"doesn't use keywords doesn't give search engines much meaningful information "
+"on what the image is about. Linking to an image with keywords is helpful to "
+"search engines as well as people visiting your site."
+msgstr ""
+
+#: admin/views/admin.php:119
+msgid "Close media panel"
+msgstr ""
+
+#: admin/views/admin.php:162
+msgid "Save Slide"
+msgstr ""
+
+#: admin/views/admin.php:167
+msgid "Scroll to Top"
+msgstr ""
+
+#: admin/views/admin_gsettings.php:25
+msgid "Basic"
+msgstr ""
+
+#: admin/views/admin_gsettings.php:28
+msgid "Advanced"
+msgstr ""
+
+#: admin/views/admin_gsettings.php:37
+msgid "The basic settings configuration allows you to change main preferences."
+msgstr ""
+
+#: admin/views/admin_gsettings.php:50
+msgid ""
+"This configuration allows you to change various preferences to suit your "
+"needs."
+msgstr ""
+
+#: admin/views/admin_shortcode.php:7
+msgid "PHP file"
+msgstr ""
+
+#: admin/views/admin_shortcode.php:13
+msgid ""
+"Copy this shortcode and paste it into your post, page, or text widget "
+"content."
+msgstr ""
+
+#: admin/views/admin_shortcode.php:23
+msgid "Copy & paste this php code into any of your php theme files."
+msgstr ""
+
+#: admin/views/gsettings_partials/anim_speed.php:4
+msgid "Speed"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:13
+msgid "bounceIn bounceOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:14
+msgid "bounceInDown bounceOutDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:15
+msgid "fadeIn fadeOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:16
+msgid "fadeInDownBig fadeOutDownBig"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:17
+msgid "rotateIn rotateOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:18
+msgid "rotateInUpRight rotateOutUpRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:19
+msgid "slideInUp slideOutUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:20
+msgid "slideInDown slideOutDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:21
+msgid "zoomIn zoomOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:22
+msgid "zoomInUp zoomOutUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:30
+#: admin/views/gsettings_partials/animation.php:111
+msgid "Attention Seekers"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:31
+#: admin/views/gsettings_partials/animation.php:112
+msgid "bounce"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:32
+#: admin/views/gsettings_partials/animation.php:113
+msgid "flash"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:33
+#: admin/views/gsettings_partials/animation.php:114
+msgid "pulse"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:34
+#: admin/views/gsettings_partials/animation.php:115
+msgid "rubberBand"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:35
+#: admin/views/gsettings_partials/animation.php:116
+msgid "shake"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:36
+#: admin/views/gsettings_partials/animation.php:117
+msgid "swing"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:37
+#: admin/views/gsettings_partials/animation.php:118
+msgid "tada"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:38
+#: admin/views/gsettings_partials/animation.php:119
+msgid "wobble"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:39
+#: admin/views/gsettings_partials/animation.php:120
+msgid "jello"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:42
+msgid "Bouncing Entrances"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:43
+msgid "bounceIn"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:44
+msgid "bounceInDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:45
+msgid "bounceInLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:46
+msgid "bounceInRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:47
+msgid "bounceInUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:50
+msgid "Fading Entrances"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:51
+msgid "fadeIn"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:52
+msgid "fadeInDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:53
+msgid "fadeInDownBig"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:54
+msgid "fadeInLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:55
+msgid "fadeInLeftBig"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:56
+msgid "fadeInRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:57
+msgid "fadeInRightBig"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:58
+msgid "fadeInUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:59
+msgid "fadeInUpBig"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:62
+#: admin/views/gsettings_partials/animation.php:143
+msgid "Flippers"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:63
+#: admin/views/gsettings_partials/animation.php:144
+msgid "flip"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:64
+#: admin/views/gsettings_partials/animation.php:145
+msgid "flipInX"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:65
+#: admin/views/gsettings_partials/animation.php:146
+msgid "flipInY"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:66
+#: admin/views/gsettings_partials/animation.php:147
+msgid "flipOutX"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:67
+#: admin/views/gsettings_partials/animation.php:148
+msgid "flipOutY"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:70
+#: admin/views/gsettings_partials/animation.php:151
+msgid "Lightspeed"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:71
+#: admin/views/gsettings_partials/animation.php:152
+msgid "lightSpeedIn"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:72
+#: admin/views/gsettings_partials/animation.php:153
+msgid "lightSpeedOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:75
+msgid "Rotating Entrances"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:76
+msgid "rotateIn"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:77
+msgid "rotateInDownLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:78
+msgid "rotateInDownRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:79
+msgid "rotateInUpLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:80
+msgid "rotateInUpRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:83
+msgid "Sliding Entrances"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:84
+msgid "slideInUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:85
+msgid "slideInDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:86
+msgid "slideInLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:87
+msgid "slideInRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:91
+msgid "Zoom Entrances"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:92
+msgid "zoomIn"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:93
+msgid "zoomInDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:94
+msgid "zoomInLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:95
+msgid "zoomInRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:96
+msgid "zoomInUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:99
+#: admin/views/gsettings_partials/animation.php:180
+msgid "Specials"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:100
+#: admin/views/gsettings_partials/animation.php:181
+msgid "hinge"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:101
+#: admin/views/gsettings_partials/animation.php:182
+msgid "rollIn"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:102
+#: admin/views/gsettings_partials/animation.php:183
+msgid "rollOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:123
+msgid "Bouncing Exits"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:124
+msgid "bounceOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:125
+msgid "bounceOutDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:126
+msgid "bounceOutLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:127
+msgid "bounceOutRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:128
+msgid "bounceOutUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:131
+msgid "Fading Exits"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:132
+msgid "fadeOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:133
+msgid "fadeOutDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:134
+msgid "fadeOutDownBig"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:135
+msgid "fadeOutLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:136
+msgid "fadeOutLeftBig"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:137
+msgid "fadeOutRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:138
+msgid "fadeOutRightBig"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:139
+msgid "fadeOutUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:140
+msgid "fadeOutUpBig"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:156
+msgid "Rotating Exits"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:157
+msgid "rotateOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:158
+msgid "rotateOutDownLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:159
+msgid "rotateOutDownRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:160
+msgid "rotateOutUpLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:161
+msgid "rotateOutUpRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:164
+msgid "Sliding Exits"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:165
+msgid "slideOutUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:166
+msgid "slideOutDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:167
+msgid "slideOutLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:168
+msgid "slideOutRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:172
+msgid "Zoom Exits"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:173
+msgid "zoomOut"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:174
+msgid "zoomOutDown"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:175
+msgid "zoomOutLeft"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:176
+msgid "zoomOutRight"
+msgstr ""
+
+#: admin/views/gsettings_partials/animation.php:177
+msgid "zoomOutUp"
+msgstr ""
+
+#: admin/views/gsettings_partials/autoWidth.php:9
+msgid "Auto Width"
+msgstr ""
+
+#: admin/views/gsettings_partials/autoheight.php:9
+msgid "Auto Height"
+msgstr ""
+
+#: admin/views/gsettings_partials/autoplayTimeout.php:5
+msgid "Timeout"
+msgstr ""
+
+#: admin/views/gsettings_partials/caption.php:9
+msgid "Show Caption"
+msgstr ""
+
+#: admin/views/gsettings_partials/captionPos.php:11
+msgid "Caption Position"
+msgstr ""
+
+#: admin/views/gsettings_partials/captionPos.php:14
+#: admin/views/gsettings_partials/navPos.php:15
+msgid "Top"
+msgstr ""
+
+#: admin/views/gsettings_partials/captionPos.php:15
+#: admin/views/gsettings_partials/captionPos.php:20
+#: admin/views/gsettings_partials/navPos.php:16
+#: admin/views/gsettings_partials/navPos.php:24
+#: admin/views/gsettings_partials/navPos.php:31
+#: admin/views/gsettings_partials/navPos.php:42
+#: admin/views/gsettings_partials/navPos.php:49
+msgid "Left"
+msgstr ""
+
+#: admin/views/gsettings_partials/captionPos.php:16
+#: admin/views/gsettings_partials/captionPos.php:21
+#: admin/views/gsettings_partials/navPos.php:19
+#: admin/views/gsettings_partials/navPos.php:26
+#: admin/views/gsettings_partials/navPos.php:33
+#: admin/views/gsettings_partials/navPos.php:44
+#: admin/views/gsettings_partials/navPos.php:51
+msgid "Right"
+msgstr ""
+
+#: admin/views/gsettings_partials/captionPos.php:19
+#: admin/views/gsettings_partials/navPos.php:41
+msgid "Bottom"
+msgstr ""
+
+#: admin/views/gsettings_partials/dots.php:4
+msgid "Dots"
+msgstr ""
+
+#: admin/views/gsettings_partials/lazyload.php:9
+msgid "Lazyload"
+msgstr ""
+
+#: admin/views/gsettings_partials/loop.php:9
+msgid "Loop"
+msgstr ""
+
+#: admin/views/gsettings_partials/margin.php:5
+msgid "Margin"
+msgstr ""
+
+#: admin/views/gsettings_partials/navPos.php:12
+msgid "Nav Position"
+msgstr ""
+
+#: admin/views/gsettings_partials/navPos.php:18
+#: admin/views/gsettings_partials/navPos.php:25
+#: admin/views/gsettings_partials/navPos.php:32
+#: admin/views/gsettings_partials/navPos.php:43
+#: admin/views/gsettings_partials/navPos.php:50
+msgid "Center"
+msgstr ""
+
+#: admin/views/gsettings_partials/navPos.php:20
+#: admin/views/gsettings_partials/navPos.php:27
+#: admin/views/gsettings_partials/navPos.php:34
+#: admin/views/gsettings_partials/navPos.php:38
+#: admin/views/gsettings_partials/navPos.php:45
+#: admin/views/gsettings_partials/navPos.php:52
+msgid "Justify"
+msgstr ""
+
+#: admin/views/gsettings_partials/navPos.php:23
+msgid "Outer Top"
+msgstr ""
+
+#: admin/views/gsettings_partials/navPos.php:30
+msgid "Middle"
+msgstr ""
+
+#: admin/views/gsettings_partials/navPos.php:37
+msgid "Outer Middle"
+msgstr ""
+
+#: admin/views/gsettings_partials/navPos.php:48
+msgid "Outer Bottom"
+msgstr ""
+
+#: admin/views/gsettings_partials/navigation.php:4
+msgid "Navigation"
+msgstr ""
+
+#: admin/views/gsettings_partials/navtext.php:15
+msgid "Nav Text"
+msgstr ""
+
+#: admin/views/gsettings_partials/padding.php:5
+msgid "Padding"
+msgstr ""
+
+#: admin/views/gsettings_partials/slider_type.php:19
+msgid "Slider Type"
+msgstr ""
+
+#: admin/views/gsettings_partials/width_height.php:11
+msgid "Slider Layout"
+msgstr ""
+
+#: admin/views/gsettings_partials/width_height.php:30
+msgid "Width"
+msgstr ""
+
+#: admin/views/gsettings_partials/width_height.php:36
+msgid "Height"
+msgstr ""
