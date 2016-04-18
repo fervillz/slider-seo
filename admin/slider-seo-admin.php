@@ -93,19 +93,16 @@ class Slider_SEO_Admin {
 	}
 
 	public function get_custom_post_type_template($single_template) {
-    global $post;
+	    global $post;
 
-     if ($post->post_type == 'slider_seo') {
-          $single_template = plugin_dir_path( __FILE__ ) . '/slider-seo-template.php';
-     }
-     else{
-     	echo $single_template;
-     }
-     return $single_template;
+	   	if ($post->post_type == 'slider_seo') {
+	   		$single_template = plugin_dir_path( __FILE__ ) . '/slider-seo-template.php';
+	    }
+
+	    return $single_template;
 	}
-	
 
-	 /**
+	/**
 	 * Define constants (optional)
 	 *
 	 * @since  0.1
@@ -264,7 +261,12 @@ class Slider_SEO_Admin {
 
 		//slider nav position
 		$this->save_post_meta_animation('slider_seo_navPos', $post_id);
+
+		//slider caption
+		$this->save_post_meta_animation('slider_seo_basic_caption', $post_id);
 		
+		//slider caption position
+		$this->save_post_meta_animation('slider_seo_captionPos', $post_id);
 
 		
 	}

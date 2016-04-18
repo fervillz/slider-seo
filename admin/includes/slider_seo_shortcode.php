@@ -2,9 +2,6 @@
 
 function slider_seo_func( $atts ){
 
-	//includes
-	include_once( slider_SEO_ADMIN_DIR.'/views/gsettings_partials/navPosCss.php' );
-
 	$post = shortcode_atts( array(
 		'id' => '1',
 	), $atts );
@@ -23,10 +20,21 @@ function slider_seo_func( $atts ){
 	// The Query
 	$slider_seo_query = new WP_Query( $args );
 
+	//counter
+	$i = 0;
+
 	//meta
 	$imgSrcs = get_post_meta( $post['id'], 'slider-img-src', true );
+	$imgSrcsT = get_post_meta( $post['id'], 'slider-img-srcT', true );
+	$imgTitles = get_post_meta( $post['id'], 'slider-img-title', true );
+	$imgAlts = get_post_meta( $post['id'], 'slider-img-alt', true );
+	$imgCaption = get_post_meta( $post['id'], 'slider-img-caption', true );
+	$imgUrls = get_post_meta( $post['id'], 'slider-img-url', true );
 	$slider_seo_basic_lazyload = get_post_meta( $post['id'], 'slider_seo_basic_lazyload', true );
 	$slider_seo_navPos = get_post_meta( $post['id'], 'slider_seo_navPos', true );
+	$slider_seo_captionPos = get_post_meta( $post['id'], 'slider_seo_captionPos', true );
+	$slider_seo_basic_caption = get_post_meta( $post['id'], 'slider_seo_basic_caption', true );
+	
 	if ($slider_seo_navPos) {
 		$slider_seo_navPos = $slider_seo_navPos.' setNavPos';
 	}
@@ -46,17 +54,26 @@ function slider_seo_func( $atts ){
 					
 					<?php foreach ( $imgSrcs as $imgSrc ) { ?>
 						<?php if ( $slider_seo_basic_lazyload == true ): ?>
-							<img class="owl-lazy" data-src="<?php echo $imgSrc; ?>" alt="" title=""/>
+							<a class="slider-seo-urls" href="<?php echo $imgUrls[$i] ?>">
+								<img class="owl-lazy" data-src="<?php echo $imgSrc; ?>" alt="<?php echo $imgAlts[$i] ?>" title="<?php echo $imgTitles[$i] ?>"/>
+								<span class="slider-seo-caption <?php echo $slider_seo_captionPos; ?> <?php if (!$slider_seo_basic_caption) { echo 'hidden'; } ?> topleft"><?php echo $imgCaption[$i] ?></span>
+							</a>
 						<?php else: ?>
-							<img src="<?php echo $imgSrc; ?>" alt="" title=""/>
-						<?php endif; ?>
+							<a class="slider-seo-urls" href="<?php echo $imgUrls[$i] ?>">
+								<img src="<?php echo $imgSrc; ?>" alt="<?php echo $imgAlts[$i] ?>" title="<?php echo $imgTitles[$i] ?>"/>
+
+								<span class="slider-seo-caption <?php echo $slider_seo_captionPos; ?> <?php if (!$slider_seo_basic_caption) { echo 'hidden'; } ?>"><?php echo $imgCaption[$i] ?></span>
+							</a>
+						<?php endif;  $i++;?>
 					<?php } ?>
 
 					</div>
 				<?php if (  $slider_layout == '1' ): ?>
 					</div><!-- .sliderSeoFixedLayout -->
 				<?php endif; ?>
-			<?php 
+			<?php
+
+
 		}
 	} else {
 		echo "You have entered an invalid Slider SEO Shortcode";
@@ -99,30 +116,24 @@ function slider_seo_func( $atts ){
 
 			$('.slider-seo-owl-carousel').owlCarousel( {
 				animateOut: '<?php echo $anim2; ?>',
-			    animateIn: '<?php echo $anim1; ?>',
-			    items: <?php echo ( $slider_type === '' ) ? '1' : $slider_type; ?>,
-			    margin:<?php echo ( $slider_seo_basic_margin === '' ) ? '0' : $slider_seo_basic_margin; ?>,
-			    stagePadding:<?php echo ( $slider_seo_basic_padding === '' ) ? '0' : $slider_seo_basic_padding; ?>,
-			    smartSpeed:<?php echo $slider_seo_basic_speed; ?>,
-			    nav: <?php echo ( $slider_seo_basic_navigation === 'true' ) ? 'true' : 'false'; ?>,
-			 	dots: <?php echo ( $slider_seo_basic_dots === 'true' ) ? 'true' : 'false'; ?>,
-			    loop: <?php echo ( ($slider_seo_basic_loop === 'true') || ($slider_seo_basic_loop === '') ) ? 'true' : 'false'; ?>,
-			    autoplay: true,
-			    autoplayTimeout:<?php echo ( $slider_seo_basic_autoplayTimeout === '' ) ? '1000' : $slider_seo_basic_autoplayTimeout; ?>,
-			    autoHeight: <?php echo ( ($slider_seo_basic_autoheight === 'true') || ($slider_seo_basic_autoheight === '') ) ? 'true' : 'false'; ?>,
-			    lazyLoad: <?php echo ( ($slider_seo_basic_lazyload === 'true') || ($slider_seo_basic_lazyload === '') ) ? 'true' : 'false'; ?>,
-			    autoWidth:<?php echo ( ($slider_seo_basic_autoWidth === 'true') || ($slider_seo_basic_autoWidth === '') ) ? 'true' : 'false'; ?>,
-			    navText: <?php echo ( $slider_seo_basic_navtext === "" ) ? "['next','prev']" : "['".$navText1."','".$navText2."']" ?>,
+				animateIn: '<?php echo $anim1; ?>',
+				items: <?php echo ( $slider_type === '' ) ? '1' : $slider_type; ?>,
+				margin:<?php echo ( $slider_seo_basic_margin === '' ) ? '0' : $slider_seo_basic_margin; ?>,
+				stagePadding:<?php echo ( $slider_seo_basic_padding === '' ) ? '0' : $slider_seo_basic_padding; ?>,
+				smartSpeed:<?php echo $slider_seo_basic_speed; ?>,
+				nav: <?php echo ( $slider_seo_basic_navigation === 'true' ) ? 'true' : 'false'; ?>,
+				dots: <?php echo ( $slider_seo_basic_dots === 'true' ) ? 'true' : 'false'; ?>,
+				loop: <?php echo ( ($slider_seo_basic_loop === 'true') || ($slider_seo_basic_loop === '') ) ? 'true' : 'false'; ?>,
+				autoplay: true,
+				autoplayTimeout:<?php echo ( $slider_seo_basic_autoplayTimeout === '' ) ? '1000' : $slider_seo_basic_autoplayTimeout; ?>,
+				autoHeight: <?php echo ( ($slider_seo_basic_autoheight === 'true') || ($slider_seo_basic_autoheight === '') ) ? 'true' : 'false'; ?>,
+				lazyLoad: <?php echo ( ($slider_seo_basic_lazyload === 'true') || ($slider_seo_basic_lazyload === '') ) ? 'true' : 'false'; ?>,
+				autoWidth:<?php echo ( ($slider_seo_basic_autoWidth === 'true') || ($slider_seo_basic_autoWidth === '') ) ? 'true' : 'false'; ?>,
+				navText: <?php echo ( $slider_seo_basic_navtext === "" ) ? "['next','prev']" : "['".$navText1."','".$navText2."']" ?>,
 			});
 
 		})(jQuery);
 	</script>
-
-	<style>
-		.slider-seo-owl-carousel-<?php echo $post['id']; ?> .owl-controls.top-center{
-			navPosTop();
-		}
-	</style>
 <?php }
 
 add_shortcode( 'slider-seo', 'slider_seo_func' );

@@ -3,6 +3,143 @@
 	-webkit-box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
 	box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
 
+	/* Tooltip container */
+	.tooltip {
+		position: relative;
+		font-size: 12px;
+		width: inherit;
+		display: inherit;
+		border-bottom: inherit;
+		height: inherit;
+		margin-left: 3px;
+		cursor: help;
+
+		&.gray-green {
+			&:before {
+				color: #b4b9be;
+			}
+
+			&:hover:before {
+				color: #8DC339;
+			}
+		}
+
+		/* If you want dots under the hoverable text */
+		/* Tooltip text */
+
+		/* Show the tooltip text when you mouse over the tooltip container */
+		&:hover .tooltiptext {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.tooltiptext {
+			line-height: 150%;
+			visibility: hidden;
+			background-color: #fff;
+			text-align: left;
+			-webkit-box-shadow: 0 1px 5px 0 #A1A1A1;
+			box-shadow: 0 1px 5px 0 #A1A1A1;
+			font-family: sans-serif;
+			border-radius: 4px;
+			position: absolute;
+			z-index: 2;
+			opacity: 0;
+			transition: opacity 300ms;
+			color: #000;
+			font-size: 12px;
+			text-shadow: none;
+
+			&.align-center {
+				text-align: center;
+			}
+
+			&.large {
+				width: 300px;
+				padding: 1em;
+			}
+
+			&.medium {
+				width: 200px;
+				padding: 10px;
+			}
+
+			&.small {
+				width: 100px;
+				padding: 10px;
+			}
+
+			&.top {
+				bottom: 100%;
+				left: 50%;
+				margin-left: calc(-150px - 1em);
+				margin-bottom: 12px;
+
+				/* Tooltip arrow */
+				&:after {
+					margin-left: -10px;
+					border-width: 10px;
+					top: 100%;
+					left: 50%;
+					border-color: #fff transparent transparent transparent;
+				}
+
+				/* Tooltip arrow */
+				&:before {
+					margin-left: -11px;
+					border-width: 11px;
+					top: 100%;
+					left: 50%;
+					border-color: #A1A1A1 transparent transparent transparent;
+				}
+			}
+
+			&.left {
+				top: -10px;
+				right: 100%;
+				margin-right: 15px;
+
+				/* Tooltip arrow */
+				&:after {
+					top: 50%;
+					left: auto;
+					right: -20px;
+					margin-top: -10px;
+					margin-left: 0;
+					border-width: 10px;
+					border-style: solid;
+					border-color: rgba(255, 0, 0, 0) transparent rgba(255, 2, 2, 0) white;
+				}
+
+				/* Tooltip arrow */
+				&:before {
+					top: 50%;
+					left: auto;
+					right: -20px;
+					margin-top: -10px;
+					margin-left: 0;
+					border-width: 10px;
+					border-style: solid;
+					border-color: rgba(255, 0, 0, 0) rgba(0, 0, 0, 0) rgba(255, 2, 2, 0) rgb(0, 0, 0);
+				}
+			}
+
+			/* Tooltip arrow */
+			&:after {
+				content: "";
+				position: absolute;
+				border-style: solid;
+			}
+
+			/* Tooltip arrow */
+			&:before {
+				content: "";
+				position: absolute;
+				border-style: solid;
+			}
+		}
+	}
+
 	.hndle.ui-sortable-handle {
 		background: #5b9dd9;
 		color: #fff;
@@ -11,7 +148,7 @@
 	.toggle-indicator:before {
 		color: #fff;
 	}
-	
+
 	table.slider-wrapper {
 		border-collapse: collapse;
 
@@ -161,10 +298,6 @@
 				display: flex;
 				align-items: center;
 				cursor: auto;
-
-				.tooltip {
-					cursor: help;
-				}
 			}
 		}
 
@@ -216,79 +349,6 @@
 				background-color: rgba(201, 253, 140, 0);
 			}
 		}
-
-		/* Tooltip container */
-		.tooltip {
-			position: relative;
-			font-size: 12px;
-			width: inherit;
-			display: inherit;
-			border-bottom: inherit;
-			height: inherit;
-			margin-left: 3px;
-
-			&:before {
-				color: #b4b9be;
-			}
-
-			&:hover:before {
-				color: #8DC339;
-			}
-
-			/* If you want dots under the hoverable text */
-			/* Tooltip text */
-
-			/* Show the tooltip text when you mouse over the tooltip container */
-			&:hover .tooltiptext {
-				visibility: visible;
-				opacity: 1;
-			}
-
-			.tooltiptext {
-				line-height: 150%;
-				visibility: hidden;
-				width: 300px;
-				background-color: #fff;
-				text-align: left;
-				padding: 1em;
-				-webkit-box-shadow: 0 1px 5px 0 #A1A1A1;
-				box-shadow: 0 1px 5px 0 #A1A1A1;
-				font-family: sans-serif;
-				border-radius: 4px;
-				position: absolute;
-				z-index: 2;
-				bottom: 100%;
-				left: 50%;
-				margin-left: calc(-150px - 1em);
-				opacity: 0;
-				transition: opacity 300ms;
-				margin-bottom: 12px;
-
-				/* Tooltip arrow */
-				&:after {
-					content: "";
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					margin-left: -10px;
-					border-width: 10px;
-					border-style: solid;
-					border-color: #fff transparent transparent transparent;
-				}
-
-				/* Tooltip arrow */
-				&:before {
-					content: "";
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					margin-left: -11px;
-					border-width: 11px;
-					border-style: solid;
-					border-color: #A1A1A1 transparent transparent transparent;
-				}
-			}
-		}
 	}
 
 	#add-slide {
@@ -336,27 +396,52 @@
 	.restore-slide {
 		visibility: hidden;
 	}
+
+	.float {
+		position: fixed;
+		right: 30px;
+		bottom: 50px;
+		display: none;
+
+		#float-save,
+		#float-totop,
+		#add-slide,
+		#restore-slide {
+			@extend .tooltip;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+	}
 }
 
-.post-type-slider_seo .no-js #loader {
-	display: none;
-}
+.post-type-slider_seo {
+	.no-js #loader {
+		display: none;
+	}
 
-.post-type-slider_seo .js #loader {
-	display: block;
-	position: absolute;
-	left: 100px;
-	top: 0;
-}
+	.js #loader {
+		display: block;
+		position: absolute;
+		left: 100px;
+		top: 0;
+	}
 
-.post-type-slider_seo .se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url("../images/loading.gif") center no-repeat #fff;
+	.se-pre-con {
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		background: url("../images/loading.gif") center no-repeat #fff;
+	}
+
+	.media-sidebar.visible {
+		pointer-events: none;
+	}
 }
 
 #slider_seo_shortcode {

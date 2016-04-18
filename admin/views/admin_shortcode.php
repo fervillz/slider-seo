@@ -1,21 +1,16 @@
-<?php 
-
-$postid = $post->ID; ?>
-
+<?php  $postid = $post->ID; ?>
 <ul class="tabs-toggle">
 	<li class="hide-if-no-js tab-1 tabs-active">
-		<a href="#" id="tab-shortcode">Shortcode</a>
+		<a href="#" id="tab-shortcode"><?php _e( 'Shortcode', 'slider-seo'); ?></a>
 	</li>
 	<li class="hide-if-no-js tab-2">
-		<a href="#" id="tab-phpcode">PHP file</a>
+		<a href="#" id="tab-phpcode"><?php _e( 'PHP file', 'slider-seo'); ?></a>
 	</li>
 </ul>
 <div class="tab-content">
 	<div class="tab-item">
  		 <span class="slider-seo-instruction">
-			<p>
-				Copy this shortcode and paste it into your post, page, or text widget content:
-			</p>
+			<p><?php _e( 'Copy this shortcode and paste it into your post, page, or text widget content.', 'slider-seo'); ?></p>
 		</span>
 		<span class="slider-seo-shortcode">
 			<input class="widefat" readonly='readonly' type='text' value='[slider-seo id="<?php echo $postid; ?>"]'>
@@ -25,7 +20,7 @@ $postid = $post->ID; ?>
 	<div class="tab-item" style="display: none;">
 		 <span class="slider-seo-instruction">
 			<p>
-				Copy & paste this php code into any of your php theme files.
+				<?php _e( 'Copy & paste this php code into any of your php theme files.', 'slider-seo'); ?>
 			</p>
 		</span>
 		<span class="slider-seo-shortcode">

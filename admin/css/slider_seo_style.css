@@ -95,8 +95,13 @@
 }
 
 .slider-seo-owl-carousel .owl-nav {
-  pointer-events: auto;
+  pointer-events: none;
   width: 100%;
+}
+
+.slider-seo-owl-carousel .owl-nav .owl-prev,
+.slider-seo-owl-carousel .owl-nav .owl-next {
+  pointer-events: auto;
 }
 
 .slider-seo-owl-carousel .owl-dots {
@@ -105,6 +110,41 @@
   position: absolute;
   bottom: 10px;
   left: 0;
+  text-align: center;
+}
+
+.slider-seo-owl-carousel .slider-seo-urls {
+  display: block;
+  position: relative;
+}
+
+.slider-seo-owl-carousel .slider-seo-urls .slider-seo-caption {
+  position: absolute;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  line-height: normal;
+  font-size: 12px;
+}
+
+.slider-seo-owl-carousel .slider-seo-urls .slider-seo-caption[class*="top"] {
+  top: 0;
+}
+
+.slider-seo-owl-carousel .slider-seo-urls .slider-seo-caption[class*="bottom"] {
+  bottom: 0;
+}
+
+.slider-seo-owl-carousel .slider-seo-urls .slider-seo-caption[class*="left"] {
+  left: 0;
+}
+
+.slider-seo-owl-carousel .slider-seo-urls .slider-seo-caption[class*="right"] {
+  right: 0;
+}
+
+.sliderSeoFixedLayout {
+  margin: auto;
 }
 
 /*# sourceMappingURL=slider_seo_style.css.map */

@@ -8,7 +8,7 @@ $screens = array( 'slider_seo' );
  
             add_meta_box(
                 'slider_seo_slides',
-                'Click "Add Slide" to add new slider',
+                __( 'Click "Add Slide" to add new slider', 'slider-seo'),
                 array( $this, 'display_main_metabox' ),
                 $screen,
                 'normal',
@@ -20,10 +20,11 @@ $screens = array( 'slider_seo' );
  
             add_meta_box(
                 'slider_seo_animation',
-                'General Settings',
+                __( 'General Settings', 'slider-seo'),
                 array( $this, 'display_main_metabox_gsettings' ),
                 $screen,
-                'side'
+                'side',
+                'high'
             );
         };
 
@@ -31,10 +32,11 @@ $screens = array( 'slider_seo' );
  
             add_meta_box(
                 'slider_seo_shortcode',
-                'How to Use',
+                __( 'How to Use', 'slider-seo'),
                 array( $this, 'display_main_metabox_shortcode' ),
                 $screen,
-                'side'
+                'side',
+                'high'
             );
         };
 

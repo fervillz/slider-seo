@@ -6,7 +6,7 @@ $slider_seo_basic_loop = get_post_meta( $post->ID, 'slider_seo_basic_loop', true
 ?>
 	<?php if ( $tab == 'advanced'): ?>
 		<tr>
-			<td class="">Loop</td>
+			<td class=""><?php _e( 'Loop', 'slider-seo'); ?></td>
 			<td>
 				<?php metaloop($slider_seo_basic_loop); ?>
 			</td>

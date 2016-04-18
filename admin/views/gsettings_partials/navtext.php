@@ -10,9 +10,9 @@ if ($slider_seo_basic_navtext_scr) {
 
 ?>
 
-	<?php if ( $tab == 'advanced'): ?>
+<?php if ( $tab == 'advanced'): ?>
 		<tr>
-			<td class="">Nav Text</td>
+			<td class=""><?php _e( 'Nav Text', 'slider-seo'); ?></td>
 			<td>
 				<input type="text" class="slider_seo_basic_navtext" name="slider_seo_basic_navtext[]" id="slider_seo_basic_navtext_prev" value="<?php echo ($navText1 == '') ? 'prev' : $navText1; ?>">
 			</td>

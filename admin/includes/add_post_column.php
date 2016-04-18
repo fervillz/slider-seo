@@ -6,12 +6,12 @@ function custom_columns( $columns ) {
 
 	$columns = array(
 		'cb' => '<input type="checkbox" />',
-		'title' => __( 'Slider' ),
-		'thumb' => __( 'Thumbnails' ),
-		'shortcode' => __( 'Shortcode' ),
-		'template' => __( 'Template Include' ),
-		'animation' => __( 'Animation' ),
-		'date' => __( 'Date' )
+		'title' => __( 'Slider', 'slider-seo'),
+		'thumb' => __( 'Thumbnails', 'slider-seo'),
+		'shortcode' => __( 'Shortcode', 'slider-seo'),
+		'template' => __( 'Template Include', 'slider-seo'),
+		'animation' => __( 'Animation', 'slider-seo'),
+		'date' => __( 'Date', 'slider-seo')
 	);
 
 	return $columns;
@@ -42,7 +42,7 @@ function slider_seo_columns( $column, $post_id ) {
 			break;
 
 		case 'template' :
-			esc_html_e("<?php echo do_shortcode(\"[id='".$post->ID."']\"); ?>","slider-seo");
+			esc_html_e("<?php echo do_shortcode(\"[slider-seo id='".$post->ID."']\"); ?>","slider-seo");
 			break;
 
 		case 'thumb' :

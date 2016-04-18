@@ -16,7 +16,7 @@
 		</td>
 	<?php elseif ( $tab == 'advanced' ): ?>
 		<tr>
-			<td class="">Slider Type</td>
+			<td class=""><?php _e( 'Slider Type', 'slider-seo'); ?></td>
 			
 			<td class="slider-type-radio">
 				<input type="text" name="slider_type" class="widefat" id="slider_type_custom" value="<?php echo (get_post_meta( $post->ID, 'slider_type_custom', true ) === '') ? '1' : get_post_meta( $post->ID, 'slider_type_custom', true ) ; ?>" onkeyup="this.value=this.value.replace(/[^\d]/,'')">

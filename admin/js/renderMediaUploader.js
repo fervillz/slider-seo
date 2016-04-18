@@ -53,16 +53,21 @@ function renderMediaUploader($) {
 
 			//Create thumbnail
 			//Get imgSrcFileName of the image
-			imgSrcFileName = image_url;
+			if ( image_url ) {
+				imgSrcFileName = image_url;
 
-			//get extension
-			fileExtension = imgSrcFileName.split('.').pop();
+				//get extension
+				fileExtension = imgSrcFileName.split('.').pop();
 
-			//add thumbnail sizes
-			imgSrcFileName = imgSrcFileName.replace('.' + fileExtension, '-' + thumbnailSizeW + 'x' + thumbnailSizeH + '.' + fileExtension);
+				//add thumbnail sizes
+				imgSrcFileName = imgSrcFileName.replace('.' + fileExtension, '-' + thumbnailSizeW + 'x' + thumbnailSizeH + '.' + fileExtension);
 
-			//remove whitespaces
-			imgSrcFileName = imgSrcFileName.replace(/\s/g, '');
+				//remove whitespaces
+				imgSrcFileName = imgSrcFileName.replace(/\s/g, '');
+			}
+			else {
+				console.log('Error Create thumbnail');
+			}
 
 			//Ih there are multiple selected images
 			if ( counter > 0) {

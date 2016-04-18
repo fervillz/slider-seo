@@ -8,7 +8,7 @@
 
 	<?php if ( $tab == 'advanced'): ?>
 		<tr>
-			<td>Slider Layout</td>
+			<td><?php _e( 'Slider Layout', 'slider-seo'); ?></td>
 			<td class="slider-type-radio">
 				<?php if ( $default ) {
 						slider_layout( '2', $post );
@@ -27,13 +27,13 @@
 			} 
 		?>
 		<tr class="fixedLayout" <?php echo $layoutStyle; ?> >
-			<td class="">Width</td>
+			<td class=""><?php _e( 'Width', 'slider-seo'); ?></td>
 			<td>
 				<input type="text" name="slider_seo_basic_width" id="slider_seo_basic_width" value="<?php echo (get_post_meta( $post->ID, 'slider_seo_basic_width', true ) === '') ? '800' : get_post_meta( $post->ID, 'slider_seo_basic_width', true ) ; ?>" onkeyup="this.value=this.value.replace(/[^\d]/,'')">
 			</td>
 		</tr>
 		<tr class="fixedLayout" <?php echo $layoutStyle; ?> >
-			<td class="">Height</td>
+			<td class=""><?php _e( 'Height', 'slider-seo'); ?></td>
 			<td>
 				<input type="text" name="slider_seo_basic_height" id="slider_seo_basic_height" value="<?php echo (get_post_meta( $post->ID, 'slider_seo_basic_height', true ) === '') ? '300' : get_post_meta( $post->ID, 'slider_seo_basic_height', true ) ; ?>" onkeyup="this.value=this.value.replace(/[^\d]/,'')">
 			</td>

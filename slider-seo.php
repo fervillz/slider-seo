@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Slider SEO
  * Plugin URI:   https://wordpress.org/plugins/slider-seo
- * Description:  Responsive WordPress slider plus SEO friendly equals boost traffic in no time. Select from 60+ different slider animations and use its builtin slider themes.
+ * Description:  Responsive WordPress slider plus SEO friendly equals boost traffic in no time. Select from 60+ different slider animations and use its builtin slider carousels.
  * Version:      1.0.1
  * Author:       Fernando Villamor Jr
  * Author URI:   http://fernandovillamorjr.com/

@@ -16,14 +16,16 @@
 <?php include_once( 'gsettings_partials/autoWidth.php' ); ?>
 <?php include_once( 'gsettings_partials/navtext.php' ); ?>
 <?php include_once( 'gsettings_partials/navPos.php' ); ?>
+<?php include_once( 'gsettings_partials/caption.php' ); ?>
+<?php include_once( 'gsettings_partials/captionPos.php' ); ?>
 
 <!-- Tabs Toggle -->
 <ul class="tabs-toggle">
 	<li class="hide-if-no-js tab-1 tabs-active">
-		<a href="#" id="tab-basic">Basic</a>
+		<a href="#" id="tab-basic"><?php _e( 'Basic', 'slider-seo'); ?></a>
 	</li>
 	<li class="hide-if-no-js tab-2">
-		<a href="#" id="tab-advanced">Advanced</a>
+		<a href="#" id="tab-advanced"><?php _e( 'Advanced', 'slider-seo'); ?></a>
 	</li>
 </ul>
 
@@ -32,7 +34,7 @@
 
 	<!-- Tab Basic -->
 	<div class="tab-item">
-		 <span> <span class="slider-seo-instruction"> <p> The basic settings configuration allows you to change main preferences. </p> </span>
+		 <span> <span class="slider-seo-instruction"> <p><?php _e( 'The basic settings configuration allows you to change main preferences.', 'slider-seo'); ?></p> </span>
 			<table id="tab-basic">
 				<tr> <?php tr_slider_type($post); ?> </tr>
 				<tr> <?php animation($post); ?> </tr>
@@ -45,10 +47,9 @@
 
 	<!-- Tab Advanced -->
 	<div class="tab-item" style="display: none;">
-		 <span> <span class="slider-seo-instruction"> <p> This configuration allows you to change various preferences to suit your needs.</p> </span>
+		 <span> <span class="slider-seo-instruction"> <p><?php _e( 'This configuration allows you to change various preferences to suit your needs.', 'slider-seo'); ?></p> </span>
 			<table id="tab-advanced">
 				<input type="hidden" id="pageID" value="<?php echo $post->ID; ?>" />
-
 				<?php tr_slider_type($post,'advanced'); ?>
 				<?php animation($post, 'advanced'); ?>
 				<?php width_height($post, 'advanced') ?>
@@ -61,6 +62,8 @@
 				<?php lazyload($post, 'advanced'); ?>
 				<?php navtext($post, 'advanced') ?>
 				<?php navPos($post, 'advanced') ?>
+				<?php caption($post, 'advanced') ?>
+				<?php captionPos($post, 'advanced') ?>
 			 </table>
 		 </span>
 	</div>

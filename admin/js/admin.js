@@ -80,12 +80,12 @@
 
 		$('.tab-others').hide();
 
-		
+
 
 		//restore deleted slides
 		$('.restore-slide').click(function(evt) {
 			evt.preventDefault();
-		    restoreSliderItem($);
+			restoreSliderItem($);
 		});
 
 		//sohw loading while loading page
@@ -97,13 +97,13 @@
 		//clone slide
 		$('body').on('click', '.clone-slide', function(evt) {
 			evt.preventDefault();
-				console.log('cloning');
-				var $tr    = $(this).closest('tr');
-    			var $clone = $tr.clone(true);
-    			$tr.after($clone);
-    	});
+			console.log('cloning');
+			var $tr = $(this).closest('tr');
+			var $clone = $tr.clone(true);
+			$tr.after($clone);
+		});
 
-    	//tabs toggle
+		//tabs toggle
 		$('body').on('click', '.tabs-toggle #tab-seo', function(evt) {
 
 			evt.preventDefault();
@@ -134,26 +134,26 @@
 
 		//simple tab function
 		//tabID in your metabox id
-		function tabtoggle(tab_Id, highlight = false){
-			$('body').on('click', tab_Id+' a', function(evt) {
-			evt.preventDefault();
+		function tabtoggle(tab_Id, highlight = false) {
+			$('body').on('click', tab_Id + ' a', function(evt) {
+				evt.preventDefault();
 
-			var order = ($(this).parent().index());
+				var order = ($(this).parent().index());
 
-			$(this).closest('.tabs-toggle').find('li.tabs-active').removeClass('tabs-active');
-			$(this).closest('li').addClass('tabs-active');
-			$(this).closest('.inside').find('.tab-content div:not(.tab-item:eq( '+order+' ))' ).hide();
-			$(this).closest('.inside').find('.tab-content div.tab-item:eq( '+order+' )').show();
+				$(this).closest('.tabs-toggle').find('li.tabs-active').removeClass('tabs-active');
+				$(this).closest('li').addClass('tabs-active');
+				$(this).closest('.inside').find('.tab-content div:not(.tab-item:eq( ' + order + ' ))').hide();
+				$(this).closest('.inside').find('.tab-content div.tab-item:eq( ' + order + ' )').show();
 
-			//highlight input, textarea 
-			if (highlight) {
-				$(this).closest('.inside').find('.tab-content input').select();
-				$(this).closest('.inside').find('.tab-content textarea').select();
-			}
+				//highlight input, textarea 
+				if (highlight) {
+					$(this).closest('.inside').find('.tab-content input').select();
+					$(this).closest('.inside').find('.tab-content textarea').select();
+				}
 
 			});
 		}
-		
+
 		//select shortcode on click
 		$('body').on('click', '#slider_seo_shortcode textarea, #slider_seo_shortcode input', function() {
 			$(this).select();
@@ -169,7 +169,7 @@
 
 			var radioValue;
 
-			if ( $(this).is(':checked') ) {
+			if ($(this).is(':checked')) {
 				radioValue = $(this).val();
 				$('#slider_type_custom').val(radioValue);
 			}
@@ -179,10 +179,9 @@
 		//slider layout
 		$('body').on('click', '.radio_slider_layout', function() {
 
-			if ( $(' #slider_layout2 ').is(':checked') ) {
+			if ($(' #slider_layout2 ').is(':checked')) {
 				$('.fixedLayout').hide();
-			}
-			else {
+			} else {
 				$('.fixedLayout').show();
 			}
 
@@ -191,19 +190,54 @@
 		//animation select
 		$('body').on('change', '.slider_seo_basic_animation', function() {
 
-			if ( $(this).hasClass('slider_seo_basic_animation1') ) {
+			if ($(this).hasClass('slider_seo_basic_animation1')) {
 				console.log('slider_seo_basic_animation1');
 				var selectedAnim1 = $('.slider_seo_basic_animation1 option:selected').text();
 				$('.slider_seo_basic_animation_input').val(selectedAnim1);
-			} 
-			else {
+			} else {
 				console.log('slider_seo_basic_animation23');
 				var selectedAnim2 = $('.slider_seo_basic_animation2 option:selected').text();
 				var selectedAnim3 = $('.slider_seo_basic_animation3 option:selected').text();
-				$('.slider_seo_basic_animation_input').val(selectedAnim2+' '+selectedAnim3);
+				$('.slider_seo_basic_animation_input').val(selectedAnim2 + ' ' + selectedAnim3);
 			}
 		});
 
+		//load floating save
+		$(window).scroll(function() {
+			if (($(this).scrollTop() < 250)) {
+				$('.float').fadeOut();
+			} else {
+				$('.float').fadeIn();
+			}
+		});
+
+		//scroll to top
+		$("#float-totop").click(function() {
+		  $("html, body").animate({ scrollTop: 0 }, "fast");
+		  return false;
+		});
+
+		//make sure input fields has values
+		var fieldTemplValue;
+		var blurValue;
+
+		$('body').on('click', '.tab-item input, .tab-item textarea', function() {
+			fieldTemplValue = $(this).val();
+		});
+
+		$('body').on('focus', '.tab-item input, .tab-item textarea', function() {
+			fieldTemplValue = $(this).val();
+		});
+
+		$('body').on('blur', '.tab-item input, .tab-item textarea', function() {
+			blurValue = $(this).val();
+			if ( blurValue == '') {
+				$(this).val(fieldTemplValue);
+			}
+		});
+
+
 	});
+
 
 })(jQuery);

@@ -118,8 +118,13 @@
 	}
 
 	.owl-nav {
-		pointer-events: auto;
+		pointer-events: none;
 		width: 100%;
+
+		.owl-prev,
+		.owl-next {
+			pointer-events: auto;
+		}
 	}
 
 	.owl-dots {
@@ -128,5 +133,40 @@
 		position: absolute;
 		bottom: 10px;
 		left: 0;
+		text-align: center;
 	}
+
+	.slider-seo-urls {
+		display: block;
+		position: relative;
+
+		.slider-seo-caption {
+			position: absolute;
+			padding: 8px 10px;
+			background: rgba(0, 0, 0, 0.8);
+			color: #fff;
+			line-height: normal;
+			font-size: 12px;
+
+			&[class*="top"] {
+				top: 0;
+			}
+
+			&[class*="bottom"] {
+				bottom: 0;
+			}
+
+			&[class*="left"] {
+				left: 0;
+			}
+
+			&[class*="right"] {
+				right: 0;
+			}
+		}
+	}
+}
+
+.sliderSeoFixedLayout {
+	margin: auto;
 }
