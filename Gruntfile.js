@@ -20,19 +20,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		pot: {
-					options:{
-						text_domain: 'slider-seo', //Your text domain. Produces my-text-domain.pot 
-						dest: 'lang/', //directory to place the pot file 
-						keywords: [ 'gettext', '_e' ], //functions to look for 
-						msgmerge: true
-					},
-					files:{
-						src:  [ '**/*.php' ], //Parse all php files 
-						expand: true,
-			}
-		},
-
 		watch: {
 			grunt: {
 				options: {
@@ -45,17 +32,11 @@ module.exports = function(grunt) {
 				files: 'sass/**/*.scss',
 				tasks: ['sass']
 			},
-
-			pot: {
-				files: [ '**/*.php' ],
-				tasks: ['pot']
-			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-pot');
 
 	grunt.registerTask('build', ['sass']);
 	grunt.registerTask('default', ['build','watch']);

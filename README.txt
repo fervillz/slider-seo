@@ -9,7 +9,7 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Responsive WordPress slider plus SEO friendly equals boost traffic in no time. Select from multiple different slider animations. Slider-SEO plugin enables you to create beautiful carousels.
+Responsive slider plus SEO friendly equals boost traffic in no time with multiple different animations effects to choose from.
 
 == Description ==
 Slider SEO is a SEO friendly slider that focus on helping your website get indexed by search engines thus allowing more traffics to come. 
@@ -55,7 +55,7 @@ This is the easiest option as WordPress handles the file transfers itself and yo
 
 **Manual installation or Installing Via FTP**
 
-* The manual installation method involves downloading our plugin and uploading it to your webserver via your favorite FTP application.
+The manual installation method involves downloading our plugin and uploading it to your webserver via your favorite FTP application.
 
 1. Download the plugin to your hardisk.
 2. Unzip.
@@ -67,17 +67,18 @@ This is the easiest option as WordPress handles the file transfers itself and yo
 
 
 == Frequently Asked Questions ==
-**How do I add the slider to my site?**
-* You can add it by shortcode or via the widget control panel or PHP shortcode.
 
-**Can I show multiple slider on one page?**
-* Yes you can use multiple slider in widgets ,post and pages.
+= How do I add the slider to my site? =
+You can add it by shortcode or via the widget control panel or PHP shortcode.
 
-**How to include a slider in a post or a page?**
-* [slider-seo id="20"]	
+= Can I show multiple slider on one page? =
+Yes you can use multiple slider in widgets ,post and pages.
 
-**How to include a slider into header.php or other PHP files?**
-* <?php echo do_shortcode("[slider-seo id='20']"); ?>
+= How to include a slider in a post or a page? =
+[slider-seo id="20"]	
+
+= How to include a slider into header.php or other PHP files? =
+`<?php echo do_shortcode("[slider-seo id='20']"); ?>`
 
 == Screenshots ==
 1. The admin settings
