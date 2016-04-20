@@ -4,8 +4,8 @@ Plugin URI:   https://wordpress.org/plugins/slider-seo
 Tags: Widget, Slider, SEO, Fast, Simple, Easy, Widget, Post, Page, Shortcode, animation, banner rotator, best slider, carousel, content slider, fullwidth slider, gallery, gallery slider, hardware accelerate, Horizontal slider, HTML5 slider, image slider, layer slider, mobile slider, page slider, Photo Slider, post slider, responsive slider, slide, slider, slider plugin, slider shortcode, slideshow, swipe, touch slider, vertical slider, wordpress slider, wordpress slideshow
 Requires at least: 3.9
 Tested up to: 4.5
-Stable tag:1.0.1
-Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U5T8UJAMEKWW6
+Stable tag: 1.0.1
+Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3LA9KPR642EN4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,7 +81,8 @@ Yes you can use multiple slider in widgets ,post and pages.
 `<?php echo do_shortcode("[slider-seo id='20']"); ?>`
 
 == Screenshots ==
-1. The admin settings
+1. The Slider SEO admin page
+2. Slider list page
 
 == Changelog ==
 = 1.0.1 - 17/04/2016 =

@@ -87,6 +87,14 @@ function slider_seo_func( $atts ){
 	$anim1 = splitBasicAnimShortcode( $anim )[0];
 	$anim2 = splitBasicAnimShortcode( $anim )[1];
 
+/*
+	if ($anim) {
+		$anim1a = splitBasicAnimShortcode( $anim );
+		$anim1 = $anim1a[0];
+		$anim2 = $anim1a[1];
+	}
+	*/
+
 	$slider_seo_basic_navtext = get_post_meta( $post['id'], 'slider_seo_basic_navtext', true );
 	$navText1 = '';
 	$navText2 = '';

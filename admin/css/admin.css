@@ -1,6 +1,5 @@
 #slider_seo_slides {
   border-color: #5b9dd9;
-  -webkit-box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
   box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
   /* Tooltip container */
 }
@@ -52,14 +51,14 @@
   visibility: hidden;
   background-color: #fff;
   text-align: left;
-  -webkit-box-shadow: 0 1px 5px 0 #A1A1A1;
   box-shadow: 0 1px 5px 0 #A1A1A1;
   font-family: sans-serif;
   border-radius: 4px;
   position: absolute;
   z-index: 2;
   opacity: 0;
-  transition: opacity 300ms;
+  -webkit-transition: opacity 300ms;
+          transition: opacity 300ms;
   color: #000;
   font-size: 12px;
   text-shadow: none;
@@ -214,12 +213,8 @@
 
 #slider_seo_slides table.slider-wrapper .slider-item {
   -webkit-transition: background 300ms ease-in;
-  -moz-transition: background 300ms ease-in;
-  -ms-transition: background 300ms ease-in;
-  -o-transition: background 300ms ease-in;
   transition: background 300ms ease-in;
   border-left: 4px solid #fff;
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(142, 141, 141, 0.1);
 }
@@ -246,6 +241,9 @@
 
 #slider_seo_slides table.slider-wrapper tr.slider-item ul.tabs-toggle {
   margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -261,9 +259,6 @@
 
 #slider_seo_slides table.slider-wrapper tr.slider-item:hover {
   -webkit-transition: background 150ms ease-in;
-  -moz-transition: background 150ms ease-in;
-  -ms-transition: background 150ms ease-in;
-  -o-transition: background 150ms ease-in;
   transition: background 150ms ease-in;
   background: #f7fcfe;
   border-left: 4px solid #00a0d2;
@@ -297,9 +292,18 @@
 
 #slider_seo_slides table.slider-wrapper #set-image {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border: 1px solid silver;
 }
 
@@ -340,8 +344,14 @@
 
 #slider_seo_slides table.slider-wrapper td.slider-text small {
   margin-bottom: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: auto;
 }
 
@@ -393,7 +403,6 @@
 #slider_seo_slides #add-slide {
   background: #93D200;
   border-color: #46AA00;
-  -webkit-box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 1px 0 rgba(150, 230, 120, 0.5), 0 1px 0 rgba(0, 0, 0, 0.15);
   color: #fff;
 }
@@ -402,7 +411,6 @@
 #slider_seo_slides #add-slide:hover {
   background: #54B101;
   border-color: #29500E;
-  -webkit-box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
   box-shadow: inset 0 1px 0 rgba(171, 230, 120, 0.6), 0 0 0 1px #80D95B, 0 0 2px 1px rgba(128, 190, 30, 0.8);
 }
 
@@ -423,7 +431,6 @@
   color: #FFF;
   border-color: #8E0000;
   background: #BF1E2E;
-  -webkit-box-shadow: inset 0 1px 0 #FF4F4F, 0 1px 0 rgba(0, 0, 0, 0.08);
   box-shadow: inset 0 1px 0 #FF4F4F, 0 1px 0 rgba(0, 0, 0, 0.08);
   opacity: .9;
 }
@@ -447,9 +454,18 @@
 #slider_seo_slides .float #float-totop,
 #slider_seo_slides .float #add-slide,
 #slider_seo_slides .float #restore-slide {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 10px;
 }
 
@@ -495,7 +511,6 @@
 #slider_seo_shortcode,
 #slider_seo_animation {
   border-color: #5b9dd9;
-  -webkit-box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
   box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
 }
 
@@ -525,6 +540,9 @@
 #slider_seo_shortcode ul.tabs-toggle,
 #slider_seo_animation ul.tabs-toggle {
   margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -559,8 +577,14 @@
 #slider_seo_shortcode small,
 #slider_seo_animation small {
   margin-bottom: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #slider_seo_animation table {
@@ -605,30 +629,33 @@
   background-color: #fff;
   height: 23px;
   display: inline-block;
-  -webkit-box-shadow: 0 0 3px 0 #DBDBDB;
   box-shadow: 0 0 3px 0 #DBDBDB;
   width: 40px;
   opacity: .3;
-  transform: scale(0.9);
-  transition: 300ms;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: 300ms;
+          transition: 300ms;
 }
 
 #slider_seo_animation table td.slider-type-radio .label_slider_type:hover,
 #slider_seo_animation table td.slider-type-radio .label_slider_layout:hover {
   opacity: .8;
-  -webkit-box-shadow: 0 0 0 1px #18A1DB;
   box-shadow: 0 0 0 1px #18A1DB;
-  transform: scale(1);
-  transition: 100ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 100ms;
+          transition: 100ms;
 }
 
 #slider_seo_animation table td.slider-type-radio .radio_slider_type:checked + label,
 #slider_seo_animation table td.slider-type-radio .radio_slider_layout:checked + label {
   opacity: 1;
-  -webkit-box-shadow: 0 0 0 1px #18A1DB;
   box-shadow: 0 0 0 1px #18A1DB;
-  transform: scale(1);
-  transition: 150ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 150ms;
+          transition: 150ms;
 }
 
 #slider_seo_animation table td.slider-type-radio .label_slider_type1 {
@@ -674,5 +701,3 @@
 .edit-php.post-type-slider_seo tbody tr:hover {
   background: #f7fcfe;
 }
-
-/*# sourceMappingURL=admin.css.map */

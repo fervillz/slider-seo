@@ -20,6 +20,27 @@ module.exports = function(grunt) {
 			}
 		},
 
+		autoprefixer:{
+			dist: {
+				files: {
+					'admin/css/admin.css': 'admin/css/admin.css',
+				},
+			},
+		},
+
+
+		cssmin: {
+			options: {
+				shorthandCompacting: false,
+				roundingPrecision: -1
+			},
+			target: {
+				files: {
+					'admin/css/admin.min.css': ['admin/css/admin.css']
+				}
+			}
+		},
+
 		watch: {
 			grunt: {
 				options: {
@@ -28,16 +49,19 @@ module.exports = function(grunt) {
 				files: ['Gruntfile.js']
 			},
 
-			sass: {
+			css: {
 				files: 'sass/**/*.scss',
-				tasks: ['sass']
+				tasks: ['sass', 'autoprefixer', 'cssmin'],
 			},
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 
-	grunt.registerTask('build', ['sass']);
-	grunt.registerTask('default', ['build','watch']);
+	grunt.registerTask('default', ['css','watch']);
+	grunt.registerTask('css', ['sass', 'autoprefixer', 'cssmin']);
+	grunt.registerTask('minify', ['cssmin']);
 }

@@ -56,12 +56,12 @@
 				<?php margin($post, 'advanced'); ?>
 				<?php padding($post, 'advanced'); ?>
 				<?php autoplayTimeout($post, 'advanced'); ?>
+				<?php navtext($post, 'advanced') ?>
+				<?php navPos($post, 'advanced') ?>
 				<?php loop($post, 'advanced'); ?>
 				<?php autoheight($post, 'advanced'); ?>
 				<?php autoWidth($post, 'advanced'); ?>
 				<?php lazyload($post, 'advanced'); ?>
-				<?php navtext($post, 'advanced') ?>
-				<?php navPos($post, 'advanced') ?>
 				<?php caption($post, 'advanced') ?>
 				<?php captionPos($post, 'advanced') ?>
 			 </table>
