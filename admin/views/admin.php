@@ -8,6 +8,7 @@ $thumbnailSizeW = get_option( 'thumbnail_size_w' );
 $thumbnailSizeH = get_option( 'thumbnail_size_h' );
 
 //Start getting meta values
+$imgIds = get_post_meta( $post->ID, 'slider-img-id', true );
 $imgSrcs = get_post_meta( $post->ID, 'slider-img-src', true );
 $imgSrcsT = get_post_meta( $post->ID, 'slider-img-srcT', true );
 $imgTitles = get_post_meta( $post->ID, 'slider-img-title', true );
@@ -93,6 +94,7 @@ foreach ( $imgSrcs as $imgSrc ) { $i++;  ?>
 					</small>
 					<input type="hidden" name="slider-img-srcT[]" id="slider-img-srcT" value="<?php if (($imgSrcsT[$i-1]) || ($imgSrcsT[$i-1] >= 0)) {  echo $imgSrcsT[$i-1];  } ?>">
 					<input type="hidden" name="slider-img-src[]" id="slider-img-src" value="<?php echo $imgSrc; ?>">
+					<input type="hidden" name="slider-img-id[]" id="slider-img-id" value="<?php if (($imgIds[$i-1]) || ($imgIds[$i-1] >= 0)) {  echo $imgIds[$i-1];  } ?>">
 				</div>
 
 				<div class="tab-item tab-others">

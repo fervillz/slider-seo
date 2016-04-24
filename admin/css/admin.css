@@ -282,7 +282,7 @@
 }
 
 #slider_seo_slides table.slider-wrapper #sortable tr.ui-sortable-helper {
-  outline: 1px solid #00A0D2;
+  box-shadow: 0 0 0 1px #00A0D2;
   border-width: 0;
 }
 
@@ -490,10 +490,6 @@
   background: url("../images/loading.gif") center no-repeat #fff;
 }
 
-.post-type-slider_seo .media-sidebar.visible {
-  pointer-events: none;
-}
-
 #slider_seo_shortcode .slider-seo-shortcode {
   margin-bottom: 13px;
 }
@@ -597,6 +593,11 @@
 
 #slider_seo_animation table tr.full--td td:last-child {
   width: 100%;
+}
+
+#slider_seo_animation table td label {
+  width: 100%;
+  display: inline-block;
 }
 
 #slider_seo_animation table td:first-child {

@@ -55,6 +55,7 @@ function createDivContainer($) {
 		+ 			'</small>'
 		+			'<input name="" type="hidden" id="slider-img-src">'
 		+ 			'<input name="" type="hidden" id="slider-img-srcT">'
+		+			'<input name="" type="hidden" id="slider-img-id">'
 		+ 			'</div>'
 		+ 		'<div class="tab-item tab-others" style="display: none;">'
 		+ 			'<textarea id="slider-img-caption" cols="30" rows="10"></textarea>'

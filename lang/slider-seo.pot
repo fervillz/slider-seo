@@ -1,9 +1,10 @@
 # Copyright (C) 2016 Fernando
 # This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2016-04-18 01:06-0700\n"
+"POT-Creation-Date: 2016-04-21 13:40-0700\n"
 "PO-Revision-Date: 2016-04-18 01:07-0700\n"
 "Last-Translator: fernando villamor <fervillz@gmail.com>\n"
 "Language-Team: fervillz <fervillz@gmail.com>\n"
@@ -14,62 +15,74 @@ msgstr ""
 "X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: _e;__;esc_html_e\n"
+"X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules2\n"
+"X-Poedit-SearchPathExcluded-1: .git\n"
+"X-Poedit-SearchPathExcluded-2: sass\n"
+"X-Poedit-SearchPathExcluded-3: .gitattributes\n"
+"X-Poedit-SearchPathExcluded-4: .gitignore\n"
+"X-Poedit-SearchPathExcluded-5: Gruntfile.js\n"
+"X-Poedit-SearchPathExcluded-6: LICENSE\n"
+"X-Poedit-SearchPathExcluded-7: package.json\n"
+"X-Poedit-SearchPathExcluded-8: admin/images\n"
+"X-Poedit-SearchPathExcluded-9: admin/js\n"
+"X-Poedit-SearchPathExcluded-10: node_modules\n"
+"X-Poedit-SearchPathExcluded-11: lang\n"
 
 #: admin/includes/add_meta_box.php:11
 msgid "Click \"Add Slide\" to add new slider"
-msgstr "Click \"Add Slide\" to add new slider"
+msgstr ""
 
 #: admin/includes/add_meta_box.php:23
 msgid "General Settings"
-msgstr "General Settings"
+msgstr ""
 
 #: admin/includes/add_meta_box.php:35
 msgid "How to Use"
-msgstr "How to Use"
+msgstr ""
 
 #: admin/includes/add_post_column.php:9
 msgid "Slider"
-msgstr "Slider"
+msgstr ""
 
 #: admin/includes/add_post_column.php:10
 msgid "Thumbnails"
-msgstr "Thumbnails"
+msgstr ""
 
 #: admin/includes/add_post_column.php:11 admin/views/admin_shortcode.php:4
 msgid "Shortcode"
-msgstr "Shortcode"
+msgstr ""
 
 #: admin/includes/add_post_column.php:12
 msgid "Template Include"
-msgstr "Template Include"
+msgstr ""
 
 #: admin/includes/add_post_column.php:13
 #: admin/views/gsettings_partials/animation.php:9
 msgid "Animation"
-msgstr "Animation"
+msgstr ""
 
 #: admin/includes/add_post_column.php:14
 msgid "Date"
-msgstr "Date"
+msgstr ""
 
 #: admin/includes/add_post_type.php:9 admin/includes/add_post_type.php:10
 #: admin/includes/add_post_type.php:34
 msgid "Slider SEO"
-msgstr "Slider SEO"
+msgstr ""
 
 #: admin/includes/add_post_type.php:11
 msgid "Slider Archives"
-msgstr "Slider Archives"
+msgstr ""
 
 #: admin/includes/add_post_type.php:12
 msgid "Parent Item:"
-msgstr "Parent Item:"
+msgstr ""
 
 #: admin/includes/add_post_type.php:13
 msgid "All Slider Items"
-msgstr "All Slider Items"
+msgstr ""
 
 #: admin/includes/add_post_type.php:14 admin/includes/add_post_type.php:15
 msgid "Add New Slider"
@@ -143,58 +156,58 @@ msgstr ""
 msgid "Create slides fast and easy"
 msgstr ""
 
-#: admin/includes/slider_seo_shortcode.php:77
+#: admin/includes/slider_seo_shortcode.php:91
 msgid "You have entered an invalid Slider SEO Shortcode"
 msgstr ""
 
-#: admin/views/admin.php:26 admin/views/admin.php:135
+#: admin/views/admin.php:27 admin/views/admin.php:137
 msgid "Delete All Slides"
 msgstr ""
 
-#: admin/views/admin.php:32 admin/views/admin.php:140 admin/views/admin.php:152
+#: admin/views/admin.php:33 admin/views/admin.php:142 admin/views/admin.php:154
 msgid "Restore Deleted Slides"
 msgstr ""
 
-#: admin/views/admin.php:33 admin/views/admin.php:141 admin/views/admin.php:157
+#: admin/views/admin.php:34 admin/views/admin.php:143 admin/views/admin.php:159
 msgid "Add Slide"
 msgstr ""
 
-#: admin/views/admin.php:56
+#: admin/views/admin.php:57
 msgid "Edit"
 msgstr ""
 
-#: admin/views/admin.php:59
+#: admin/views/admin.php:60
 msgid "Clone"
 msgstr ""
 
-#: admin/views/admin.php:62
+#: admin/views/admin.php:63
 msgid "Delete"
 msgstr ""
 
-#: admin/views/admin.php:69
+#: admin/views/admin.php:70
 msgid "SEO"
 msgstr ""
 
-#: admin/views/admin.php:72
+#: admin/views/admin.php:73
 msgid "Others"
 msgstr ""
 
-#: admin/views/admin.php:78
+#: admin/views/admin.php:79
 msgid "Slider Image Title Text"
 msgstr ""
 
-#: admin/views/admin.php:80
+#: admin/views/admin.php:81
 msgid ""
 "<b>Use keyword(s) in title. Preferably using english words.</b> <br><br>ie: "
 "istead of \"iStock_00044xSmall.jpg\" which doesn't add much information "
 "about an image, use \"image-optimization.jpg\"."
 msgstr ""
 
-#: admin/views/admin.php:87
+#: admin/views/admin.php:88
 msgid "Slider Image Alt Text"
 msgstr ""
 
-#: admin/views/admin.php:89
+#: admin/views/admin.php:90
 msgid ""
 "<b>Create descriptive alt text</b> <br><br>\n"
 "\t\t\t\t\t\t\tAlt text or tags are another way that search engines help "
@@ -209,14 +222,14 @@ msgid ""
 "linked to."
 msgstr ""
 
-#: admin/views/admin.php:103
+#: admin/views/admin.php:105
 msgid ""
 "<b>Short descriptive content about the image</b> <br><br>Image captions are "
 "important because they are one of the most well-read pieces of content on "
 "your entire site."
 msgstr ""
 
-#: admin/views/admin.php:111
+#: admin/views/admin.php:113
 msgid ""
 "<b>The right anchor text</b> <br><br>Anchor text is another important factor "
 "in image SEO. If you decide to link to images with text, your anchor text "
@@ -228,31 +241,31 @@ msgid ""
 "search engines as well as people visiting your site."
 msgstr ""
 
-#: admin/views/admin.php:119
+#: admin/views/admin.php:121
 msgid "Close media panel"
 msgstr ""
 
-#: admin/views/admin.php:162
+#: admin/views/admin.php:164
 msgid "Save Slide"
 msgstr ""
 
-#: admin/views/admin.php:167
+#: admin/views/admin.php:169
 msgid "Scroll to Top"
 msgstr ""
 
-#: admin/views/admin_gsettings.php:25
+#: admin/views/admin_gsettings.php:26
 msgid "Basic"
 msgstr ""
 
-#: admin/views/admin_gsettings.php:28
+#: admin/views/admin_gsettings.php:29
 msgid "Advanced"
 msgstr ""
 
-#: admin/views/admin_gsettings.php:37
+#: admin/views/admin_gsettings.php:38
 msgid "The basic settings configuration allows you to change main preferences."
 msgstr ""
 
-#: admin/views/admin_gsettings.php:50
+#: admin/views/admin_gsettings.php:51
 msgid ""
 "This configuration allows you to change various preferences to suit your "
 "needs."
@@ -749,11 +762,31 @@ msgstr ""
 msgid "Dots"
 msgstr ""
 
+#: admin/views/gsettings_partials/imageSize.php:23
+msgid "Image Size"
+msgstr ""
+
+#: admin/views/gsettings_partials/imageSize.php:27
+msgid "Thumbnail"
+msgstr ""
+
+#: admin/views/gsettings_partials/imageSize.php:31
+msgid "Medium"
+msgstr ""
+
+#: admin/views/gsettings_partials/imageSize.php:34
+msgid "Large"
+msgstr ""
+
+#: admin/views/gsettings_partials/imageSize.php:38
+msgid "Largest ( Original Image Size )"
+msgstr ""
+
 #: admin/views/gsettings_partials/lazyload.php:9
 msgid "Lazyload"
 msgstr ""
 
-#: admin/views/gsettings_partials/loop.php:9
+#: admin/views/gsettings_partials/loop.php:14
 msgid "Loop"
 msgstr ""
 
@@ -810,7 +843,7 @@ msgstr ""
 msgid "Padding"
 msgstr ""
 
-#: admin/views/gsettings_partials/slider_type.php:19
+#: admin/views/gsettings_partials/slider_type.php:20
 msgid "Slider Type"
 msgstr ""
 

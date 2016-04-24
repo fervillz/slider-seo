@@ -1,7 +1,12 @@
-function saveSliderItem() {
+function saveSliderItem($) {
 	'use strict';
 
-	savedeleteSliderItem($);
+	if ( $('.slider-item').hasClass('delete-item-active') ) {
+		$('.delete-item-active .tab-item')
+		.children()
+		.val('');
+		console.log('deleting');	
+	}
 
 	$('#publish').trigger('click');
 }

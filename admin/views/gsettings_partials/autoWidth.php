@@ -6,7 +6,7 @@ $slider_seo_basic_autoWidth = get_post_meta( $post->ID, 'slider_seo_basic_autoWi
 ?>
 	<?php if ( $tab == 'advanced'): ?>
 		<tr>
-			<td class=""><?php _e( 'Auto Width', 'slider-seo'); ?></td>
+			<td class=""><label for="slider_seo_basic_autoWidth"><?php _e( 'Auto Width', 'slider-seo'); ?></label></td>
 			<td>
 				<?php metaautoWidth($slider_seo_basic_autoWidth); ?>
 			</td>

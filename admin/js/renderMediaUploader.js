@@ -7,52 +7,55 @@
  */
 
 function renderMediaUploader($) {
-	'use strict';
 
-	var file_frame, image_data;
+	var sliderSeoUploader, thumbnailSizeW, thumbnailSizeH, image_url, image_caption, image_title, image_alt, image_id, imgSrcFileName, fileExtension, counter = 0;
 
 	//Get thumbnail sizes
-	var thumbnailSizeW = $('#thumbnailSizeW').val();
-	var thumbnailSizeH = $('#thumbnailSizeH').val();
-	console.log(thumbnailSizeW);
-	console.log(thumbnailSizeH);
+	thumbnailSizeW = $('#thumbnailSizeW').val();
+	thumbnailSizeH = $('#thumbnailSizeH').val();
 
-	if (undefined !== file_frame) {
-
-		file_frame.open();
+	if (undefined !== sliderSeoUploader) {
+		sliderSeoUploader.open(); 
 		return;
-
 	}
 
-	file_frame = wp.media.frames.file_frame = wp.media({
-		frame: 'post',
-		state: 'insert',
-		multiple: true,
+	sliderSeoUploader = wp.media.frames.file_frame = wp.media({
+
+		title: 'Select Attachment',
+		button: {
+			text: 'Add Image Slide(s)'
+		}, 
 		library : {
 			type : 'image'
-		}
+		},
+		multiple: true
 	});
-
-
-	file_frame.on('insert', function() {
-
-		var length = file_frame.state().get("selection").length;
-		var images = file_frame.state().get("selection").models
-		var imgSrcFileName, fileExtension;
 		
-		if (0 > length) {
-			return;
-		}
+		sliderSeoUploader.on('select', function () {
+		
+			var selection = sliderSeoUploader.state().get('selection');
 
-		for( var counter = 0; counter < length; counter++ ) {
+			selection.map( function( attachment ) {
 
-			var image_url = images[counter].changed.url;
-			var image_caption = images[counter].changed.caption;
-			var image_title = images[counter].changed.title;
-			var image_alt = images[counter].changed.alt;
+			attach = attachment.toJSON();
 
-			//Create thumbnail
-			//Get imgSrcFileName of the image
+			image_url = attach.url;
+			image_caption = attach.caption;
+			image_title = attach.title;
+			image_alt = attach.alt;
+			image_id = attach.id;
+			counter++;
+
+			/*
+			console.log(image_id);
+			console.log(image_caption);
+			console.log(image_title);
+			console.log(image_alt);
+			console.log(image_url);
+			console.log(counter);
+			*/
+
+			//Create thumbnail and Get imgSrcFileName of the image
 			if ( image_url ) {
 				imgSrcFileName = image_url;
 
@@ -69,7 +72,7 @@ function renderMediaUploader($) {
 				console.log('Error Create thumbnail');
 			}
 
-			//Ih there are multiple selected images
+			//If there are multiple selected images
 			if ( counter > 0) {
 				$('.slider-body').append(createDivContainer($));
 				createSliderHiddenInputs($);	 
@@ -83,6 +86,11 @@ function renderMediaUploader($) {
 			.attr('title', image_title);
 
 			// Store the image's information into the meta data fields
+			if (image_id != '') {
+
+				$('.item-active #slider-img-id').val(image_id);
+			}
+
 			if (image_url != '') {
 
 				$('.item-active #slider-img-src').val(image_url);
@@ -123,12 +131,11 @@ function renderMediaUploader($) {
 
 			$('.item-active').removeClass('item-active');
 
-			//console.log(imgSrcFileName +'\n'+image_caption +'\n'+image_title +'\n');
-		}
+
+		});
 
 		$('.item-active').removeClass('item-active');
 	});
 
-	// Now display the actual file_frame
-	file_frame.open();
+	sliderSeoUploader.open();
 }

@@ -6,7 +6,7 @@ $slider_seo_basic_autoheight = get_post_meta( $post->ID, 'slider_seo_basic_autoh
 ?>
 	<?php if ( $tab == 'advanced'): ?>
 		<tr>
-			<td class=""><?php _e( 'Auto Height', 'slider-seo'); ?></td>
+			<td class=""><label for="slider_seo_basic_autoheight"><?php _e( 'Auto Height', 'slider-seo'); ?></label></td>
 			<td>
 				<?php metaautoheight($slider_seo_basic_autoheight); ?>
 			</td>

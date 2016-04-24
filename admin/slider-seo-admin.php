@@ -170,13 +170,21 @@ class Slider_SEO_Admin {
 		}
 	}
 
-	public function save_post_meta_animation( $meta_id = '',  $post_id ) {
+	public function save_post_meta_animation( $meta_id = '',  $post_id, $checkbox = '' ) {
 		
 		if ( isset( $_POST[$meta_id] ) ) {
 			update_post_meta( $post_id, $meta_id, esc_attr( $_POST[$meta_id] ) );
 		}
+
 		else {
-			update_post_meta( $post_id, $meta_id, null );
+
+			if ( $checkbox == 'checkbox' ) {
+				update_post_meta( $post_id, $meta_id, 'false' );
+			}
+			else {
+				update_post_meta( $post_id, $meta_id, null );
+			}
+			
 		}
 	}
 
@@ -208,11 +216,14 @@ class Slider_SEO_Admin {
 		//slider custom url
 		$this->save_post_meta('slider-img-url', $post_id, true);
 
+		//slider custom url
+		$this->save_post_meta('slider-img-id', $post_id, false, true);
+
 		
 		//save animation metabox settings
 		
 		//slider type
-		$this->save_post_meta_animation('slider_type', $post_id);
+		$this->save_post_meta_animation('slider_type_text', $post_id);
 		
 		//animation speed
 		$this->save_post_meta_animation('slider_seo_basic_speed', $post_id);
@@ -239,7 +250,7 @@ class Slider_SEO_Admin {
 		$this->save_post_meta_animation('slider_seo_basic_padding', $post_id);
 
 		//slider loop
-		$this->save_post_meta_animation('slider_seo_basic_loop', $post_id);
+		$this->save_post_meta_animation('slider_seo_basic_loop', $post_id, 'checkbox' );
 		
 		//slider Timeout
 		$this->save_post_meta_animation('slider_seo_basic_autoplayTimeout', $post_id);
@@ -267,6 +278,9 @@ class Slider_SEO_Admin {
 		
 		//slider caption position
 		$this->save_post_meta_animation('slider_seo_captionPos', $post_id);
+
+		//slider image size
+		$this->save_post_meta_animation('slider_seo_imageSize', $post_id);
 
 		
 	}

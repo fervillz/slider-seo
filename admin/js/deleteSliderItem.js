@@ -18,16 +18,6 @@ function restoreSliderItem($) {
 	$('.restore-slide').css('visibility','hidden');
 }
 
-function savedeleteSliderItem($) {
-	'use strict';
-
-	$('.delete-item-active .tab-item')
-		.children()
-		.val('');
-		console.log('deleting');	
-}
-
-
 function deleteAllSliderItem($) {
 	'use strict';
 

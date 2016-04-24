@@ -60,9 +60,7 @@
 		$('.add-slide').on('click', function(evt) {
 
 			evt.preventDefault();
-
-			$('.slider-body').append(createDivContainer($));
-			createSliderHiddenInputs($);
+			
 			renderMediaUploader($);
 
 		});
@@ -70,7 +68,7 @@
 		//save slider
 		$('body').on('click', '.publish-slider', function(evt) {
 			evt.preventDefault();
-			saveSliderItem();
+			saveSliderItem($);
 		});
 
 		//Run stuff when uploader close modal is click
@@ -222,7 +220,13 @@
 		var blurValue;
 
 		$('body').on('click', '.tab-item input, .tab-item textarea', function() {
-			fieldTemplValue = $(this).val();
+			if ( fieldTemplValue == '') {
+				fieldTemplValue = 'Please enter value';
+			}
+			else {
+				fieldTemplValue = $(this).val();
+			}
+			
 		});
 
 		$('body').on('focus', '.tab-item input, .tab-item textarea', function() {

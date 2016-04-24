@@ -240,7 +240,7 @@
 			}
 
 			tr.ui-sortable-helper {
-				outline: 1px solid #00A0D2;
+				box-shadow: 0 0 0 1px #00A0D2;
 				border-width: 0;
 			}
 
@@ -438,10 +438,6 @@
 		z-index: 9999;
 		background: url("../images/loading.gif") center no-repeat #fff;
 	}
-
-	.media-sidebar.visible {
-		pointer-events: none;
-	}
 }
 
 #slider_seo_shortcode {
@@ -536,6 +532,11 @@
 		}
 
 		td {
+			label {
+				width: 100%;
+				display: inline-block;
+			}
+
 			&:first-child {
 				width: 40%;
 			}

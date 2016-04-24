@@ -6,7 +6,7 @@ $slider_seo_basic_lazyload = get_post_meta( $post->ID, 'slider_seo_basic_lazyloa
 ?>
 	<?php if ( $tab == 'advanced'): ?>
 		<tr>
-			<td class=""><?php _e( 'Lazyload', 'slider-seo'); ?></td>
+			<td class=""><label for="slider_seo_basic_lazyload"><?php _e( 'Lazyload', 'slider-seo'); ?></label></td>
 			<td>
 				<?php metalazyload($slider_seo_basic_lazyload); ?>
 			</td>

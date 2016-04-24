@@ -18,6 +18,7 @@
 <?php include_once( 'gsettings_partials/navPos.php' ); ?>
 <?php include_once( 'gsettings_partials/caption.php' ); ?>
 <?php include_once( 'gsettings_partials/captionPos.php' ); ?>
+<?php include_once( 'gsettings_partials/imageSize.php' ); ?>
 
 <!-- Tabs Toggle -->
 <ul class="tabs-toggle">
@@ -53,6 +54,7 @@
 				<?php tr_slider_type($post,'advanced'); ?>
 				<?php animation($post, 'advanced'); ?>
 				<?php width_height($post, 'advanced') ?>
+				<?php imageSize($post, 'advanced'); ?>
 				<?php margin($post, 'advanced'); ?>
 				<?php padding($post, 'advanced'); ?>
 				<?php autoplayTimeout($post, 'advanced'); ?>

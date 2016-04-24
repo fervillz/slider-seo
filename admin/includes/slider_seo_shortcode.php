@@ -24,6 +24,7 @@ function slider_seo_func( $atts ){
 	$i = 0;
 
 	//meta
+	$imgIds = get_post_meta( $post['id'], 'slider-img-id', true );
 	$imgSrcs = get_post_meta( $post['id'], 'slider-img-src', true );
 	$imgSrcsT = get_post_meta( $post['id'], 'slider-img-srcT', true );
 	$imgTitles = get_post_meta( $post['id'], 'slider-img-title', true );
@@ -34,6 +35,7 @@ function slider_seo_func( $atts ){
 	$slider_seo_navPos = get_post_meta( $post['id'], 'slider_seo_navPos', true );
 	$slider_seo_captionPos = get_post_meta( $post['id'], 'slider_seo_captionPos', true );
 	$slider_seo_basic_caption = get_post_meta( $post['id'], 'slider_seo_basic_caption', true );
+	$slider_seo_imageSize = get_post_meta( $post['id'], 'slider_seo_imageSize', true );
 	
 	if ($slider_seo_navPos) {
 		$slider_seo_navPos = $slider_seo_navPos.' setNavPos';
@@ -59,11 +61,23 @@ function slider_seo_func( $atts ){
 								<span class="slider-seo-caption <?php echo $slider_seo_captionPos; ?> <?php if (!$slider_seo_basic_caption) { echo 'hidden'; } ?> topleft"><?php echo $imgCaption[$i] ?></span>
 							</a>
 						<?php else: ?>
-							<a class="slider-seo-urls" href="<?php echo $imgUrls[$i] ?>">
-								<img src="<?php echo $imgSrc; ?>" alt="<?php echo $imgAlts[$i] ?>" title="<?php echo $imgTitles[$i] ?>"/>
 
-								<span class="slider-seo-caption <?php echo $slider_seo_captionPos; ?> <?php if (!$slider_seo_basic_caption) { echo 'hidden'; } ?>"><?php echo $imgCaption[$i] ?></span>
+							<a class="slider-seo-urls" href="<?php echo $imgUrls[$i] ?>">
+							
+							<?php
+								if ( ($slider_seo_imageSize) || ($slider_seo_imageSize != 'largest') ) {
+									$image_data = wp_get_attachment_image_src( $imgIds[$i], $size = $slider_seo_imageSize );
+									//$image_data = wp_get_attachment_image_src ( $imgIds[$i], $size = array (100,300) );
+									echo "<img src='".$image_data[0]."' alt='".$imgAlts[$i]."' title='".$imgTitles[$i]."'>";
+								}else {
+									echo "string";
+									echo "<img src='".$imgSrc."' alt='".$imgAlts[$i]."' title='".$imgTitles[$i]."'>";
+								}
+							?>
+
+							<span class="slider-seo-caption <?php echo $slider_seo_captionPos; ?> <?php if (!$slider_seo_basic_caption) { echo 'hidden'; } ?>"><?php echo $imgCaption[$i] ?></span>
 							</a>
+
 						<?php endif;  $i++;?>
 					<?php } ?>
 
@@ -103,7 +117,7 @@ function slider_seo_func( $atts ){
 		$navText2 = $slider_seo_basic_navtext[1];	
 	}
 
-	$slider_type = get_post_meta( $post['id'], 'slider_type', true );
+	$slider_type = get_post_meta( $post['id'], 'slider_type_text', true );
 	$slider_seo_basic_speed = get_post_meta( $post['id'], 'slider_seo_basic_speed', true );
 	$slider_seo_basic_navigation = get_post_meta( $post['id'], 'slider_seo_basic_navigation', true );
 	$slider_seo_basic_dots = get_post_meta( $post['id'], 'slider_seo_basic_dots', true );

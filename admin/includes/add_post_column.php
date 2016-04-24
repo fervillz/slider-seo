@@ -46,10 +46,16 @@ function slider_seo_columns( $column, $post_id ) {
 			break;
 
 		case 'thumb' :
-		$imgSrcsT = get_post_meta( $post->ID, 'slider-img-srcT', true );
-		foreach ( $imgSrcsT as $imgSrc ) {
-			echo "<img src='".$imgSrc."' style='width: 40px;'>";
+			$imgSrcsT = get_post_meta( $post->ID, 'slider-img-srcT', true );
+			if ($imgSrcsT) {
+				foreach ( $imgSrcsT as $imgSrc ) {
+				echo "<img src='".$imgSrc."' style='width: 40px;'>";
+				}
 			}
+			else {
+				echo "No Thumbnail";
+			}
+		
 			break;
 
 		default :
