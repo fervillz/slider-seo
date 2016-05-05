@@ -98,8 +98,8 @@ function slider_seo_func( $atts ){
 	*  Get value animation
 	*/
 	$anim = get_post_meta( $post['id'], 'slider_seo_basic_animation', true );
-	$anim1 = splitBasicAnimShortcode( $anim )[0];
-	$anim2 = splitBasicAnimShortcode( $anim )[1];
+	$anim1 = splitBasicAnimShortcode1( $anim );
+	$anim2 = splitBasicAnimShortcode2( $anim );
 
 /*
 	if ($anim) {
@@ -160,7 +160,7 @@ add_shortcode( 'slider-seo', 'slider_seo_func' );
 
 ?>
 
-<?php function splitBasicAnimShortcode( $anim ) {
+<?php function splitBasicAnimShortcode1( $anim ) {
 
 	//locate the position of white space
 	$spacePos = (strrpos($anim, " "));
@@ -171,6 +171,21 @@ add_shortcode( 'slider-seo', 'slider_seo_func' );
 	//Get the second animation
 	$anim2 = substr($anim,$spacePos);
 
-	return array($anim1, $anim2);
+	return $anim1;
+
+} ?>
+
+<?php function splitBasicAnimShortcode2( $anim ) {
+
+	//locate the position of white space
+	$spacePos = (strrpos($anim, " "));
+
+	//Get the first animation
+	$anim1 = substr($anim,0,$spacePos);
+
+	//Get the second animation
+	$anim2 = substr($anim,$spacePos);
+
+	return $anim2;
 
 } ?>

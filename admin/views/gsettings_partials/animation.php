@@ -1,8 +1,8 @@
 <!-- Animation Function -->
 <?php function animation($post, $tab = 'basic') {
 $anim = get_post_meta( $post->ID, 'slider_seo_basic_animation', true );
-$anim1 = preg_replace('/\s+/','',(splitBasicAnim( $anim )[0])); //remove all spaces
-$anim2 = preg_replace('/\s+/','',(splitBasicAnim( $anim )[1])); //remove all spaces
+$anim1 = preg_replace('/\s+/','',(splitBasicAnim1( $anim ))); //remove all spaces
+$anim2 = preg_replace('/\s+/','',(splitBasicAnim2( $anim ))); //remove all spaces
 ?>
 
 	<?php if ( $tab == 'basic' ): ?>
@@ -191,7 +191,7 @@ $anim2 = preg_replace('/\s+/','',(splitBasicAnim( $anim )[1])); //remove all spa
 
 <?php } ?>
 
-<?php function splitBasicAnim( $anim ) {
+<?php function splitBasicAnim1( $anim ) {
 
 	//locate the position of white space
 	$spacePos = (strrpos($anim, " "));
@@ -202,6 +202,21 @@ $anim2 = preg_replace('/\s+/','',(splitBasicAnim( $anim )[1])); //remove all spa
 	//Get the second animation
 	$anim2 = substr($anim,$spacePos);
 
-	return array($anim1, $anim2);
+	return $anim1;
+
+} ?>
+
+<?php function splitBasicAnim2( $anim ) {
+
+	//locate the position of white space
+	$spacePos = (strrpos($anim, " "));
+
+	//Get the first animation
+	$anim1 = substr($anim,0,$spacePos);
+
+	//Get the second animation
+	$anim2 = substr($anim,$spacePos);
+
+	return $anim2;
 
 } ?>

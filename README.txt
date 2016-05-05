@@ -4,7 +4,7 @@ Plugin URI:   https://wordpress.org/plugins/slider-seo
 Tags: Widget, Slider, SEO, Fast, Simple, Easy, Widget, Post, Page, Shortcode, animation, banner rotator, best slider, carousel, content slider, fullwidth slider, gallery, gallery slider, hardware accelerate, Horizontal slider, HTML5 slider, image slider, layer slider, mobile slider, page slider, Photo Slider, post slider, responsive slider, slide, slider, slider plugin, slider shortcode, slideshow, swipe, touch slider, vertical slider, wordpress slider, wordpress slideshow
 Requires at least: 3.9
 Tested up to: 4.5
-Stable tag: 1.0.4
+Stable tag: 1.0.6
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3LA9KPR642EN4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,6 +15,12 @@ Responsive slider plus SEO friendly equals boost traffic in no time with multipl
 Slider SEO is a SEO friendly slider that focus on helping your website get indexed by search engines thus allowing more traffics to come. 
 
 This slider is 100% responsive with full support mobile devices, tablets, desktop computers and all modern web browsers which includes iPhone, iPad, Android, Chrome, Safari, Firefox, Opera, Internet Explorer 7/8/9/10/11 and also Microsoft Edge.
+
+Demo here - http://sheferstudio.com/plugins/slider-seo/
+
+Experiment animations here - https://daneden.github.io/animate.css/
+
+More Demos here - http://www.owlcarousel.owlgraphic.com/demos/demos.html
 
 Create amazing animation combo effects powered by animate.css
 
@@ -104,6 +110,12 @@ The 20 in id="20" above is the id of the slider and will different on every slid
 4. 
 
 == Changelog ==
+= 1.0.4 - 05/04/2016 =
+* Fix plugin compatability with older versions of php
+
+= 1.0.4 - 27/04/2016 =
+* Added demo and links
+
 = 1.0.4 - 24/04/2016 =
 * Fix firefox buggy input fields
 
