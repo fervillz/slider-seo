@@ -2,6 +2,8 @@
 
 function slider_seo_func( $atts ){
 
+	$sliderOutput = "";
+
 	$post = shortcode_atts( array(
 		'id' => '1',
 	), $atts );
@@ -50,38 +52,91 @@ function slider_seo_func( $atts ){
 			$slider_seo_query->the_post(); ?>
 
 				<?php if ( $slider_layout == '1'): ?>
-						<div class="sliderSeoFixedLayout" style="width: <?php echo $slider_layoutW.'px;'; ?> height:<?php echo $slider_layoutH.'px;'; ?>" >
+			 		<?php
+						$sliderOutput .= "<div class=\"sliderSeoFixedLayout\"";
+						$sliderOutput .= "style=\"width:".$slider_layoutW."px;";
+						$sliderOutput .= "height:".$slider_layoutH."px;\">";
+						$sliderOutput .= "</div>"; 
+					?>
 				<?php endif; ?>
-					<div class="slider-seo-owl-carousel-<?php echo $post['id']; ?> <?php echo $slider_seo_navPos; ?> slider-seo-owl-carousel owl-theme">
-					
-					<?php foreach ( $imgSrcs as $imgSrc ) { ?>
-						<?php if ( $slider_seo_basic_lazyload == true ): ?>
-							<a class="slider-seo-urls" href="<?php echo $imgUrls[$i] ?>">
-								<img class="owl-lazy" data-src="<?php echo $imgSrc; ?>" alt="<?php echo $imgAlts[$i] ?>" title="<?php echo $imgTitles[$i] ?>"/>
-								<span class="slider-seo-caption <?php echo $slider_seo_captionPos; ?> <?php if (!$slider_seo_basic_caption) { echo 'hidden'; } ?> topleft"><?php echo $imgCaption[$i] ?></span>
-							</a>
-						<?php else: ?>
 
-							<a class="slider-seo-urls" href="<?php echo $imgUrls[$i] ?>">
-							
-							<?php
-								if ( ($slider_seo_imageSize) || ($slider_seo_imageSize != 'largest') ) {
-									$image_data = wp_get_attachment_image_src( $imgIds[$i], $size = $slider_seo_imageSize );
-									//$image_data = wp_get_attachment_image_src ( $imgIds[$i], $size = array (100,300) );
-									echo "<img src='".$image_data[0]."' alt='".$imgAlts[$i]."' title='".$imgTitles[$i]."'>";
-								}else {
-									echo "string";
-									echo "<img src='".$imgSrc."' alt='".$imgAlts[$i]."' title='".$imgTitles[$i]."'>";
-								}
-							?>
+				<!-- start output if layout is not fixed -->
+				<?php 
+					$sliderOutput .= "<div class=\"slider-seo-owl-carousel-";
+					$sliderOutput .= $post['id']." ".$slider_seo_navPos." slider-seo-owl-carousel owl-theme\">";
+				?>
+				
+				<!-- start loop -->
+				<?php foreach ( $imgSrcs as $imgSrc ) : ?>
+					<?php if ( $slider_seo_basic_lazyload == true ): ?>
 
-							<span class="slider-seo-caption <?php echo $slider_seo_captionPos; ?> <?php if (!$slider_seo_basic_caption) { echo 'hidden'; } ?>"><?php echo $imgCaption[$i] ?></span>
-							</a>
+						<!-- lazy load -->
+						<?php 
 
-						<?php endif;  $i++;?>
-					<?php } ?>
+							$sliderOutput .= "<a ";
+							$sliderOutput .="class=\"slider-seo-urls\" "; 
+							$sliderOutput .="href=\"".$imgUrls[$i]."\">"; 
+							//start content of a tag
+							$sliderOutput .= "<img ";
+							$sliderOutput .= "class=\"owl-lazy\"";
+							$sliderOutput .= "data-src=\"".$imgSrc."\"";
+							$sliderOutput .= "alt=\"".$imgAlts[$i]."\"";
+							$sliderOutput .= "title=\"".$imgTitles[$i]."\"";
+							$sliderOutput .= ">";
+							//end content of a tag
+							$sliderOutput .= "</a>";
+						?>
+						<!-- end lazy load -->
 
-					</div>
+					<?php else: ?>
+
+						<!-- not lazy load -->
+						<?php 
+							$sliderOutput .= "<a ";
+							$sliderOutput .="class=\"slider-seo-urls\" "; 
+							$sliderOutput .="href=\"".$imgUrls[$i]."\">"; 
+						?>
+
+						<?php
+							if ( ($slider_seo_imageSize) || ($slider_seo_imageSize != 'largest') ) {
+								$image_data = wp_get_attachment_image_src( $imgIds[$i], $size = $slider_seo_imageSize );
+								
+								$sliderOutput .= "<img ";
+								$sliderOutput .= "src=\"".$image_data[0]."\"";
+								$sliderOutput .= "alt=\"".$imgAlts[$i]."\"";
+								$sliderOutput .= "title=\"".$imgTitles[$i]."\"";
+								$sliderOutput .= ">";
+
+							} else {
+								$sliderOutput .= "<img ";
+								$sliderOutput .= "src=\"".$imgSrc."\"";
+								$sliderOutput .= "alt=\"".$imgAlts[$i]."\"";
+								$sliderOutput .= "title=\"".$imgTitles[$i]."\"";
+								$sliderOutput .= ">";
+							}
+						?>
+
+						<?php 
+							$sliderOutput .= "<span class=\"slider-seo-caption ".$slider_seo_captionPos; 
+							if (!$slider_seo_basic_caption) { 
+								$sliderOutput .= " hidden"; 
+							}
+							$sliderOutput .= "\">"; 
+							$sliderOutput .= $imgCaption[$i]; 
+							$sliderOutput .= "</span>"; 
+						?>
+
+						<?php $sliderOutput .= "</a>"; ?>
+						
+
+						<!-- end not lazy load -->
+					<?php endif;  $i++;?>	
+				<?php endforeach; ?>
+				<!-- end loop -->
+
+				<?php $sliderOutput .="</div>"; ?>
+				<!-- end layout not fixed -->
+
 				<?php if (  $slider_layout == '1' ): ?>
 					</div><!-- .sliderSeoFixedLayout -->
 				<?php endif; ?>
@@ -100,14 +155,6 @@ function slider_seo_func( $atts ){
 	$anim = get_post_meta( $post['id'], 'slider_seo_basic_animation', true );
 	$anim1 = splitBasicAnimShortcode1( $anim );
 	$anim2 = splitBasicAnimShortcode2( $anim );
-
-/*
-	if ($anim) {
-		$anim1a = splitBasicAnimShortcode( $anim );
-		$anim1 = $anim1a[0];
-		$anim2 = $anim1a[1];
-	}
-	*/
 
 	$slider_seo_basic_navtext = get_post_meta( $post['id'], 'slider_seo_basic_navtext', true );
 	$navText1 = '';
@@ -130,11 +177,12 @@ function slider_seo_func( $atts ){
 
 	?>
 
+
 	<script type='text/javascript'>
 		(function($) {
 			'use strict';
 
-			$('.slider-seo-owl-carousel').owlCarousel( {
+			$('.slider-seo-owl-carousel-40').owlCarousel( {
 				animateOut: '<?php echo $anim2; ?>',
 				animateIn: '<?php echo $anim1; ?>',
 				items: <?php echo ( $slider_type === '' ) ? '1' : $slider_type; ?>,
@@ -154,7 +202,13 @@ function slider_seo_func( $atts ){
 
 		})(jQuery);
 	</script>
-<?php }
+
+	<?php 
+		//Enqueue the shortcode js
+		wp_enqueue_script('slider_seo_shortcodejs',slider_SEO_URL . 'js/shortcode.js',array( 'jquery' ), false,true); 
+	?>
+
+<?php return $sliderOutput; }
 
 add_shortcode( 'slider-seo', 'slider_seo_func' );
 

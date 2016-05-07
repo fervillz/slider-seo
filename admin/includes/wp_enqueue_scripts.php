@@ -36,6 +36,5 @@ wp_enqueue_style( 'slider-seo-animate-style', slider_SEO_URL . 'css/animate.css'
 //Enqueue the frontend js
 wp_enqueue_script('slider_seo_frontjs',slider_SEO_URL . 'js/frontend.js',array( 'jquery' ),$this->version,true);
 
-
 ?>
 
