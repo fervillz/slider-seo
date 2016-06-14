@@ -4,7 +4,7 @@ Plugin URI:   https://wordpress.org/plugins/slider-seo
 Tags: Widget, Slider, SEO, Fast, Simple, Easy, Widget, Post, Page, Shortcode, animation, banner rotator, best slider, carousel, content slider, fullwidth slider, gallery, gallery slider, hardware accelerate, Horizontal slider, HTML5 slider, image slider, layer slider, mobile slider, page slider, Photo Slider, post slider, responsive slider, slide, slider, slider plugin, slider shortcode, slideshow, swipe, touch slider, vertical slider, wordpress slider, wordpress slideshow
 Requires at least: 3.9
 Tested up to: 4.5
-Stable tag: 1.0.6
+Stable tag: 1.2.0
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3LA9KPR642EN4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -110,6 +110,9 @@ The 20 in id="20" above is the id of the slider and will different on every slid
 4. 
 
 == Changelog ==
+= 1.2.0 - 06/14/2016 =
+* Fix Slider order
+
 = 1.0.4 - 05/04/2016 =
 * Fix plugin compatability with older versions of php
 

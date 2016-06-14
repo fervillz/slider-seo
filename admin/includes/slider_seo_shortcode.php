@@ -175,40 +175,34 @@ function slider_seo_func( $atts ){
 	$slider_seo_basic_autoheight = get_post_meta( $post['id'], 'slider_seo_basic_autoheight', true );
 	$slider_seo_basic_autoWidth = get_post_meta( $post['id'], 'slider_seo_basic_autoWidth', true );
 
-	?>
 
-
-	<script type='text/javascript'>
+	$sliderOutput.="<script type='text/javascript'>
 		(function($) {
 			'use strict';
 
-			$('.slider-seo-owl-carousel-40').owlCarousel( {
-				animateOut: '<?php echo $anim2; ?>',
-				animateIn: '<?php echo $anim1; ?>',
-				items: <?php echo ( $slider_type === '' ) ? '1' : $slider_type; ?>,
-				margin:<?php echo ( $slider_seo_basic_margin === '' ) ? '0' : $slider_seo_basic_margin; ?>,
-				stagePadding:<?php echo ( $slider_seo_basic_padding === '' ) ? '0' : $slider_seo_basic_padding; ?>,
-				smartSpeed:<?php echo $slider_seo_basic_speed; ?>,
-				nav: <?php echo ( $slider_seo_basic_navigation === 'true' ) ? 'true' : 'false'; ?>,
-				dots: <?php echo ( $slider_seo_basic_dots === 'true' ) ? 'true' : 'false'; ?>,
-				loop: <?php echo ( ($slider_seo_basic_loop === 'true') || ($slider_seo_basic_loop === '') ) ? 'true' : 'false'; ?>,
-				autoplay: true,
-				autoplayTimeout:<?php echo ( $slider_seo_basic_autoplayTimeout === '' ) ? '1000' : $slider_seo_basic_autoplayTimeout; ?>,
-				autoHeight: <?php echo ( ($slider_seo_basic_autoheight === 'true') || ($slider_seo_basic_autoheight === '') ) ? 'true' : 'false'; ?>,
-				lazyLoad: <?php echo ( ($slider_seo_basic_lazyload === 'true') || ($slider_seo_basic_lazyload === '') ) ? 'true' : 'false'; ?>,
-				autoWidth:<?php echo ( ($slider_seo_basic_autoWidth === 'true') || ($slider_seo_basic_autoWidth === '') ) ? 'true' : 'false'; ?>,
-				navText: <?php echo ( $slider_seo_basic_navtext === "" ) ? "['next','prev']" : "['".$navText1."','".$navText2."']" ?>,
+			$('.slider-seo-owl-carousel').owlCarousel( {
+				animateOut: '".$anim2."',
+				animateIn: '".$anim1."',
+			    items: ".(($slider_type === '' ) ? '1' : $slider_type).",
+			    margin: ".(( $slider_seo_basic_margin === '' ) ? '0' : $slider_seo_basic_margin).",
+			    stagePadding: ".(( $slider_seo_basic_padding === '' ) ? '0' : $slider_seo_basic_padding).",
+			    smartSpeed: ".$slider_seo_basic_speed.",
+			    nav: ".(( $slider_seo_basic_navigation === 'true' ) ? 'true' : 'false').",
+			    dots: ".(( $slider_seo_basic_dots === 'true' ) ? 'true' : 'false').",
+			    loop: ".(( ($slider_seo_basic_loop === 'true') || ($slider_seo_basic_loop === '') ) ? 'true' : 'false').",
+			    autoplay: true,
+			    autoplayTimeout: ".(( $slider_seo_basic_autoplayTimeout === '' ) ? '1000' : $slider_seo_basic_autoplayTimeout).",
+			    autoHeight: ".(( ($slider_seo_basic_autoheight === 'true') || ($slider_seo_basic_autoheight === '') ) ? 'true' : 'false').",
+			    lazyLoad: ".(( ($slider_seo_basic_lazyload === 'true') || ($slider_seo_basic_lazyload === '') ) ? 'true' : 'false').",
+			    autoWidth: ".(( ($slider_seo_basic_autoWidth === 'true') || ($slider_seo_basic_autoWidth === '') ) ? 'true' : 'false').",
+			    navText:".(( $slider_seo_basic_navtext === '' ) ? ['next','prev'] : "['".$navText1."','".$navText2."']").",
 			});
-
 		})(jQuery);
-	</script>
+	</script>";
+	
+	return $sliderOutput; 
 
-	<?php 
-		//Enqueue the shortcode js
-		wp_enqueue_script('slider_seo_shortcodejs',slider_SEO_URL . 'js/shortcode.js',array( 'jquery' ), false,true); 
-	?>
-
-<?php return $sliderOutput; }
+}
 
 add_shortcode( 'slider-seo', 'slider_seo_func' );
 
@@ -239,6 +233,10 @@ add_shortcode( 'slider-seo', 'slider_seo_func' );
 
 	//Get the second animation
 	$anim2 = substr($anim,$spacePos);
+
+	$anim2 = str_replace(' ', '', $anim2);
+
+	$anim2 = preg_replace('/\s+/', '', $anim2);
 
 	return $anim2;
 
