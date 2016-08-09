@@ -171,6 +171,7 @@ function slider_seo_func( $atts ){
 	$slider_seo_basic_margin = get_post_meta( $post['id'], 'slider_seo_basic_margin', true );
 	$slider_seo_basic_padding = get_post_meta( $post['id'], 'slider_seo_basic_padding', true );
 	$slider_seo_basic_loop = get_post_meta( $post['id'], 'slider_seo_basic_loop', true );
+	$slider_seo_basic_autoplay = get_post_meta( $post['id'], 'slider_seo_basic_autoplay', true );
 	$slider_seo_basic_autoplayTimeout = get_post_meta( $post['id'], 'slider_seo_basic_autoplayTimeout', true );
 	$slider_seo_basic_autoheight = get_post_meta( $post['id'], 'slider_seo_basic_autoheight', true );
 	$slider_seo_basic_autoWidth = get_post_meta( $post['id'], 'slider_seo_basic_autoWidth', true );
@@ -190,12 +191,12 @@ function slider_seo_func( $atts ){
 			    nav: ".(( $slider_seo_basic_navigation === 'true' ) ? 'true' : 'false').",
 			    dots: ".(( $slider_seo_basic_dots === 'true' ) ? 'true' : 'false').",
 			    loop: ".(( ($slider_seo_basic_loop === 'true') || ($slider_seo_basic_loop === '') ) ? 'true' : 'false').",
-			    autoplay: true,
+			    autoplay: ".(( $slider_seo_basic_autoplay === 'true' ) ? 'true' : 'false').",
 			    autoplayTimeout: ".(( $slider_seo_basic_autoplayTimeout === '' ) ? '1000' : $slider_seo_basic_autoplayTimeout).",
 			    autoHeight: ".(( ($slider_seo_basic_autoheight === 'true') || ($slider_seo_basic_autoheight === '') ) ? 'true' : 'false').",
 			    lazyLoad: ".(( ($slider_seo_basic_lazyload === 'true') || ($slider_seo_basic_lazyload === '') ) ? 'true' : 'false').",
 			    autoWidth: ".(( ($slider_seo_basic_autoWidth === 'true') || ($slider_seo_basic_autoWidth === '') ) ? 'true' : 'false').",
-			    navText:".(( $slider_seo_basic_navtext === '' ) ? ['next','prev'] : "['".$navText1."','".$navText2."']").",
+			    navText:".(( $slider_seo_basic_navtext === '' ) ? "['next','prev']" : "['".$navText1."','".$navText2."']").",
 			});
 		})(jQuery);
 	</script>";

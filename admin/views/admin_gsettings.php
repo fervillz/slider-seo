@@ -10,6 +10,7 @@
 <?php include_once( 'gsettings_partials/margin.php' ); ?>
 <?php include_once( 'gsettings_partials/padding.php' ); ?>
 <?php include_once( 'gsettings_partials/loop.php' ); ?>
+<?php include_once( 'gsettings_partials/autoplay.php' ); ?>
 <?php include_once( 'gsettings_partials/autoplayTimeout.php' ); ?>
 <?php include_once( 'gsettings_partials/autoheight.php' ); ?>
 <?php include_once( 'gsettings_partials/lazyload.php' ); ?>
@@ -38,8 +39,9 @@
 		 <span> <span class="slider-seo-instruction"> <p><?php _e( 'The basic settings configuration allows you to change main preferences.', 'slider-seo'); ?></p> </span>
 			<table id="tab-basic">
 				<tr> <?php tr_slider_type($post); ?> </tr>
-				<tr> <?php animation($post); ?> </tr>
+				<tr class="animation"> <?php animation($post); ?> </tr>
 				<tr> <?php anim_speed($post); ?> </tr>
+				<tr> <?php autoplay($post); ?> </tr>
 				<tr> <?php navigation($post); ?> </tr>
 				<tr> <?php dots($post); ?> </tr>
 			</table> 

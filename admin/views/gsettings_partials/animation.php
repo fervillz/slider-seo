@@ -23,7 +23,7 @@ $anim2 = preg_replace('/\s+/','',(splitBasicAnim2( $anim ))); //remove all space
 		</select>
 		</td>
 	<?php elseif ( $tab == 'advanced' ): ?>
-		<tr>
+		<tr class="animation">
 			<td class="">Animation</td>
 			<td class="">
 				<select name="slider_seo_basic_animationIn" class="slider_seo_basic_animation slider_seo_basic_animation2">
@@ -104,7 +104,7 @@ $anim2 = preg_replace('/\s+/','',(splitBasicAnim2( $anim ))); //remove all space
 				</select>
 			</td>
 		</tr>
-		<tr>
+		<tr class="animation">
 			<td></td>
 			<td>
 				<select name="slider_seo_basic_animationOut" class="slider_seo_basic_animation slider_seo_basic_animation3">

@@ -75,7 +75,6 @@ class Slider_SEO_Admin {
 
 		add_action( 'save_post', array( $this, 'save_post' ) );
 
-
 		add_filter( 'single_template', array( $this, 'get_custom_post_type_template' ) );
  
 	}
@@ -251,6 +250,9 @@ class Slider_SEO_Admin {
 
 		//slider loop
 		$this->save_post_meta_animation('slider_seo_basic_loop', $post_id, 'checkbox' );
+
+		//slider autopaly
+		$this->save_post_meta_animation('slider_seo_basic_autoplay', $post_id);
 		
 		//slider Timeout
 		$this->save_post_meta_animation('slider_seo_basic_autoplayTimeout', $post_id);
@@ -331,6 +333,10 @@ class Slider_SEO_Admin {
 			plugin_dir_url( __FILE__ ) . 'css/admin.css',
 			array()
 		);
+
+		$screen = get_current_screen();
+
+		console.log($screen);
 	}
  
 	/**
