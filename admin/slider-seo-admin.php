@@ -334,9 +334,6 @@ class Slider_SEO_Admin {
 			array()
 		);
 
-		$screen = get_current_screen();
-
-		console.log($screen);
 	}
  
 	/**
